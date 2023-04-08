@@ -398,6 +398,7 @@ xkb_symbols "kom" {
 // 2008/04/23 Yakov Aleksandrov <bertjickty@yandex.ru>
 // 2008/04/23 Anatoliy Zhozhikov <jav@sitc.ru>
 // 2008/04/23 Aleksandr Varlamov
+// 2023/04/08 Prokopii Ivanov <beltillium@gmail.com>
 partial alphanumeric_keys
 xkb_symbols "sah" {
 
@@ -417,6 +418,7 @@ xkb_symbols "sah" {
     key <AB02> { [  Cyrillic_che,     Cyrillic_CHE,     Cyrillic_u_macron,    Cyrillic_U_macron    ] };
     key <AB04> { [  Cyrillic_em,      Cyrillic_EM,      U04C8,                U04C7                ] };
     key <AB05> { [  Cyrillic_i,       Cyrillic_I,       Cyrillic_i_macron,    Cyrillic_I_macron    ] };
+    key <AB07> { [  Cyrillic_softsign, Cyrillic_SOFTSIGN, Cyrillic_shha,      Cyrillic_SHHA        ] };
 
     include "level3(ralt_switch)"
 };
