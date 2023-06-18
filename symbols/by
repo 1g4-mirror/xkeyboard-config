@@ -53,7 +53,7 @@ xkb_symbols "latin" {
 	key <AD03> {[    e,    E,    eogonek,     Eogonek   ]};
 	key <AD09> {[    o,    O,    oacute,      Oacute    ]};
 	key <AC01> {[    a,    A,    aogonek,     Aogonek   ]};
-	key <AC10> {[    j,    J,    zabovedot,   Zabovedot   ]};
+	key <AC07> {[    j,    J,    zabovedot,   Zabovedot   ]};
 
 	include "level3(ralt_switch)"
 };
