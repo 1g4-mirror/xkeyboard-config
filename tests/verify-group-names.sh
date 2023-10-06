@@ -7,7 +7,7 @@
 set -e
 
 pwd="$PWD"
-tmpdir=$(mktemp -d xkeyboard-config.XXXX)
+tmpdir=$(mktemp -d xkeyboard-config.XXXXXX)
 scriptdir=$(dirname "$0")
 ROOT=$(realpath "$scriptdir/..")
 
