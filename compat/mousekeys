@@ -178,6 +178,38 @@ default partial xkb_compatibility "mousekeys" {
     interpret Pointer_Drag3 {
 	action= LockPointerButton(button=3);
     };
+    interpret Pointer_UpLeft {
+	repeat = True;
+	action = MovePtr(x=-1,y=-1);
+    };
+    interpret Pointer_Up {
+	repeat = True;
+	action = MovePtr(x=+0,y=-1);
+    };
+    interpret Pointer_UpRight {
+	repeat = True;
+	action = MovePtr(x=+1,y=-1);
+    };
+    interpret Pointer_DownLeft {
+	repeat = True;
+	action = MovePtr(x=-1,y= +1);
+    };
+    interpret Pointer_Down {
+	repeat = True;
+	action = MovePtr(x=+0,y= +1);
+    };
+    interpret Pointer_DownRight {
+	repeat = True;
+	action = MovePtr(x=+1,y= +1);
+    };
+    interpret Pointer_Right {
+	repeat = True;
+	action = MovePtr(x=+1,y=+0);
+    };
+    interpret Pointer_Left {
+	repeat = True;
+	action = MovePtr(x=-1,y=+0);
+    };
 
     interpret Pointer_EnableKeys {
 	action= LockControls(controls=MouseKeys);
