@@ -3,7 +3,107 @@
 // bind "mouse" keys using xmodmap and activate or
 // deactivate them from the keyboard.
 
-default partial xkb_compatibility "mousekeys" {
+default partial xkb_compatibility "pointerkeys" {
+
+    interpret.repeat= True;
+
+    interpret Pointer_UpLeft {
+	repeat = True;
+	action = MovePtr(x=-1,y=-1);
+    };
+    interpret Pointer_Up {
+	repeat = True;
+	action = MovePtr(x=+0,y=-1);
+    };
+    interpret Pointer_UpRight {
+	repeat = True;
+	action = MovePtr(x=+1,y=-1);
+    };
+    interpret Pointer_DownLeft {
+	repeat = True;
+	action = MovePtr(x=-1,y= +1);
+    };
+    interpret Pointer_Down {
+	repeat = True;
+	action = MovePtr(x=+0,y= +1);
+    };
+    interpret Pointer_DownRight {
+	repeat = True;
+	action = MovePtr(x=+1,y= +1);
+    };
+    interpret Pointer_Right {
+	repeat = True;
+	action = MovePtr(x=+1,y=+0);
+    };
+    interpret Pointer_Left {
+	repeat = True;
+	action = MovePtr(x=-1,y=+0);
+    };
+
+    interpret.repeat= False;
+
+    interpret Pointer_Button_Dflt {
+	action= PointerButton(button=default);
+    };
+    interpret Pointer_Button1 {
+	action= PointerButton(button=1);
+    };
+    interpret Pointer_Button2 {
+	action= PointerButton(button=2);
+    };
+    interpret Pointer_Button3 {
+	action= PointerButton(button=3);
+    };
+    interpret Pointer_DblClick_Dflt {
+	action= PointerButton(button=default,count=2);
+    };
+    interpret Pointer_DblClick1 {
+	action= PointerButton(button=1,count=2);
+    };
+    interpret Pointer_DblClick2 {
+	action= PointerButton(button=2,count=2);
+    };
+    interpret Pointer_DblClick3 {
+	action= PointerButton(button=3,count=2);
+    };
+    interpret Pointer_Drag_Dflt {
+	action= LockPointerButton(button=default);
+    };
+    interpret Pointer_Drag1 {
+	action= LockPointerButton(button=1);
+    };
+    interpret Pointer_Drag2 {
+	action= LockPointerButton(button=2);
+    };
+    interpret Pointer_Drag3 {
+	action= LockPointerButton(button=3);
+    };
+    interpret Pointer_EnableKeys {
+	action= LockControls(controls=MouseKeys);
+    };
+    interpret Pointer_Accelerate {
+	action= LockControls(controls=MouseKeysAccel);
+    };
+    interpret Pointer_DfltBtnNext {
+	action= SetPtrDflt(affect=defaultButton,button= +1);
+    };
+    interpret Pointer_DfltBtnPrev {
+	action= SetPtrDflt(affect=defaultButton,button= -1);
+    };
+
+    // Allow an indicator for MouseKeys.
+    indicator "Mouse Keys" {
+	indicatorDrivesKeyboard;
+	controls= MouseKeys;
+    };
+};
+
+// Hardcoded mouse keys for the numlock pad.
+// This is named mousekeys for backwards compatbility reasons.
+
+partial xkb_compatibility "mousekeys" {
+
+    include "mousekeys(pointerkeys)"
 
     // Keypad actions.
 
@@ -136,97 +236,5 @@ default partial xkb_compatibility "mousekeys" {
     };
     interpret F35 { // aka KP_Next
 	action = MovePtr(x=+1,y=+1);
-    };
-
-    interpret.repeat= False;
-
-    // New keysym actions.
-
-    interpret Pointer_Button_Dflt {
-	action= PointerButton(button=default);
-    };
-    interpret Pointer_Button1 {
-	action= PointerButton(button=1);
-    };
-    interpret Pointer_Button2 {
-	action= PointerButton(button=2);
-    };
-    interpret Pointer_Button3 {
-	action= PointerButton(button=3);
-    };
-    interpret Pointer_DblClick_Dflt {
-	action= PointerButton(button=default,count=2);
-    };
-    interpret Pointer_DblClick1 {
-	action= PointerButton(button=1,count=2);
-    };
-    interpret Pointer_DblClick2 {
-	action= PointerButton(button=2,count=2);
-    };
-    interpret Pointer_DblClick3 {
-	action= PointerButton(button=3,count=2);
-    };
-    interpret Pointer_Drag_Dflt {
-	action= LockPointerButton(button=default);
-    };
-    interpret Pointer_Drag1 {
-	action= LockPointerButton(button=1);
-    };
-    interpret Pointer_Drag2 {
-	action= LockPointerButton(button=2);
-    };
-    interpret Pointer_Drag3 {
-	action= LockPointerButton(button=3);
-    };
-    interpret Pointer_UpLeft {
-	repeat = True;
-	action = MovePtr(x=-1,y=-1);
-    };
-    interpret Pointer_Up {
-	repeat = True;
-	action = MovePtr(x=+0,y=-1);
-    };
-    interpret Pointer_UpRight {
-	repeat = True;
-	action = MovePtr(x=+1,y=-1);
-    };
-    interpret Pointer_DownLeft {
-	repeat = True;
-	action = MovePtr(x=-1,y= +1);
-    };
-    interpret Pointer_Down {
-	repeat = True;
-	action = MovePtr(x=+0,y= +1);
-    };
-    interpret Pointer_DownRight {
-	repeat = True;
-	action = MovePtr(x=+1,y= +1);
-    };
-    interpret Pointer_Right {
-	repeat = True;
-	action = MovePtr(x=+1,y=+0);
-    };
-    interpret Pointer_Left {
-	repeat = True;
-	action = MovePtr(x=-1,y=+0);
-    };
-
-    interpret Pointer_EnableKeys {
-	action= LockControls(controls=MouseKeys);
-    };
-    interpret Pointer_Accelerate {
-	action= LockControls(controls=MouseKeysAccel);
-    };
-    interpret Pointer_DfltBtnNext {
-	action= SetPtrDflt(affect=defaultButton,button= +1);
-    };
-    interpret Pointer_DfltBtnPrev {
-	action= SetPtrDflt(affect=defaultButton,button= -1);
-    };
-
-    // Allow an indicator for MouseKeys.
-    indicator "Mouse Keys" {
-	indicatorDrivesKeyboard;
-	controls= MouseKeys;
     };
 };
