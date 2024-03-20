@@ -1,0 +1,25 @@
+partial modifier_keys
+xkb_symbols "numlock" {
+    key <NMLK> { [ Num_Lock ] };
+
+    key  <KP7> {	[  Pointer_UpLeft,	KP_7	]	};
+    key  <KP8> {	[  Pointer_Up,	KP_8	]	};
+    key  <KP9> {	[  Pointer_UpRight,	KP_9	]	};
+
+    key  <KP4> {	[  Pointer_Left,	KP_4	]	};
+    key  <KP5> {	[  Pointer_Button_Dflt,	KP_5	]	};
+    key  <KP6> {	[  Pointer_Right,	KP_6	]	};
+
+    key  <KP1> {	[  Pointer_DownLeft,	KP_1	]	};
+    key  <KP2> {	[  Pointer_Down,	KP_2	]	};
+    key  <KP3> {	[  Pointer_DownRight,	KP_3	]	};
+    key <KPDV> {	[	Pointer_Button1, KP_Divide	]	};
+    key <KPMU> {	[	Pointer_Button2, KP_Multiply	]	};
+    key <KPSU> {	[	Pointer_Button3, KP_Subtract	]	};
+    key <KPAD> {	[	Pointer_DblClick_Dflt, KP_Add	]	};
+
+    // There is no equivalent to LockPointerButton, let's use
+    // something hopefully implemented by the caller.
+    key <KP0> {	[	Pointer_Drag1, KP_0	]	};
+    key <KPDL> {	[	Pointer_Drag3, KP_Decimal	]	};
+};

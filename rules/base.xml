@@ -7937,7 +7937,13 @@
       <option>
         <configItem>
           <name>keypad:pointerkeys</name>
-          <description>Shift + Num Lock enables PointerKeys</description>
+          <description>Shift + Num Lock enables PointerKeys (X11 only)</description>
+        </configItem>
+      </option>
+      <option>
+        <configItem>
+          <name>pointerkeys:numlock</name>
+          <description>Num Lock toggles PointerKeys</description>
         </configItem>
       </option>
       <option>

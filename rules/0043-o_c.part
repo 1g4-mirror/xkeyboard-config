@@ -6,3 +6,4 @@
   japan:kana_lock	=	+japan(kana_lock)
   caps:shiftlock	=	+ledcaps(shift_lock)
   grab:break_actions	=	+xfree86(grab_break)
+  keypad:pointerkeys	=	+mousekeys(mousekeys)

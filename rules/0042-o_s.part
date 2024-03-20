@@ -185,3 +185,4 @@
   grp:ralt_rshift_toggle	= +group(ralt_rshift_toggle)
   grp:alt_shift_toggle		= +group(alt_shift_toggle)
   grp:alt_shift_toggle_bidir	= +group(alt_shift_toggle_bidir)
+  pointerkeys:numlock		= +pointerkeys(numlock)
