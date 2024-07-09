@@ -10,5 +10,6 @@
   *		grp:ctrl_space_toggle			= +group(ctrl_space_toggle):3
   *		grp:rctrl_rshift_toggle			= +group(rctrl_rshift_toggle):3
   *		grp:shifts_toggle			= +group(shifts_toggle):3
+  *		shortcuts:qwerty			= +us(qwerty_shortcuts):3
   $azerty	caps:digits_row				= +capslock(digits_row):3
   $azerty	caps:digits_row_independent_lock	= +capslock(digits_row_independent_lock):3

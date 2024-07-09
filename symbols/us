@@ -2228,3 +2228,61 @@ xkb_symbols "de_se_fi"  {
 
     include "level3(ralt_switch)"
 };
+
+partial alphanumeric_keys modifier_keys
+xkb_symbols "qwerty_shortcuts" {
+
+    key.type[Group1] = "FOUR_LEVEL_WITH_ALTERNATIVE_BASE_SYMBOLS";
+
+    key <TLDE>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol,  grave,	 asciitilde	]};
+    key <AE01>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, 	1,	 exclam		]};
+    key <AE02>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, 	2,	 at		]};
+    key <AE03>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, 	3,	 numbersign	]};
+    key <AE04>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, 	4,	 dollar		]};
+    key <AE05>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, 	5,	 percent	]};
+    key <AE06>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, 	6,	 asciicircum	]};
+    key <AE07>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, 	7,	 ampersand	]};
+    key <AE08>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, 	8,	 asterisk	]};
+    key <AE09>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, 	9,	 parenleft	]};
+    key <AE10>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, 	0,	 parenright	]};
+    key <AE11>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol,  minus,	 underscore	]};
+    key <AE12>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol,  equal,	 plus		]};
+
+    key <AD01>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, 	 q,	 Q		]};
+    key <AD02>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, 	 w,	 W		]};
+    key <AD03>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, 	 e,	 E		]};
+    key <AD04>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, 	 r,	 R		]};
+    key <AD05>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, 	 t,	 T		]};
+    key <AD06>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, 	 y,	 Y		]};
+    key <AD07>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, 	 u,	 U		]};
+    key <AD08>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, 	 i,	 I		]};
+    key <AD09>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, 	 o,	 O		]};
+    key <AD10>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, 	 p,	 P		]};
+    key <AD11>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol,  bracketleft,	 braceleft	]};
+    key <AD12>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol,  bracketright, braceright	]};
+
+    key <AC01>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, 	 a,	 A		]};
+    key <AC02>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, 	 s,	 S		]};
+    key <AC03>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, 	 d,	 D		]};
+    key <AC04>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, 	 f,	 F		]};
+    key <AC05>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, 	 g,	 G		]};
+    key <AC06>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, 	 h,	 H		]};
+    key <AC07>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, 	 j,	 J		]};
+    key <AC08>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, 	 k,	 K		]};
+    key <AC09>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, 	 l,	 L		]};
+    key <AC10>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, semicolon,	 colon		]};
+    key <AC11>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, apostrophe,	 quotedbl	]};
+    key <BKSL>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, backslash,	 bar		]};
+
+    key <LSGT>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, 	 less, 	 greater	]};
+    key <AB01>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, 	 z,	 Z		]};
+    key <AB02>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, 	 x,	 X		]};
+    key <AB03>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, 	 c,	 C		]};
+    key <AB04>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, 	 v,	 V		]};
+    key <AB05>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, 	 b,	 B		]};
+    key <AB06>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, 	 n,	 N		]};
+    key <AB07>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol, 	 m,	 M		]};
+    key <AB08>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol,   comma,	 less		]};
+    key <AB09>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol,  period,	 greater	]};
+    key <AB10>	{[ NoSymbol, NoSymbol, NoSymbol, NoSymbol,   slash,	 question	]};
+};
