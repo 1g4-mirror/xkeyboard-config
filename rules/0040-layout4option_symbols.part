@@ -11,5 +11,6 @@
   *		grp:rctrl_rshift_toggle			= +group(rctrl_rshift_toggle):4
   *		grp:shifts_toggle			= +group(shifts_toggle):4
   *		shortcuts:qwerty			= +us(qwerty_shortcuts):4
+  il		shortcuts:qwerty			= +il(basic_qt_fix):4
   $azerty	caps:digits_row				= +capslock(digits_row):4
   $azerty	caps:digits_row_independent_lock	= +capslock(digits_row_independent_lock):4
