@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE xkbConfigRegistry SYSTEM "xkb.dtd">
+<!DOCTYPE xkbConfigRegistry SYSTEM "xkb-dev.dtd">
 <xkbConfigRegistry>
   <modelList/>
   <layoutList>
@@ -31,6 +31,8 @@
             <languageList>
               <iso639Id>uga</iso639Id>
             </languageList>
+            <!-- Delete in 2028. -->
+            <alias category="compatibility" layout="ara" variant="uga"/>
           </configItem>
         </variant>
         <variant>
@@ -40,6 +42,8 @@
             <languageList>
               <iso639Id>ave</iso639Id>
             </languageList>
+            <!-- Delete in 2028. -->
+            <alias category="compatibility" layout="ir" variant="ave"/>
           </configItem>
         </variant>
       </variantList>
@@ -139,6 +143,10 @@
           <configItem popularity="exotic">
             <name>sun_type6</name>
             <description>Multilingual (Canada, Sun Type 6/7)</description>
+            <membership>
+              <member-of>$sun_compat</member-of>
+              <member-of>$sun_var</member-of>
+            </membership>
           </configItem>
         </variant>
       </variantList>
@@ -186,36 +194,42 @@
           <configItem popularity="exotic">
             <name>adnw</name>
             <description>German (Aus der Neo-Welt)</description>
+            <rule layout-range="any" compat="+caps(caps_lock):%i+misc(assign_shift_left_action):%i+level5(level5_lock):%i" category="compatibility"/>
           </configItem>
         </variant>
         <variant>
           <configItem popularity="exotic">
             <name>koy</name>
             <description>German (KOY)</description>
+            <rule layout-range="any" compat="+caps(caps_lock):%i+misc(assign_shift_left_action):%i+level5(level5_lock):%i" category="compatibility"/>
           </configItem>
         </variant>
         <variant>
           <configItem popularity="exotic">
             <name>bone</name>
             <description>German (Bone)</description>
+            <rule layout-range="any" compat="+caps(caps_lock):%i+misc(assign_shift_left_action):%i+level5(level5_lock):%i" category="compatibility"/>
           </configItem>
         </variant>
         <variant>
           <configItem popularity="exotic">
             <name>bone_eszett_home</name>
             <description>German (Bone, eszett in the home row)</description>
+            <rule layout-range="any" compat="+caps(caps_lock):%i+misc(assign_shift_left_action):%i+level5(level5_lock):%i" category="compatibility"/>
           </configItem>
         </variant>
         <variant>
           <configItem popularity="exotic">
             <name>neo_qwertz</name>
             <description>German (Neo, QWERTZ)</description>
+            <rule layout-range="any" compat="+caps(caps_lock):%i+misc(assign_shift_left_action):%i+level5(level5_lock):%i" category="compatibility"/>
           </configItem>
         </variant>
         <variant>
           <configItem popularity="exotic">
             <name>neo_qwerty</name>
             <description>German (Neo, QWERTY)</description>
+            <rule layout-range="any" compat="+caps(caps_lock):%i+misc(assign_shift_left_action):%i+level5(level5_lock):%i" category="compatibility"/>
           </configItem>
         </variant>
         <variant>
@@ -632,13 +646,13 @@
             <description>Polish (Colemak)</description>
           </configItem>
         </variant>
-	<variant>
+        <variant>
           <configItem popularity="exotic">
             <name>colemak_dh_ansi</name>
             <description>Polish (Colemak-DH)</description>
           </configItem>
         </variant>
-	<variant>
+        <variant>
           <configItem popularity="exotic">
             <name>colemak_dh</name>
             <description>Polish (Colemak-DH ISO)</description>
@@ -998,12 +1012,12 @@
             <description>Arabic (Eastern Arabic numerals, extensions in the 4th level)</description>
           </configItem>
         </variant>
-	<variant>
+        <variant>
           <configItem popularity="exotic">
             <name>ergoarabic</name>
             <description>Arabic (ErgoArabic)</description>
           </configItem>
-	</variant>
+        </variant>
       </variantList>
     </layout>
     <layout>
@@ -1290,6 +1304,8 @@
               <iso639Id>deu</iso639Id>
               <iso639Id>lld</iso639Id>
             </languageList>
+            <!-- Delete in 2028. -->
+            <alias category="compatibility" layout="de" variant="lld"/>
           </configItem>
         </variant>
         <variant>
@@ -1326,12 +1342,17 @@
           <configItem popularity="exotic">
             <name>sun_type7</name>
             <description>Japanese (Sun Type 7, PC-compatible)</description>
+            <member-of>$sun_var</member-of>
           </configItem>
         </variant>
         <variant>
           <configItem popularity="exotic">
             <name>sun_type7_suncompat</name>
             <description>Japanese (Sun Type 7, Sun-compatible)</description>
+            <membership>
+              <member-of>$sun_compat</member-of>
+              <member-of>$sun_var</member-of>
+            </membership>
           </configItem>
         </variant>
       </variantList>
@@ -1512,12 +1533,14 @@
           <configItem popularity="exotic">
             <name>sun_type6_de</name>
             <description>German (Switzerland, Sun Type 6/7)</description>
+            <member-of>$sun_var</member-of>
           </configItem>
         </variant>
         <variant>
           <configItem popularity="exotic">
             <name>sun_type6_fr</name>
             <description>French (Switzerland, Sun Type 6/7)</description>
+            <member-of>$sun_var</member-of>
           </configItem>
         </variant>
       </variantList>
@@ -1620,7 +1643,7 @@
         <name>kr</name>
         <shortDescription>ko</shortDescription>
         <description>Korean</description>
-          <countryList>
+        <countryList>
           <iso3166Id>KR</iso3166Id>
         </countryList>
         <languageList>
@@ -1632,6 +1655,7 @@
           <configItem popularity="exotic">
             <name>sun_type6</name>
             <description>Korean (Sun Type 6/7)</description>
+            <member-of>$sun_var</member-of>
           </configItem>
         </variant>
       </variantList>

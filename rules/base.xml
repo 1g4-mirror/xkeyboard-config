@@ -1,13 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE xkbConfigRegistry SYSTEM "xkb.dtd">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xkbConfigRegistry SYSTEM "xkb-dev.dtd">
 <xkbConfigRegistry version="1.1">
+  <header>
+    Rules for resolving XKB components for use with XFree86
+    Copyright 1996 by Joseph Moss
 
+    2002 Modifier: Ivan Pascal      The XFree86 Project
+  </header>
   <modelList>
     <model>
       <configItem>
         <name>pc86</name>
         <description>Generic 86-key PC</description>
         <vendor>Generic</vendor>
+        <member-of>$pcmodels</member-of>
       </configItem>
     </model>
     <model>
@@ -15,6 +21,7 @@
         <name>pc101</name>
         <description>Generic 101-key PC</description>
         <vendor>Generic</vendor>
+        <member-of>$pcmodels</member-of>
       </configItem>
     </model>
     <model>
@@ -22,6 +29,7 @@
         <name>pc102</name>
         <description>Generic 102-key PC</description>
         <vendor>Generic</vendor>
+        <member-of>$pcmodels</member-of>
       </configItem>
     </model>
     <model>
@@ -29,6 +37,7 @@
         <name>pc104</name>
         <description>Generic 104-key PC</description>
         <vendor>Generic</vendor>
+        <member-of>$pcmodels</member-of>
       </configItem>
     </model>
     <model>
@@ -36,6 +45,7 @@
         <name>pc104alt</name>
         <description>Generic 104-key PC with L-shaped Enter key</description>
         <vendor>Generic</vendor>
+        <member-of>$pcmodels</member-of>
       </configItem>
     </model>
     <model>
@@ -43,6 +53,11 @@
         <name>pc105</name>
         <description>Generic 105-key PC</description>
         <vendor>Generic</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+          <member-of>$pcmodels</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -50,6 +65,8 @@
         <name>a4techKB21</name>
         <description>A4Tech KB-21</description>
         <vendor>A4Tech</vendor>
+        <member-of rules="base">$inetmediakbds</member-of>
+        <rule symbols="+inet(media_nav_common)" rules="base"/>
       </configItem>
     </model>
     <model>
@@ -57,6 +74,8 @@
         <name>a4techKBS8</name>
         <description>A4Tech KBS-8</description>
         <vendor>A4Tech</vendor>
+        <member-of rules="base">$inetmediakbds</member-of>
+        <rule symbols="+inet(media_nav_acpi_common)" rules="base"/>
       </configItem>
     </model>
     <model>
@@ -64,6 +83,8 @@
         <name>a4_rfkb23</name>
         <description>A4Tech Wireless Desktop RFKB-23</description>
         <vendor>A4Tech</vendor>
+        <member-of rules="base">$inetmediakbds</member-of>
+        <rule symbols="+inet(media_nav_acpi_common)" rules="base"/>
       </configItem>
     </model>
     <model>
@@ -71,6 +92,7 @@
         <name>airkey</name>
         <description>Acer AirKey V</description>
         <vendor>Acer</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -78,6 +100,7 @@
         <name>acer_c300</name>
         <description>Acer C300</description>
         <vendor>Acer</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -85,6 +108,10 @@
         <name>acer_ferrari4k</name>
         <description>Acer Ferrari 4000</description>
         <vendor>Acer</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -92,6 +119,10 @@
         <name>acer_laptop</name>
         <description>Acer laptop</description>
         <vendor>Acer</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -99,6 +130,8 @@
         <name>scorpius</name>
         <description>Advance Scorpius KI</description>
         <vendor>Scorpius</vendor>
+        <member-of rules="base">$inetmediakbds</member-of>
+        <rule symbols="+inet(media_nav_acpi_common)" rules="base"/>
       </configItem>
     </model>
     <model>
@@ -106,6 +139,7 @@
         <name>apple</name>
         <description>Apple</description>
         <vendor>Apple</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -113,6 +147,7 @@
         <name>applealu_ansi</name>
         <description>Apple Aluminium (ANSI)</description>
         <vendor>Apple</vendor>
+        <member-of>$applealu</member-of>
       </configItem>
     </model>
     <model>
@@ -120,6 +155,7 @@
         <name>applealu_iso</name>
         <description>Apple Aluminium (ISO)</description>
         <vendor>Apple</vendor>
+        <member-of>$applealu</member-of>
       </configItem>
     </model>
     <model>
@@ -127,6 +163,12 @@
         <name>applealu_jis</name>
         <description>Apple Aluminium (JIS)</description>
         <vendor>Apple</vendor>
+        <member-of>$applealu</member-of>
+        <rules>
+          <rule layout="jp" layout-range="single" symbols="macintosh_vndr/apple(alukbd)+macintosh_vndr/jp(usmac)+macintosh_vndr/jp(mac):2"/>
+          <rule layout="us" layout-range="1" symbols="macintosh_vndr/apple(alukbd)+macintosh_vndr/jp(usmac)"/>
+          <rule layout="*" layout-range="single" symbols="macintosh_vndr/apple(alukbd)+%l%(v)+macintosh_vndr/jp(mac):2"/>
+        </rules>
       </configItem>
     </model>
     <model>
@@ -134,6 +176,8 @@
         <name>asus_laptop</name>
         <description>Asus laptop</description>
         <vendor>Asus</vendor>
+        <member-of rules="base">$inetmediakbds</member-of>
+        <rule symbols="+inet(media_common)" rules="base"/>
       </configItem>
     </model>
     <model>
@@ -141,6 +185,7 @@
         <name>azonaRF2300</name>
         <description>Azona RF2300 Wireless Internet</description>
         <vendor>Azona</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -148,6 +193,10 @@
         <name>benqx</name>
         <description>BenQ X-Touch</description>
         <vendor>BenQ</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -155,6 +204,7 @@
         <name>benqx730</name>
         <description>BenQ X-Touch 730</description>
         <vendor>BenQ</vendor>
+        <rule symbols="+inet(benqx)" rules="base"/>
       </configItem>
     </model>
     <model>
@@ -162,6 +212,7 @@
         <name>benqx800</name>
         <description>BenQ X-Touch 800</description>
         <vendor>BenQ</vendor>
+        <rule symbols="+inet(benqx)" rules="base"/>
       </configItem>
     </model>
     <model>
@@ -169,6 +220,7 @@
         <name>abnt2</name>
         <description>Brazilian ABNT2</description>
         <vendor>Generic</vendor>
+        <member-of>$pcmodels</member-of>
       </configItem>
     </model>
     <model>
@@ -176,6 +228,7 @@
         <name>brother</name>
         <description>Brother Internet</description>
         <vendor>Brother</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -183,6 +236,10 @@
         <name>btc5090</name>
         <description>BTC 5090</description>
         <vendor>BTC</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -190,6 +247,7 @@
         <name>btc5113rf</name>
         <description>BTC 5113RF Multimedia</description>
         <vendor>BTC</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -197,6 +255,7 @@
         <name>btc5126t</name>
         <description>BTC 5126T</description>
         <vendor>BTC</vendor>
+        <rule symbols="+inet(nav_acpi_common)" rules="base"/>
       </configItem>
     </model>
     <model>
@@ -204,6 +263,8 @@
         <name>btc6301urf</name>
         <description>BTC 6301URF</description>
         <vendor>BTC</vendor>
+        <member-of rules="base">$inetmediakbds</member-of>
+        <rule symbols="+inet(media_nav_acpi_common)" rules="base"/>
       </configItem>
     </model>
     <model>
@@ -211,6 +272,7 @@
         <name>btc9000</name>
         <description>BTC 9000</description>
         <vendor>BTC</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -218,6 +280,7 @@
         <name>btc9000a</name>
         <description>BTC 9000A</description>
         <vendor>BTC</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -225,6 +288,7 @@
         <name>btc9001ah</name>
         <description>BTC 9001AH</description>
         <vendor>BTC</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -232,6 +296,10 @@
         <name>btc9019u</name>
         <description>BTC 9019U</description>
         <vendor>BTC</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -239,6 +307,7 @@
         <name>btc9116u</name>
         <description>BTC 9116U Mini Wireless Internet and Gaming</description>
         <vendor>BTC</vendor>
+        <rule symbols="+inet(btc9019u)" rules="base"/>
       </configItem>
     </model>
     <model>
@@ -246,6 +315,7 @@
         <name>cherryblue</name>
         <description>Cherry Blue Line CyBo@rd</description>
         <vendor>Cherry</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -253,6 +323,10 @@
         <name>cherrybluea</name>
         <description>Cherry Blue Line CyBo@rd (alt.)</description>
         <vendor>Cherry</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -260,6 +334,7 @@
         <name>cherrybunlim</name>
         <description>Cherry B.UNLIMITED</description>
         <vendor>Cherry</vendor>
+        <rule symbols="+inet(nav_common)" rules="base"/>
       </configItem>
     </model>
     <model>
@@ -267,6 +342,10 @@
         <name>cherrycyboard</name>
         <description>Cherry CyBo@rd USB-Hub</description>
         <vendor>Cherry</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -274,6 +353,7 @@
         <name>cherrycmexpert</name>
         <description>Cherry CyMotion Expert</description>
         <vendor>Cherry</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -281,6 +361,10 @@
         <name>cymotionlinux</name>
         <description>Cherry CyMotion Master Linux</description>
         <vendor>Cherry</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -288,6 +372,10 @@
         <name>cherryblueb</name>
         <description>Cherry CyMotion Master XPress</description>
         <vendor>Cherry</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -295,6 +383,7 @@
         <name>chicony</name>
         <description>Chicony Internet</description>
         <vendor>Chicony</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -302,6 +391,7 @@
         <name>chicony9885</name>
         <description>Chicony KB-9885</description>
         <vendor>Chicony</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -309,6 +399,7 @@
         <name>chicony0108</name>
         <description>Chicony KU-0108</description>
         <vendor>Chicony</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -316,6 +407,7 @@
         <name>chicony0420</name>
         <description>Chicony KU-0420</description>
         <vendor>Chicony</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -323,6 +415,10 @@
         <name>chromebook</name>
         <description>Chromebook</description>
         <vendor>Google</vendor>
+        <rules>
+          <rule symbols="+inet(chromebook)" rules="base"/>
+          <rule symbols="+inet(evdev)+inet(chromebook)" rules="evdev"/>
+        </rules>
       </configItem>
     </model>
     <model>
@@ -330,6 +426,10 @@
         <name>compalfl90</name>
         <description>Compal FL90</description>
         <vendor>Compal Electronics</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -337,6 +437,10 @@
         <name>armada</name>
         <description>Compaq Armada laptop</description>
         <vendor>Compaq</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -344,6 +448,7 @@
         <name>compaqeak8</name>
         <description>Compaq Easy Access</description>
         <vendor>Compaq</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -351,6 +456,7 @@
         <name>compaqik7</name>
         <description>Compaq Internet (7 keys)</description>
         <vendor>Compaq</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -358,6 +464,10 @@
         <name>compaqik13</name>
         <description>Compaq Internet (13 keys)</description>
         <vendor>Compaq</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -365,6 +475,10 @@
         <name>compaqik18</name>
         <description>Compaq Internet (18 keys)</description>
         <vendor>Compaq</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -372,6 +486,7 @@
         <name>ipaq</name>
         <description>Compaq iPaq</description>
         <vendor>Compaq</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -379,6 +494,10 @@
         <name>presario</name>
         <description>Compaq Presario laptop</description>
         <vendor>Compaq</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -386,6 +505,10 @@
         <name>creativedw7000</name>
         <description>Creative Desktop Wireless 7000</description>
         <vendor>Creative</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -393,6 +516,7 @@
         <name>dell</name>
         <description>Dell</description>
         <vendor>Dell</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -400,6 +524,7 @@
         <name>dell101</name>
         <description>Dell 101-key PC</description>
         <vendor>Dell</vendor>
+        <rule geometry="dell(dell101)"/>
       </configItem>
     </model>
     <model>
@@ -407,6 +532,11 @@
         <name>latitude</name>
         <description>Dell Latitude laptop</description>
         <vendor>Dell</vendor>
+        <member-of rules="base">$inetmediakbds</member-of>
+        <rules>
+          <rule geometry="dell(latitude)"/>
+          <rule symbols="+inet(media_common)" rules="base"/>
+        </rules>
       </configItem>
     </model>
     <model>
@@ -414,6 +544,10 @@
         <name>inspiron</name>
         <description>Dell Inspiron 6000/8000 laptop</description>
         <vendor>Dell</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -421,6 +555,8 @@
         <name>precision_m</name>
         <description>Dell Precision M laptop</description>
         <vendor>Dell</vendor>
+        <member-of rules="base">$inetmediakbds</member-of>
+        <rule symbols="+inet(media_nav_common)" rules="base"/>
       </configItem>
     </model>
     <model>
@@ -428,6 +564,11 @@
         <name>dellm65</name>
         <description>Dell Precision M65 laptop</description>
         <vendor>Dell</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
+        <rule geometry="dell(dellm65)"/>
       </configItem>
     </model>
     <model>
@@ -435,6 +576,7 @@
         <name>dellsk8125</name>
         <description>Dell SK-8125</description>
         <vendor>Dell</vendor>
+        <rule symbols="+inet(dell)" rules="base"/>
       </configItem>
     </model>
     <model>
@@ -442,6 +584,7 @@
         <name>dellsk8135</name>
         <description>Dell SK-8135</description>
         <vendor>Dell</vendor>
+        <rule symbols="+inet(dell)" rules="base"/>
       </configItem>
     </model>
     <model>
@@ -449,6 +592,10 @@
         <name>dellusbmm</name>
         <description>Dell USB Multimedia</description>
         <vendor>Dell</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -456,6 +603,8 @@
         <name>dexxa</name>
         <description>Dexxa Wireless Desktop</description>
         <vendor>Dexxa</vendor>
+        <member-of rules="base">$inetmediakbds</member-of>
+        <rule symbols="+inet(media_nav_common)" rules="base"/>
       </configItem>
     </model>
     <model>
@@ -463,6 +612,7 @@
         <name>diamond</name>
         <description>Diamond 9801/9802</description>
         <vendor>Diamond</vendor>
+        <member-of rules="base">$inetmediakbds</member-of>
       </configItem>
     </model>
     <model>
@@ -470,6 +620,8 @@
         <name>dtk2000</name>
         <description>DTK2000</description>
         <vendor>DTK</vendor>
+        <member-of rules="base">$inetmediakbds</member-of>
+        <rule symbols="+inet(media_nav_acpi_common)" rules="base"/>
       </configItem>
     </model>
     <model>
@@ -477,6 +629,10 @@
         <name>emachines</name>
         <description>eMachines m6800 laptop</description>
         <vendor>eMachines</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -484,6 +640,10 @@
         <name>ennyah_dkb1008</name>
         <description>Ennyah DKB-1008</description>
         <vendor>Ennyah</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -491,6 +651,7 @@
         <name>everex</name>
         <description>Everex STEPnote</description>
         <vendor>Everex</vendor>
+        <rule geometry="everex(STEPnote)"/>
       </configItem>
     </model>
     <model>
@@ -498,6 +659,8 @@
         <name>fscaa1667g</name>
         <description>Fujitsu-Siemens Amilo laptop</description>
         <vendor>Fujitsu-Siemens</vendor>
+        <member-of rules="base">$inetmediakbds</member-of>
+        <rule symbols="+inet(media_nav_common)" rules="base"/>
       </configItem>
     </model>
     <model>
@@ -505,6 +668,10 @@
         <name>genius</name>
         <description>Genius Comfy KB-16M/Multimedia KWD-910</description>
         <vendor>Genius</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -512,6 +679,8 @@
         <name>geniuscomfy</name>
         <description>Genius Comfy KB-12e</description>
         <vendor>Genius</vendor>
+        <member-of rules="base">$inetmediakbds</member-of>
+        <rule symbols="+inet(media_nav_acpi_common)" rules="base"/>
       </configItem>
     </model>
     <model>
@@ -519,6 +688,10 @@
         <name>geniuscomfy2</name>
         <description>Genius Comfy KB-21e-Scroll</description>
         <vendor>Genius</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -526,6 +699,8 @@
         <name>geniuskb19e</name>
         <description>Genius KB-19e NB</description>
         <vendor>Genius</vendor>
+        <member-of rules="base">$inetmediakbds</member-of>
+        <rule symbols="+inet(media_nav_acpi_common)" rules="base"/>
       </configItem>
     </model>
     <model>
@@ -533,6 +708,7 @@
         <name>geniuskkb2050hs</name>
         <description>Genius KKB-2050HS</description>
         <vendor>Genius</vendor>
+        <rule symbols="+inet(dellusbmm)" rules="base"/>
       </configItem>
     </model>
     <model>
@@ -540,6 +716,7 @@
         <name>gyration</name>
         <description>Gyration</description>
         <vendor>Gyration</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -547,6 +724,7 @@
         <name>hhk</name>
         <description>Happy Hacking</description>
         <vendor>Fujitsu</vendor>
+        <rule geometry="hhk(basic)"/>
       </configItem>
     </model>
     <model>
@@ -554,6 +732,10 @@
         <name>hpi6</name>
         <description>Hewlett-Packard Internet</description>
         <vendor>Hewlett-Packard</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -561,6 +743,7 @@
         <name>hpmini110</name>
         <description>Hewlett-Packard Mini 110 laptop</description>
         <vendor>Hewlett-Packard</vendor>
+        <rule geometry="hp(mini110)"/>
       </configItem>
     </model>
     <model>
@@ -568,6 +751,7 @@
         <name>hpnx9020</name>
         <description>Hewlett-Packard nx9020</description>
         <vendor>Hewlett-Packard</vendor>
+        <rule symbols="+inet(hpi6)" rules="base"/>
       </configItem>
     </model>
     <model>
@@ -575,6 +759,10 @@
         <name>hp5xx</name>
         <description>Hewlett-Packard Omnibook 500</description>
         <vendor>Hewlett-Packard</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -582,6 +770,7 @@
         <name>hp500fa</name>
         <description>Hewlett-Packard Omnibook 500 FA</description>
         <vendor>Hewlett-Packard</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -589,6 +778,7 @@
         <name>hp6000</name>
         <description>Hewlett-Packard Omnibook 6000/6100</description>
         <vendor>Hewlett-Packard</vendor>
+        <rule geometry="hp(omnibook)"/>
       </configItem>
     </model>
     <model>
@@ -596,6 +786,10 @@
         <name>hpxe3gc</name>
         <description>Hewlett-Packard Omnibook XE3 GC</description>
         <vendor>Hewlett-Packard</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -603,6 +797,10 @@
         <name>hpxe3gf</name>
         <description>Hewlett-Packard Omnibook XE3 GF</description>
         <vendor>Hewlett-Packard</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -610,6 +808,10 @@
         <name>hpxt1000</name>
         <description>Hewlett-Packard Omnibook XT1000</description>
         <vendor>Hewlett-Packard</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -617,6 +819,11 @@
         <name>hpdv5</name>
         <description>Hewlett-Packard Pavilion dv5</description>
         <vendor>Hewlett-Packard</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
+        <rule geometry="hp(dv5)"/>
       </configItem>
     </model>
     <model>
@@ -624,6 +831,10 @@
         <name>hpzt11xx</name>
         <description>Hewlett-Packard Pavilion ZT1100</description>
         <vendor>Hewlett-Packard</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -631,6 +842,7 @@
         <name>hp250x</name>
         <description>Hewlett-Packard SK-2501 Multimedia</description>
         <vendor>Hewlett-Packard</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -638,6 +850,7 @@
         <name>honeywell_euroboard</name>
         <description>Honeywell Euroboard</description>
         <vendor>Hewlett-Packard</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -645,6 +858,7 @@
         <name>rapidaccess</name>
         <description>IBM Rapid Access</description>
         <vendor>Lenovo (previously IBM)</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -652,6 +866,7 @@
         <name>rapidaccess2</name>
         <description>IBM Rapid Access II</description>
         <vendor>Lenovo (previously IBM)</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -659,6 +874,7 @@
         <name>ibm_spacesaver</name>
         <description>IBM Space Saver</description>
         <vendor>Lenovo (previously IBM)</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -666,6 +882,15 @@
         <name>thinkpad</name>
         <description>IBM ThinkPad 560Z/600/600E/A22E</description>
         <vendor>Lenovo (previously IBM)</vendor>
+        <membership>
+          <member-of rules="base">$inetmediakbds</member-of>
+          <member-of>$thinkpads</member-of>
+        </membership>
+        <rules>
+          <rule geometry="thinkpad(intl)"/>
+          <rule layout="us" layout-range="single" geometry="thinkpad(us)"/>
+          <rule symbols="+inet(media_nav_common)" rules="base"/>
+        </rules>
       </configItem>
     </model>
     <model>
@@ -673,6 +898,12 @@
         <name>thinkpad60</name>
         <description>IBM ThinkPad R60/T60/R61/T61</description>
         <vendor>Lenovo (previously IBM)</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+          <member-of>$thinkpads</member-of>
+        </membership>
+        <rule geometry="thinkpad(60)"/>
       </configItem>
     </model>
     <model>
@@ -680,6 +911,12 @@
         <name>thinkpadz60</name>
         <description>IBM ThinkPad Z60m/Z60t/Z61m/Z61t</description>
         <vendor>Lenovo (previously IBM)</vendor>
+        <member-of>$thinkpads</member-of>
+        <rules>
+          <rule keycodes="xfree86(thinkpadz60)" rules="base"/>
+          <rule geometry="thinkpad(60)"/>
+          <rule symbols="+inet(thinkpad60)" rules="base"/>
+        </rules>
       </configItem>
     </model>
     <model>
@@ -687,6 +924,7 @@
         <name>jp106</name>
         <description>Japanese 106-key</description>
         <vendor>Generic</vendor>
+        <member-of>$pcmodels</member-of>
       </configItem>
     </model>
     <model>
@@ -694,6 +932,7 @@
         <name>flexpro</name>
         <description>Keytronic FlexPro</description>
         <vendor>Keytronic</vendor>
+        <rule geometry="keytronic(FlexPro)"/>
       </configItem>
     </model>
     <model>
@@ -701,13 +940,15 @@
         <name>kinesis</name>
         <description>Kinesis</description>
         <vendor>Kinesis</vendor>
+        <rule geometry="kinesis(model100)"/>
       </configItem>
     </model>
     <model>
       <configItem>
-	<name>kr106</name>
-	<description>Korean 106-key</description>
-	<vendor>Generic</vendor>
+        <name>kr106</name>
+        <description>Korean 106-key</description>
+        <vendor>Generic</vendor>
+        <member-of>$pcmodels</member-of>
       </configItem>
     </model>
     <model>
@@ -715,6 +956,10 @@
         <name>logitech_base</name>
         <description>Logitech</description>
         <vendor>Logitech</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -722,6 +967,7 @@
         <name>logiaccess</name>
         <description>Logitech Access</description>
         <vendor>Logitech</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -729,6 +975,7 @@
         <name>logicd</name>
         <description>Logitech Cordless Desktop</description>
         <vendor>Logitech</vendor>
+        <rule symbols="+inet(logitech_base)" rules="base"/>
       </configItem>
     </model>
     <model>
@@ -736,6 +983,7 @@
         <name>logicda</name>
         <description>Logitech Cordless Desktop (alt.)</description>
         <vendor>Logitech</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -743,6 +991,7 @@
         <name>logiex110</name>
         <description>Logitech Cordless Desktop EX110</description>
         <vendor>Logitech</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -750,6 +999,7 @@
         <name>logicd_it</name>
         <description>Logitech Cordless Desktop iTouch</description>
         <vendor>Logitech</vendor>
+        <rule symbols="+inet(logitech_base)" rules="base"/>
       </configItem>
     </model>
     <model>
@@ -757,6 +1007,8 @@
         <name>logiclx300</name>
         <description>Logitech Cordless Desktop LX-300</description>
         <vendor>Logitech</vendor>
+        <member-of rules="base">$inetkbds</member-of>
+        <rule symbols="+inet(logiex110)" rules="base"/>
       </configItem>
     </model>
     <model>
@@ -764,6 +1016,7 @@
         <name>logicd_nav</name>
         <description>Logitech Cordless Desktop Navigator</description>
         <vendor>Logitech</vendor>
+        <rule symbols="+inet(logitech_base)" rules="base"/>
       </configItem>
     </model>
     <model>
@@ -771,6 +1024,7 @@
         <name>logicd_opt</name>
         <description>Logitech Cordless Desktop Optical</description>
         <vendor>Logitech</vendor>
+        <rule symbols="+inet(logitech_base)" rules="base"/>
       </configItem>
     </model>
     <model>
@@ -778,6 +1032,10 @@
         <name>logidinovo</name>
         <description>Logitech diNovo</description>
         <vendor>Logitech</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -785,6 +1043,10 @@
         <name>logidinovoedge</name>
         <description>Logitech diNovo Edge</description>
         <vendor>Logitech</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -792,6 +1054,10 @@
         <name>logitech_g15</name>
         <description>Logitech G15 extra keys via G15daemon</description>
         <vendor>Logitech</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -799,6 +1065,7 @@
         <name>logiik</name>
         <description>Logitech Internet</description>
         <vendor>Logitech</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -806,7 +1073,10 @@
         <name>logii350</name>
         <description>Logitech Internet 350</description>
         <vendor>Logitech</vendor>
-        <hwList> <hwId>046d:c313</hwId> </hwList>
+        <hwList>
+          <hwId>046d:c313</hwId>
+        </hwList>
+        <rule symbols="+inet(logiex110)" rules="base"/>
       </configItem>
     </model>
     <model>
@@ -814,6 +1084,7 @@
         <name>logimel</name>
         <description>Logitech Internet 350</description>
         <vendor>Logitech</vendor>
+        <rule symbols="+inet(logiex110)" rules="base"/>
       </configItem>
     </model>
     <model>
@@ -821,6 +1092,7 @@
         <name>logicink</name>
         <description>Logitech Internet Navigator</description>
         <vendor>Logitech</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -828,6 +1100,7 @@
         <name>itouch</name>
         <description>Logitech iTouch</description>
         <vendor>Logitech</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -835,6 +1108,7 @@
         <name>logiitc</name>
         <description>Logitech iTouch Cordless Y-RB6</description>
         <vendor>Logitech</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -842,6 +1116,7 @@
         <name>logiinkse</name>
         <description>Logitech iTouch Internet Navigator SE</description>
         <vendor>Logitech</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -849,6 +1124,7 @@
         <name>logiinkseusb</name>
         <description>Logitech iTouch Internet Navigator SE USB</description>
         <vendor>Logitech</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -856,6 +1132,8 @@
         <name>logiultrax</name>
         <description>Logitech Ultra-X</description>
         <vendor>Logitech</vendor>
+        <member-of rules="base">$inetkbds</member-of>
+        <rule symbols="+inet(logitech_base)" rules="base"/>
       </configItem>
     </model>
     <model>
@@ -870,6 +1148,10 @@
         <name>mx1998</name>
         <description>Memorex MX1998</description>
         <vendor>Memorex</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -877,6 +1159,10 @@
         <name>mx2500</name>
         <description>Memorex MX2500 EZ-Access</description>
         <vendor>Memorex</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -884,6 +1170,10 @@
         <name>mx2750</name>
         <description>Memorex MX2750</description>
         <vendor>Memorex</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -891,6 +1181,7 @@
         <name>microsoftccurve2k</name>
         <description>Microsoft Comfort Curve 2000</description>
         <vendor>Microsoft</vendor>
+        <rule symbols="+inet(microsoftprooem)" rules="base"/>
       </configItem>
     </model>
     <model>
@@ -898,6 +1189,7 @@
         <name>microsoftinet</name>
         <description>Microsoft Internet</description>
         <vendor>Microsoft</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -905,6 +1197,10 @@
         <name>microsoftprose</name>
         <description>Microsoft Internet Pro (Swedish)</description>
         <vendor>Microsoft</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of>$msmodels</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -912,6 +1208,7 @@
         <name>microsoft</name>
         <description>Microsoft Natural</description>
         <vendor>Microsoft</vendor>
+        <member-of>$msmodels</member-of>
       </configItem>
     </model>
     <model>
@@ -919,6 +1216,7 @@
         <name>microsoftelite</name>
         <description>Microsoft Natural Elite</description>
         <vendor>Microsoft</vendor>
+        <rule geometry="microsoft(elite)"/>
       </configItem>
     </model>
     <model>
@@ -926,6 +1224,11 @@
         <name>microsoft4000</name>
         <description>Microsoft Natural Ergonomic 4000</description>
         <vendor>Microsoft</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+          <member-of>$msmodels</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -933,6 +1236,11 @@
         <name>microsoft7000</name>
         <description>Microsoft Natural Wireless Ergonomic 7000</description>
         <vendor>Microsoft</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+          <member-of>$msmodels</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -940,6 +1248,11 @@
         <name>microsoftpro</name>
         <description>Microsoft Natural Pro/Internet Pro</description>
         <vendor>Microsoft</vendor>
+        <membership>
+          <member-of rules="base">$inetmediakbds</member-of>
+          <member-of>$msmodels</member-of>
+        </membership>
+        <rule symbols="+inet(media_nav_acpi_common)" rules="base"/>
       </configItem>
     </model>
     <model>
@@ -947,6 +1260,10 @@
         <name>microsoftprousb</name>
         <description>Microsoft Natural Pro USB/Internet Pro</description>
         <vendor>Microsoft</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of>$msmodels</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -954,6 +1271,10 @@
         <name>microsoftprooem</name>
         <description>Microsoft Natural Pro OEM</description>
         <vendor>Microsoft</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -961,6 +1282,7 @@
         <name>microsoftoffice</name>
         <description>Microsoft Office Keyboard</description>
         <vendor>Microsoft</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -968,6 +1290,7 @@
         <name>microsoftsurface</name>
         <description>Microsoft Surface</description>
         <vendor>Microsoft</vendor>
+        <member-of>$msmodels</member-of>
       </configItem>
     </model>
     <model>
@@ -975,6 +1298,10 @@
         <name>microsoftmult</name>
         <description>Microsoft Wireless Multimedia 1.0A</description>
         <vendor>Microsoft</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -982,6 +1309,10 @@
         <name>sk1300</name>
         <description>NEC SK-1300</description>
         <vendor>NEC</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -989,6 +1320,10 @@
         <name>sk2500</name>
         <description>NEC SK-2500</description>
         <vendor>NEC</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -996,6 +1331,7 @@
         <name>sk6200</name>
         <description>NEC SK-6200</description>
         <vendor>NEC</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -1003,6 +1339,10 @@
         <name>sk7100</name>
         <description>NEC SK-7100</description>
         <vendor>NEC</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -1010,6 +1350,7 @@
         <name>omnikey101</name>
         <description>Northgate OmniKey 101</description>
         <vendor>Northgate</vendor>
+        <rule geometry="northgate(omnikey101)"/>
       </configItem>
     </model>
     <model>
@@ -1017,6 +1358,12 @@
         <name>olpc</name>
         <description>OLPC</description>
         <vendor>OLPC</vendor>
+        <rules>
+          <rule keycodes="evdev+olpc(olpc)" rules="evdev"/>
+          <rule layout="*" layout-range="single" compat="olpc"/>
+          <rule layout="$olpclayouts" layout-range="single" symbols="olpc+%l%(m)"/>
+          <rule layout="*" layout-range="single" symbols="olpc+%l%(v)"/>
+        </rules>
       </configItem>
     </model>
     <model>
@@ -1024,6 +1371,7 @@
         <name>oretec</name>
         <description>Ortek Multimedia/Internet MCK-800</description>
         <vendor>Ortek</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -1031,6 +1379,12 @@
         <name>pc98</name>
         <description>PC-98</description>
         <vendor>Generic</vendor>
+        <rules>
+          <rule keycodes="xfree98(pc98)" rules="base"/>
+          <rule geometry="nec(pc98)"/>
+          <rule layout="nec_vndr/jp" layout-range="single" compat="pc98(basic)"/>
+          <rule layout="nec_vndr/jp" layout-range="single" symbols="nec_vndr/jp(pc98)"/>
+        </rules>
       </configItem>
     </model>
     <model>
@@ -1038,6 +1392,8 @@
         <name>ppkb</name>
         <description>PinePhone Keyboard</description>
         <vendor>Pine64</vendor>
+        <member-of rules="base">$inetkbds</member-of>
+        <rule symbols="+inet(evdev)+inet(ppkb)" rules="evdev"/>
       </configItem>
     </model>
     <model>
@@ -1045,6 +1401,10 @@
         <name>propeller</name>
         <description>Propeller Voyager KTEZ-1000</description>
         <vendor>KeyTronic</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -1052,6 +1412,7 @@
         <name>qtronix</name>
         <description>QTronix Scorpius 98N+</description>
         <vendor>QTronix</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -1059,6 +1420,10 @@
         <name>samsung4500</name>
         <description>Samsung SDM 4500P</description>
         <vendor>Samsung</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -1066,6 +1431,10 @@
         <name>samsung4510</name>
         <description>Samsung SDM 4510P</description>
         <vendor>Samsung</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -1073,6 +1442,7 @@
         <name>sanwaskbkg3</name>
         <description>Sanwa Supply SKB-KG3</description>
         <vendor>Sanwa Supply Inc.</vendor>
+        <rule geometry="sanwa(sanwaskbkg3)"/>
       </configItem>
     </model>
     <model>
@@ -1080,6 +1450,10 @@
         <name>silvercrest</name>
         <description>Silvercrest Multimedia Wireless</description>
         <vendor>Silvercrest</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -1087,6 +1461,8 @@
         <name>apex300</name>
         <description>SteelSeries Apex 300 (Apex RAW)</description>
         <vendor>SteelSeries</vendor>
+        <member-of rules="base">$inetkbds</member-of>
+        <rule geometry="steelseries(apex300)"/>
       </configItem>
     </model>
     <model>
@@ -1094,6 +1470,11 @@
         <name>sun_type6_jp</name>
         <description>Sun Type 6 (Japanese)</description>
         <vendor>Sun Microsystems</vendor>
+        <membership>
+          <member-of>$sun</member-of>
+          <member-of>$sun_jp</member-of>
+        </membership>
+        <rule geometry="sun(type6jp)"/>
       </configItem>
     </model>
     <model>
@@ -1101,6 +1482,11 @@
         <name>sun_type6_jp_usb</name>
         <description>Sun Type 6 USB (Japanese)</description>
         <vendor>Sun Microsystems</vendor>
+        <membership>
+          <member-of>$sun</member-of>
+          <member-of>$sun_jp</member-of>
+        </membership>
+        <rule geometry="sun(type6jp)"/>
       </configItem>
     </model>
     <model>
@@ -1108,6 +1494,8 @@
         <name>sun_type6_unix_usb</name>
         <description>Sun Type 6 USB (Unix)</description>
         <vendor>Sun Microsystems</vendor>
+        <member-of>$sun</member-of>
+        <rule geometry="sun(type6unix)"/>
       </configItem>
     </model>
     <model>
@@ -1115,6 +1503,8 @@
         <name>sun_type6_usb</name>
         <description>Sun Type 6/7 USB</description>
         <vendor>Sun Microsystems</vendor>
+        <member-of>$sun</member-of>
+        <rule geometry="sun(type6)"/>
       </configItem>
     </model>
     <model>
@@ -1122,6 +1512,8 @@
         <name>sun_type6_euro_usb</name>
         <description>Sun Type 6/7 USB (European)</description>
         <vendor>Sun Microsystems</vendor>
+        <member-of>$sun</member-of>
+        <rule geometry="sun(type6tuv)"/>
       </configItem>
     </model>
     <model>
@@ -1129,6 +1521,8 @@
         <name>sun_type7_usb</name>
         <description>Sun Type 7 USB</description>
         <vendor>Sun Microsystems</vendor>
+        <member-of>$sun</member-of>
+        <rule geometry="sun(type7)"/>
       </configItem>
     </model>
     <model>
@@ -1136,6 +1530,8 @@
         <name>sun_type7_euro_usb</name>
         <description>Sun Type 7 USB (European)</description>
         <vendor>Sun Microsystems</vendor>
+        <member-of>$sun</member-of>
+        <rule geometry="sun(type7tuv)"/>
       </configItem>
     </model>
     <model>
@@ -1143,6 +1539,14 @@
         <name>sun_type7_jp_usb</name>
         <description>Sun Type 7 USB (Japanese)/Japanese 106-key</description>
         <vendor>Sun Microsystems</vendor>
+        <membership>
+          <member-of>$sun</member-of>
+          <member-of>$sun_jp</member-of>
+        </membership>
+        <rules>
+          <rule geometry="sun(type6jp)"/>
+          <rule symbols="+sun_vndr/solaris(defaults_type7jp)" rules="base"/>
+        </rules>
       </configItem>
     </model>
     <model>
@@ -1150,6 +1554,8 @@
         <name>sun_type7_unix_usb</name>
         <description>Sun Type 7 USB (Unix)</description>
         <vendor>Sun Microsystems</vendor>
+        <member-of>$sun</member-of>
+        <rule geometry="sun(type7unix)"/>
       </configItem>
     </model>
     <model>
@@ -1157,6 +1563,8 @@
         <name>sp_inet</name>
         <description>Super Power Multimedia</description>
         <vendor>Generic</vendor>
+        <member-of rules="base">$inetmediakbds</member-of>
+        <rule symbols="+inet(media_nav_acpi_common)" rules="base"/>
       </configItem>
     </model>
     <model>
@@ -1164,6 +1572,7 @@
         <name>sven</name>
         <description>SVEN Ergonomic 2500</description>
         <vendor>SVEN</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -1171,6 +1580,7 @@
         <name>sven303</name>
         <description>SVEN Slim 303</description>
         <vendor>SVEN</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -1178,6 +1588,7 @@
         <name>symplon</name>
         <description>Symplon PaceBook tablet</description>
         <vendor>Symplon</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -1185,6 +1596,8 @@
         <name>targa_v811</name>
         <description>Targa Visionary 811</description>
         <vendor>Targa</vendor>
+        <member-of rules="base">$inetmediakbds</member-of>
+        <rule symbols="+inet(media_nav_acpi_common)" rules="base"/>
       </configItem>
     </model>
     <model>
@@ -1192,6 +1605,10 @@
         <name>toshiba_s3000</name>
         <description>Toshiba Satellite S3000</description>
         <vendor>Toshiba</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -1199,6 +1616,7 @@
         <name>teck227</name>
         <description>Truly Ergonomic 227</description>
         <vendor>Truly Ergonomic</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -1206,6 +1624,7 @@
         <name>teck229</name>
         <description>Truly Ergonomic 229</description>
         <vendor>Truly Ergonomic</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
     <model>
@@ -1213,6 +1632,10 @@
         <name>trustda</name>
         <description>Trust Direct Access</description>
         <vendor>Trust</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -1220,6 +1643,8 @@
         <name>trust_slimline</name>
         <description>Trust Slimline</description>
         <vendor>Trust</vendor>
+        <member-of rules="base">$inetmediakbds</member-of>
+        <rule symbols="+inet(media_nav_acpi_common)" rules="base"/>
       </configItem>
     </model>
     <model>
@@ -1227,6 +1652,10 @@
         <name>trust</name>
         <description>Trust Wireless Classic</description>
         <vendor>Trust</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -1234,6 +1663,7 @@
         <name>tm2020</name>
         <description>TypeMatrix EZ-Reach 2020</description>
         <vendor>TypeMatrix</vendor>
+        <member-of>$tmgeometries</member-of>
       </configItem>
     </model>
     <model>
@@ -1241,6 +1671,7 @@
         <name>tm2030PS2</name>
         <description>TypeMatrix EZ-Reach 2030 PS2</description>
         <vendor>TypeMatrix</vendor>
+        <member-of>$tmgeometries</member-of>
       </configItem>
     </model>
     <model>
@@ -1248,6 +1679,7 @@
         <name>tm2030USB</name>
         <description>TypeMatrix EZ-Reach 2030 USB</description>
         <vendor>TypeMatrix</vendor>
+        <member-of>$tmgeometries</member-of>
       </configItem>
     </model>
     <model>
@@ -1255,6 +1687,11 @@
         <name>tm2030USB-102</name>
         <description>TypeMatrix EZ-Reach 2030 USB (102/105:EU mode)</description>
         <vendor>TypeMatrix</vendor>
+        <membership>
+          <member-of rules="base">$inetmediakbds</member-of>
+          <member-of>$tmgeometries</member-of>
+        </membership>
+        <rule symbols="+inet(media_nav_acpi_common)" rules="base"/>
       </configItem>
     </model>
     <model>
@@ -1262,6 +1699,11 @@
         <name>tm2030USB-106</name>
         <description>TypeMatrix EZ-Reach 2030 USB (106:JP mode)</description>
         <vendor>TypeMatrix</vendor>
+        <membership>
+          <member-of rules="base">$inetmediakbds</member-of>
+          <member-of>$tmgeometries</member-of>
+        </membership>
+        <rule symbols="+inet(media_nav_acpi_common)" rules="base"/>
       </configItem>
     </model>
     <model>
@@ -1269,6 +1711,10 @@
         <name>unitekkb1925</name>
         <description>Unitek KB-1925</description>
         <vendor>Unitek Group</vendor>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
       </configItem>
     </model>
     <model>
@@ -1276,6 +1722,7 @@
         <name>vsonku306</name>
         <description>ViewSonic KU-306 Internet</description>
         <vendor>ViewSonic</vendor>
+        <rule symbols="+inet(microsoftprooem)" rules="base"/>
       </configItem>
     </model>
     <model>
@@ -1283,6 +1730,7 @@
         <name>winbook</name>
         <description>Winbook Model XP5</description>
         <vendor>Generic</vendor>
+        <rule geometry="winbook(XP5)"/>
       </configItem>
     </model>
     <model>
@@ -1290,10 +1738,10 @@
         <name>yahoo</name>
         <description>Yahoo! Internet</description>
         <vendor>Yahoo!</vendor>
+        <member-of rules="base">$inetkbds</member-of>
       </configItem>
     </model>
   </modelList>
-
   <layoutList>
     <layout>
       <configItem>
@@ -1301,6 +1749,7 @@
         <!-- Keyboard indicator for Albanian layouts -->
         <shortDescription>sq</shortDescription>
         <description>Albanian</description>
+        <member-of>$qwertz</member-of>
         <countryList>
           <iso3166Id>AL</iso3166Id>
         </countryList>
@@ -1329,6 +1778,10 @@
         <!-- Keyboard indicator for Amharic layouts -->
         <shortDescription>am</shortDescription>
         <description>Amharic</description>
+        <membership>
+          <member-of>$nonlatin</member-of>
+          <member-of>$olpclayouts</member-of>
+        </membership>
         <countryList>
           <iso3166Id>ET</iso3166Id>
         </countryList>
@@ -1344,6 +1797,10 @@
         <!-- Keyboard indicator for Armenian layouts -->
         <shortDescription>hy</shortDescription>
         <description>Armenian</description>
+        <membership>
+          <member-of>$nonlatin</member-of>
+          <member-of>$olpclayouts</member-of>
+        </membership>
         <countryList>
           <iso3166Id>AM</iso3166Id>
         </countryList>
@@ -1390,6 +1847,11 @@
         <!-- Keyboard indicator for Arabic layouts -->
         <shortDescription>ar</shortDescription>
         <description>Arabic</description>
+        <membership>
+          <member-of>$nonlatin</member-of>
+          <member-of>$olpclayouts</member-of>
+          <member-of>$sun_custom</member-of>
+        </membership>
         <countryList>
           <iso3166Id>AE</iso3166Id>
           <iso3166Id>BH</iso3166Id>
@@ -1414,12 +1876,16 @@
         <languageList>
           <iso639Id>ara</iso639Id>
         </languageList>
+        <!-- Delete in 2028. -->
+        <alias category="compatibility" layout="ara" variant="qwerty" target-variant="basic"/>
       </configItem>
       <variantList>
         <variant>
           <configItem>
             <name>digits</name>
             <description>Arabic (Eastern Arabic numerals)</description>
+            <!-- Delete in 2028. -->
+            <alias category="compatibility" layout="ara" variant="qwerty_digits"/>
           </configItem>
         </variant>
         <variant>
@@ -1466,6 +1932,7 @@
         <!-- Keyboard indicator for Arabic layouts -->
         <shortDescription>ar</shortDescription>
         <description>Arabic (Egypt)</description>
+        <member-of>$nonlatin</member-of>
         <countryList>
           <iso3166Id>EG</iso3166Id>
         </countryList>
@@ -1541,6 +2008,7 @@
         <!-- Keyboard indicator for Arabic layouts -->
         <shortDescription>ar</shortDescription>
         <description>Arabic (Morocco)</description>
+        <member-of>$nonlatin</member-of>
         <countryList>
           <iso3166Id>MA</iso3166Id>
         </countryList>
@@ -1645,6 +2113,7 @@
         <!-- Keyboard indicator for Arabic layouts -->
         <shortDescription>ar</shortDescription>
         <description>Arabic (Syria)</description>
+        <member-of>$nonlatin</member-of>
         <countryList>
           <iso3166Id>SY</iso3166Id>
         </countryList>
@@ -1659,6 +2128,10 @@
             <!-- Keyboard indicator for Syriac layouts -->
             <shortDescription>syc</shortDescription>
             <description>Syriac</description>
+            <aliases>
+              <alias category="compatibility" layout="syr"/>
+              <alias category="compatibility" layout="syr" variant="basic"/>
+            </aliases>
           </configItem>
         </variant>
         <variant>
@@ -1667,6 +2140,7 @@
             <!-- Keyboard indicator for Syriac layouts -->
             <shortDescription>syc</shortDescription>
             <description>Syriac (phonetic)</description>
+            <alias category="compatibility" layout="syr" variant="phonetic"/>
           </configItem>
         </variant>
         <variant>
@@ -1781,6 +2255,7 @@
         <!-- Keyboard indicator for Bangla layouts -->
         <shortDescription>bn</shortDescription>
         <description>Bangla</description>
+        <member-of>$nonlatin</member-of>
         <countryList>
           <iso3166Id>BD</iso3166Id>
         </countryList>
@@ -1805,6 +2280,7 @@
         <!-- Keyboard indicator for Belarusian layouts -->
         <shortDescription>by</shortDescription>
         <description>Belarusian</description>
+        <member-of>$nonlatin</member-of>
         <countryList>
           <iso3166Id>BY</iso3166Id>
         </countryList>
@@ -1854,6 +2330,10 @@
         <!-- Keyboard indicator for Belgian layouts -->
         <shortDescription>be</shortDescription>
         <description>Belgian</description>
+        <membership>
+          <member-of>$azerty</member-of>
+          <member-of>$sun_custom</member-of>
+        </membership>
         <countryList>
           <iso3166Id>BE</iso3166Id>
         </countryList>
@@ -2045,6 +2525,7 @@
         <!-- Keyboard indicator for Bulgarian layouts -->
         <shortDescription>bg</shortDescription>
         <description>Bulgarian</description>
+        <member-of>$nonlatin</member-of>
         <countryList>
           <iso3166Id>BG</iso3166Id>
         </countryList>
@@ -2079,6 +2560,7 @@
         <!-- Keyboard indicator for Burmese layouts -->
         <shortDescription>my</shortDescription>
         <description>Burmese</description>
+        <member-of>$nonlatin</member-of>
         <countryList>
           <iso3166Id>MM</iso3166Id>
         </countryList>
@@ -2267,6 +2749,7 @@
         <!-- Keyboard indicator for Croatian layouts -->
         <shortDescription>hr</shortDescription>
         <description>Croatian</description>
+        <member-of>$qwertz</member-of>
         <countryList>
           <iso3166Id>HR</iso3166Id>
         </countryList>
@@ -2307,6 +2790,10 @@
         <!-- Keyboard indicator for Czech layouts -->
         <shortDescription>cs</shortDescription>
         <description>Czech</description>
+        <membership>
+          <member-of>$qwertz</member-of>
+          <member-of>$sun_custom</member-of>
+        </membership>
         <countryList>
           <iso3166Id>CZ</iso3166Id>
         </countryList>
@@ -2382,6 +2869,10 @@
         <!-- Keyboard indicator for Danish layouts -->
         <shortDescription>da</shortDescription>
         <description>Danish</description>
+        <membership>
+          <member-of>$macvendorlayouts</member-of>
+          <member-of>$sun_custom</member-of>
+        </membership>
         <countryList>
           <iso3166Id>DK</iso3166Id>
         </countryList>
@@ -2428,6 +2919,10 @@
         <!-- Keyboard indicator for Persian layouts -->
         <shortDescription>fa</shortDescription>
         <description>Dari</description>
+        <membership>
+          <member-of>$nonlatin</member-of>
+          <member-of>$olpclayouts</member-of>
+        </membership>
         <countryList>
           <iso3166Id>AF</iso3166Id>
         </countryList>
@@ -2496,6 +2991,7 @@
         <!-- Keyboard indicator for Dhivehi layouts -->
         <shortDescription>dv</shortDescription>
         <description>Dhivehi</description>
+        <member-of>$nonlatin</member-of>
         <countryList>
           <iso3166Id>MV</iso3166Id>
         </countryList>
@@ -2511,6 +3007,10 @@
         <!-- Keyboard indicator for Dutch layouts -->
         <shortDescription>nl</shortDescription>
         <description>Dutch</description>
+        <membership>
+          <member-of>$macvendorlayouts</member-of>
+          <member-of>$sun_custom</member-of>
+        </membership>
         <countryList>
           <iso3166Id>NL</iso3166Id>
         </countryList>
@@ -2545,6 +3045,7 @@
         <!-- Keyboard indicator for Dzongkha layouts -->
         <shortDescription>dz</shortDescription>
         <description>Dzongkha</description>
+        <member-of>$nonlatin</member-of>
         <countryList>
           <iso3166Id>BT</iso3166Id>
         </countryList>
@@ -2797,6 +3298,12 @@
             <languageList>
               <iso639Id>mri</iso639Id>
             </languageList>
+            <aliases>
+              <!-- Delete in 2028. -->
+              <alias category="compatibility" layout="mao"/>
+              <!-- Delete in 2028. -->
+              <alias category="compatibility" layout="mao" variant="basic"/>
+            </aliases>
           </configItem>
         </variant>
       </variantList>
@@ -2807,6 +3314,7 @@
         <!-- Keyboard indicator for English layouts -->
         <shortDescription>en</shortDescription>
         <description>English (Nigeria)</description>
+        <member-of>$olpclayouts</member-of>
         <countryList>
           <iso3166Id>NG</iso3166Id>
         </countryList>
@@ -2870,6 +3378,10 @@
         <!-- Keyboard indicator for English layouts -->
         <shortDescription>en</shortDescription>
         <description>English (UK)</description>
+        <membership>
+          <member-of>$macvendorlayouts</member-of>
+          <member-of>$sun_custom</member-of>
+        </membership>
         <countryList>
           <iso3166Id>GB</iso3166Id>
         </countryList>
@@ -2960,6 +3472,11 @@
         <!-- Keyboard indicator for English layouts -->
         <shortDescription>en</shortDescription>
         <description>English (US)</description>
+        <membership>
+          <member-of>$macvendorlayouts</member-of>
+          <member-of>$olpclayouts</member-of>
+          <member-of>$sun_custom</member-of>
+        </membership>
         <countryList>
           <iso3166Id>US</iso3166Id>
         </countryList>
@@ -2984,6 +3501,7 @@
           <configItem>
             <name>alt-intl</name>
             <description>English (US, alt. intl.)</description>
+            <alias category="compatibility" layout="us_intl"/>
           </configItem>
         </variant>
         <variant>
@@ -3190,6 +3708,7 @@
         <!-- Keyboard indicator for Estonian layouts -->
         <shortDescription>et</shortDescription>
         <description>Estonian</description>
+        <member-of>$sun_custom</member-of>
         <countryList>
           <iso3166Id>EE</iso3166Id>
         </countryList>
@@ -3386,6 +3905,10 @@
         <!-- Keyboard indicator for Finnish layouts -->
         <shortDescription>fi</shortDescription>
         <description>Finnish</description>
+        <membership>
+          <member-of>$macvendorlayouts</member-of>
+          <member-of>$sun_custom</member-of>
+        </membership>
         <countryList>
           <iso3166Id>FI</iso3166Id>
         </countryList>
@@ -3404,6 +3927,7 @@
           <configItem>
             <name>classic</name>
             <description>Finnish (classic)</description>
+            <alias category="compatibility" layout="fi" variant="basic"/>
           </configItem>
         </variant>
         <variant>
@@ -3435,6 +3959,12 @@
         <!-- Keyboard indicator for French layouts -->
         <shortDescription>fr</shortDescription>
         <description>French</description>
+        <membership>
+          <member-of>$azerty</member-of>
+          <member-of>$macvendorlayouts</member-of>
+          <member-of>$olpclayouts</member-of>
+          <member-of>$sun_custom</member-of>
+        </membership>
         <countryList>
           <iso3166Id>FR</iso3166Id>
         </countryList>
@@ -3574,6 +4104,10 @@
         <!-- Keyboard indicator for French layouts -->
         <shortDescription>fr</shortDescription>
         <description>French (Canada)</description>
+        <membership>
+          <member-of>$olpclayouts</member-of>
+          <member-of>$sun_custom</member-of>
+        </membership>
         <countryList>
           <iso3166Id>CA</iso3166Id>
         </countryList>
@@ -3680,6 +4214,7 @@
         <!-- Keyboard indicator for Georgian layouts -->
         <shortDescription>ka</shortDescription>
         <description>Georgian</description>
+        <member-of>$nonlatin</member-of>
         <countryList>
           <iso3166Id>GE</iso3166Id>
         </countryList>
@@ -3728,6 +4263,11 @@
         <!-- Keyboard indicator for German layouts -->
         <shortDescription>de</shortDescription>
         <description>German</description>
+        <membership>
+          <member-of>$macvendorlayouts</member-of>
+          <member-of>$qwertz</member-of>
+          <member-of>$sun_custom</member-of>
+        </membership>
         <countryList>
           <iso3166Id>DE</iso3166Id>
         </countryList>
@@ -3806,6 +4346,7 @@
           <configItem>
             <name>neo</name>
             <description>German (Neo 2)</description>
+            <rule layout-range="any" compat="+caps(caps_lock):%i+misc(assign_shift_left_action):%i+level5(level5_lock):%i" category="compatibility"/>
           </configItem>
         </variant>
         <variant>
@@ -3906,6 +4447,11 @@
         <!-- Keyboard indicator for German layouts -->
         <shortDescription>de</shortDescription>
         <description>German (Switzerland)</description>
+        <membership>
+          <member-of>$macvendorlayouts</member-of>
+          <member-of>$qwertz</member-of>
+          <member-of>$sun_custom</member-of>
+        </membership>
         <countryList>
           <iso3166Id>CH</iso3166Id>
         </countryList>
@@ -3978,12 +4524,18 @@
         <!-- Keyboard indicator for Greek layouts -->
         <shortDescription>gr</shortDescription>
         <description>Greek</description>
+        <membership>
+          <member-of>$nonlatin</member-of>
+          <member-of>$sun_custom</member-of>
+        </membership>
         <countryList>
           <iso3166Id>GR</iso3166Id>
         </countryList>
         <languageList>
           <iso639Id>ell</iso639Id>
         </languageList>
+        <!-- Delete in 2028. -->
+        <alias category="compatibility" layout="gr" variant="extended" target-variant="basic"/>
       </configItem>
       <variantList>
         <variant>
@@ -4012,6 +4564,7 @@
         <!-- Keyboard indicator for Hebrew layouts -->
         <shortDescription>he</shortDescription>
         <description>Hebrew</description>
+        <member-of>$nonlatin</member-of>
         <countryList>
           <iso3166Id>IL</iso3166Id>
         </countryList>
@@ -4052,6 +4605,7 @@
         <!-- Keyboard indicator for Hungarian layouts -->
         <shortDescription>hu</shortDescription>
         <description>Hungarian</description>
+        <member-of>$qwertz</member-of>
         <countryList>
           <iso3166Id>HU</iso3166Id>
         </countryList>
@@ -4182,6 +4736,7 @@
         <!-- Keyboard indicator for Icelandic layouts -->
         <shortDescription>is</shortDescription>
         <description>Icelandic</description>
+        <member-of>$macvendorlayouts</member-of>
         <countryList>
           <iso3166Id>IS</iso3166Id>
         </countryList>
@@ -4216,6 +4771,10 @@
         <!-- Keyboard indicator for Indian layouts -->
         <shortDescription>in</shortDescription>
         <description>Indian</description>
+        <membership>
+          <member-of>$nonlatin</member-of>
+          <member-of>$olpclayouts</member-of>
+        </membership>
         <countryList>
           <iso3166Id>IN</iso3166Id>
         </countryList>
@@ -4275,6 +4834,10 @@
           <iso639Id>xnr</iso639Id>
           <iso639Id>xsr</iso639Id>
         </languageList>
+        <aliases>
+          <alias category="compatibility" layout="dev" target-variant="deva"/>
+          <alias category="compatibility" layout="dev" variant="basic" target-variant="deva"/>
+        </aliases>
       </configItem>
       <variantList>
         <variant>
@@ -4299,6 +4862,10 @@
               <!-- sat-Beng: http://www.ethnologue.com/language/sat -->
               <iso639Id>sat</iso639Id>
             </languageList>
+            <aliases>
+              <alias category="compatibility" layout="ben"/>
+              <alias category="compatibility" layout="ben" variant="basic"/>
+            </aliases>
           </configItem>
         </variant>
         <variant>
@@ -4312,6 +4879,7 @@
               <!-- sat-Beng: http://www.ethnologue.com/language/sat -->
               <iso639Id>sat</iso639Id>
             </languageList>
+            <alias category="compatibility" layout="ben" variant="probhat"/>
           </configItem>
         </variant>
         <variant>
@@ -4388,6 +4956,10 @@
             <languageList>
               <iso639Id>guj</iso639Id>
             </languageList>
+            <aliases>
+              <alias category="compatibility" layout="guj"/>
+              <alias category="compatibility" layout="guj" variant="basic"/>
+            </aliases>
           </configItem>
         </variant>
         <variant>
@@ -4443,6 +5015,10 @@
             <languageList>
               <iso639Id>kan</iso639Id>
             </languageList>
+            <aliases>
+              <alias category="compatibility" layout="kan"/>
+              <alias category="compatibility" layout="kan" variant="basic"/>
+            </aliases>
           </configItem>
         </variant>
         <variant>
@@ -4465,6 +5041,7 @@
             <languageList>
               <iso639Id>mal</iso639Id>
             </languageList>
+            <alias category="compatibility" layout="mal" variant="basic"/>
           </configItem>
         </variant>
         <variant>
@@ -4507,6 +5084,8 @@
             <languageList>
               <iso639Id>mni</iso639Id>
             </languageList>
+            <!-- Delete in 2028. -->
+            <alias category="compatibility" layout="in" variant="eeyek"/>
           </configItem>
         </variant>
         <variant>
@@ -4540,6 +5119,10 @@
               <!-- sat-Orya: http://www.ethnologue.com/language/sat -->
               <iso639Id>sat</iso639Id>
             </languageList>
+            <aliases>
+              <alias category="compatibility" layout="ori"/>
+              <alias category="compatibility" layout="ori" variant="basic"/>
+            </aliases>
           </configItem>
         </variant>
         <variant>
@@ -4577,6 +5160,10 @@
             <languageList>
               <iso639Id>pan</iso639Id>
             </languageList>
+            <aliases>
+              <alias category="compatibility" layout="gur"/>
+              <alias category="compatibility" layout="gur" variant="basic"/>
+            </aliases>
           </configItem>
         </variant>
         <variant>
@@ -4611,6 +5198,8 @@
               <!-- sat-Olck: http://www.ethnologue.com/language/sat -->
               <iso639Id>sat</iso639Id>
             </languageList>
+            <!-- Delete in 2028. -->
+            <alias category="compatibility" layout="in" variant="olck"/>
           </configItem>
         </variant>
         <variant>
@@ -4666,6 +5255,7 @@
             <languageList>
               <iso639Id>tam</iso639Id>
             </languageList>
+            <alias category="compatibility" layout="tml"/>
           </configItem>
         </variant>
         <variant>
@@ -4688,6 +5278,10 @@
             <languageList>
               <iso639Id>tel</iso639Id>
             </languageList>
+            <aliases>
+              <alias category="compatibility" layout="tel"/>
+              <alias category="compatibility" layout="tel" variant="basic"/>
+            </aliases>
           </configItem>
         </variant>
         <variant>
@@ -4721,6 +5315,7 @@
             <languageList>
               <iso639Id>urd</iso639Id>
             </languageList>
+            <alias category="compatibility" layout="in" variant="urd"/>
           </configItem>
         </variant>
         <variant>
@@ -4762,6 +5357,7 @@
         <!-- Keyboard indicator for Indonesian layouts -->
         <shortDescription>id</shortDescription>
         <description>Indonesian (Latin)</description>
+        <member-of>$nonlatin</member-of>
         <countryList>
           <iso3166Id>ID</iso3166Id>
         </countryList>
@@ -4849,6 +5445,10 @@
             <languageList>
               <iso639Id>sga</iso639Id>
             </languageList>
+            <aliases>
+              <alias category="compatibility" layout="ogham"/>
+              <alias category="compatibility" layout="ogham" variant="basic"/>
+            </aliases>
           </configItem>
         </variant>
         <variant>
@@ -4858,6 +5458,7 @@
             <languageList>
               <iso639Id>sga</iso639Id>
             </languageList>
+            <alias category="compatibility" layout="ogham" variant="is434"/>
           </configItem>
         </variant>
       </variantList>
@@ -4868,6 +5469,11 @@
         <!-- Keyboard indicator for Italian layouts -->
         <shortDescription>it</shortDescription>
         <description>Italian</description>
+        <membership>
+          <member-of>$macvendorlayouts</member-of>
+          <member-of>$olpclayouts</member-of>
+          <member-of>$sun_custom</member-of>
+        </membership>
         <countryList>
           <iso3166Id>IT</iso3166Id>
         </countryList>
@@ -4942,12 +5548,22 @@
         <!-- Keyboard indicator for Japanese layouts -->
         <shortDescription>ja</shortDescription>
         <description>Japanese</description>
+        <membership>
+          <member-of>$nonlatin</member-of>
+          <member-of>$sun_custom</member-of>
+        </membership>
         <countryList>
           <iso3166Id>JP</iso3166Id>
         </countryList>
         <languageList>
           <iso639Id>jpn</iso639Id>
         </languageList>
+        <rules>
+          <rule model="*" layout-range="single" compat="complete+japan" priority="highest"/>
+          <rule layout-range="first" variant="$sun_compat" compat="complete+japan(kana_lock):%i" category="compatibility"/>
+          <rule layout-range="later" variant="$sun_compat" compat="+complete+japan(kana_lock):%i" category="compatibility"/>
+          <rule model="$inetmediakbds" layout-range="single" symbols="+jp(henkan)" rules="base"/>
+        </rules>
       </configItem>
       <variantList>
         <variant>
@@ -4988,6 +5604,10 @@
         <!-- Keyboard indicator for Kazakh layouts -->
         <shortDescription>kk</shortDescription>
         <description>Kazakh</description>
+        <membership>
+          <member-of>$nonlatin</member-of>
+          <member-of>$olpclayouts</member-of>
+        </membership>
         <countryList>
           <iso3166Id>KZ</iso3166Id>
         </countryList>
@@ -5044,6 +5664,10 @@
         <!-- Keyboard indicator for Khmer layouts -->
         <shortDescription>km</shortDescription>
         <description>Khmer (Cambodia)</description>
+        <membership>
+          <member-of>$nonlatin</member-of>
+          <member-of>$olpclayouts</member-of>
+        </membership>
         <countryList>
           <iso3166Id>KH</iso3166Id>
         </countryList>
@@ -5059,6 +5683,10 @@
         <!-- Keyboard indicator for Korean layouts -->
         <shortDescription>ko</shortDescription>
         <description>Korean</description>
+        <membership>
+          <member-of>$nonlatin</member-of>
+          <member-of>$sun_custom</member-of>
+        </membership>
         <countryList>
           <iso3166Id>KR</iso3166Id>
         </countryList>
@@ -5081,6 +5709,7 @@
         <!-- Keyboard indicator for Kyrgyz layouts -->
         <shortDescription>ki</shortDescription>
         <description>Kyrgyz</description>
+        <member-of>$nonlatin</member-of>
         <countryList>
           <iso3166Id>KG</iso3166Id>
         </countryList>
@@ -5103,6 +5732,7 @@
         <!-- Keyboard indicator for Lao layouts -->
         <shortDescription>lo</shortDescription>
         <description>Lao</description>
+        <member-of>$nonlatin</member-of>
         <countryList>
           <iso3166Id>LA</iso3166Id>
         </countryList>
@@ -5128,6 +5758,7 @@
         <!-- Keyboard indicator for Latvian layouts -->
         <shortDescription>lv</shortDescription>
         <description>Latvian</description>
+        <member-of>$sun_custom</member-of>
         <countryList>
           <iso3166Id>LV</iso3166Id>
         </countryList>
@@ -5186,6 +5817,7 @@
         <!-- Keyboard indicator for Lithuanian layouts -->
         <shortDescription>lt</shortDescription>
         <description>Lithuanian</description>
+        <member-of>$sun_custom</member-of>
         <countryList>
           <iso3166Id>LT</iso3166Id>
         </countryList>
@@ -5247,6 +5879,7 @@
         <!-- Keyboard indicator for Macedonian layouts -->
         <shortDescription>mk</shortDescription>
         <description>Macedonian</description>
+        <member-of>$nonlatin</member-of>
         <countryList>
           <iso3166Id>MK</iso3166Id>
         </countryList>
@@ -5269,6 +5902,7 @@
         <!-- Keyboard indicator for Malay layouts -->
         <shortDescription>ms</shortDescription>
         <description>Malay (Jawi, Arabic Keyboard)</description>
+        <member-of>$nonlatin</member-of>
         <countryList>
           <iso3166Id>MY</iso3166Id>
         </countryList>
@@ -5358,6 +5992,10 @@
         <!-- Keyboard indicator for Mongolian layouts -->
         <shortDescription>mn</shortDescription>
         <description>Mongolian</description>
+        <membership>
+          <member-of>$nonlatin</member-of>
+          <member-of>$olpclayouts</member-of>
+        </membership>
         <countryList>
           <iso3166Id>MN</iso3166Id>
         </countryList>
@@ -5373,6 +6011,7 @@
         <!-- Keyboard indicator for Montenegrin layouts -->
         <shortDescription>sr</shortDescription>
         <description>Montenegrin</description>
+        <member-of>$nonlatin</member-of>
         <countryList>
           <iso3166Id>ME</iso3166Id>
         </countryList>
@@ -5431,6 +6070,7 @@
         <!-- Keyboard indicator for Nepali layouts -->
         <shortDescription>ne</shortDescription>
         <description>Nepali</description>
+        <member-of>$olpclayouts</member-of>
         <countryList>
           <iso3166Id>NP</iso3166Id>
         </countryList>
@@ -5447,6 +6087,7 @@
         <!-- Keyboard indicator for N'Ko layouts -->
         <shortDescription>nqo</shortDescription>
         <description>N'Ko (AZERTY)</description>
+        <member-of>$nonlatin</member-of>
         <countryList>
           <iso3166Id>GN</iso3166Id>
         </countryList>
@@ -5462,6 +6103,10 @@
         <!-- Keyboard indicator for Norwegian layouts -->
         <shortDescription>no</shortDescription>
         <description>Norwegian</description>
+        <membership>
+          <member-of>$macvendorlayouts</member-of>
+          <member-of>$sun_custom</member-of>
+        </membership>
         <countryList>
           <iso3166Id>NO</iso3166Id>
         </countryList>
@@ -5546,6 +6191,7 @@
         <!-- Keyboard indicator for Persian layouts -->
         <shortDescription>fa</shortDescription>
         <description>Persian</description>
+        <member-of>$nonlatin</member-of>
         <countryList>
           <iso3166Id>IR</iso3166Id>
         </countryList>
@@ -5629,6 +6275,7 @@
         <!-- Keyboard indicator for Polish layouts -->
         <shortDescription>pl</shortDescription>
         <description>Polish</description>
+        <member-of>$sun_custom</member-of>
         <countryList>
           <iso3166Id>PL</iso3166Id>
         </countryList>
@@ -5710,6 +6357,10 @@
         <!-- Keyboard indicator for Portuguese layouts -->
         <shortDescription>pt</shortDescription>
         <description>Portuguese</description>
+        <membership>
+          <member-of>$macvendorlayouts</member-of>
+          <member-of>$sun_custom</member-of>
+        </membership>
         <countryList>
           <iso3166Id>PT</iso3166Id>
         </countryList>
@@ -5765,12 +6416,17 @@
         <!-- Keyboard indicator for Portuguese layouts -->
         <shortDescription>pt</shortDescription>
         <description>Portuguese (Brazil)</description>
+        <membership>
+          <member-of>$olpclayouts</member-of>
+          <member-of>$sun_custom</member-of>
+        </membership>
         <countryList>
           <iso3166Id>BR</iso3166Id>
         </countryList>
         <languageList>
           <iso639Id>por</iso639Id>
         </languageList>
+        <rule model="$thinkpads" layout-range="first" symbols="pc+%l[%i](thinkpad)"/>
       </configItem>
       <variantList>
         <variant>
@@ -5831,24 +6487,35 @@
         <!-- Keyboard indicator for Romanian layouts -->
         <shortDescription>ro</shortDescription>
         <description>Romanian</description>
+        <membership>
+          <member-of>$qwertz</member-of>
+          <member-of>$sun_custom</member-of>
+        </membership>
         <countryList>
           <iso3166Id>RO</iso3166Id>
         </countryList>
         <languageList>
           <iso639Id>ron</iso639Id>
         </languageList>
+        <alias category="compatibility" layout="ro" variant="comma" target-variant="basic"/>
       </configItem>
       <variantList>
         <variant>
           <configItem>
             <name>std</name>
             <description>Romanian (standard)</description>
+            <aliases>
+              <alias category="compatibility" layout="ro" variant="academic"/>
+              <alias category="compatibility" layout="ro" variant="std_comma"/>
+              <alias category="compatibility" layout="ro" variant="us"/>
+            </aliases>
           </configItem>
         </variant>
         <variant>
           <configItem>
             <name>winkeys</name>
             <description>Romanian (Windows)</description>
+            <alias category="compatibility" layout="ro" variant="de"/>
           </configItem>
         </variant>
       </variantList>
@@ -5859,6 +6526,11 @@
         <!-- Keyboard indicator for Russian layouts -->
         <shortDescription>ru</shortDescription>
         <description>Russian</description>
+        <membership>
+          <member-of>$nonlatin</member-of>
+          <member-of>$olpclayouts</member-of>
+          <member-of>$sun_custom</member-of>
+        </membership>
         <countryList>
           <iso3166Id>RU</iso3166Id>
         </countryList>
@@ -6010,6 +6682,7 @@
             <languageList>
               <iso639Id>oss</iso639Id>
             </languageList>
+            <alias category="compatibility" layout="ru" variant="os"/>
           </configItem>
         </variant>
         <variant>
@@ -6066,6 +6739,7 @@
         <!-- Keyboard indicator for Serbian layouts -->
         <shortDescription>sr</shortDescription>
         <description>Serbian</description>
+        <member-of>$nonlatin</member-of>
         <countryList>
           <iso3166Id>RS</iso3166Id>
         </countryList>
@@ -6133,6 +6807,7 @@
         <!-- Keyboard indicator for Sinhala layouts -->
         <shortDescription>si</shortDescription>
         <description>Sinhala (phonetic)</description>
+        <member-of>$nonlatin</member-of>
         <countryList>
           <iso3166Id>LK</iso3166Id>
         </countryList>
@@ -6177,6 +6852,10 @@
         <!-- Keyboard indicator for Slovak layouts -->
         <shortDescription>sk</shortDescription>
         <description>Slovak</description>
+        <membership>
+          <member-of>$qwertz</member-of>
+          <member-of>$sun_custom</member-of>
+        </membership>
         <countryList>
           <iso3166Id>SK</iso3166Id>
         </countryList>
@@ -6211,6 +6890,7 @@
         <!-- Keyboard indicator for Slovenian layouts -->
         <shortDescription>sl</shortDescription>
         <description>Slovenian</description>
+        <member-of>$qwertz</member-of>
         <countryList>
           <iso3166Id>SI</iso3166Id>
         </countryList>
@@ -6239,6 +6919,10 @@
         <!-- Keyboard indicator for Spanish layouts -->
         <shortDescription>es</shortDescription>
         <description>Spanish</description>
+        <membership>
+          <member-of>$olpclayouts</member-of>
+          <member-of>$sun_custom</member-of>
+        </membership>
         <countryList>
           <iso3166Id>ES</iso3166Id>
         </countryList>
@@ -6299,6 +6983,7 @@
         <!-- Keyboard indicator for Spanish layouts -->
         <shortDescription>es</shortDescription>
         <description>Spanish (Latin American)</description>
+        <member-of>$macvendorlayouts</member-of>
         <countryList>
           <iso3166Id>AR</iso3166Id>
           <iso3166Id>BO</iso3166Id>
@@ -6386,6 +7071,7 @@
         <!-- Keyboard indicator for Swahili layouts -->
         <shortDescription>sw</shortDescription>
         <description>Swahili (Tanzania)</description>
+        <member-of>$nonlatin</member-of>
         <countryList>
           <iso3166Id>TZ</iso3166Id>
         </countryList>
@@ -6400,6 +7086,10 @@
         <!-- Keyboard indicator for Swedish layouts -->
         <shortDescription>sv</shortDescription>
         <description>Swedish</description>
+        <membership>
+          <member-of>$macvendorlayouts</member-of>
+          <member-of>$sun_custom</member-of>
+        </membership>
         <countryList>
           <iso3166Id>SE</iso3166Id>
         </countryList>
@@ -6481,6 +7171,7 @@
         <!-- Keyboard indicator for Taiwanese layouts -->
         <shortDescription>zh</shortDescription>
         <description>Taiwanese</description>
+        <member-of>$sun_custom</member-of>
         <countryList>
           <iso3166Id>TW</iso3166Id>
         </countryList>
@@ -6533,6 +7224,7 @@
         <!-- Keyboard indicator for Tajik layouts -->
         <shortDescription>tg</shortDescription>
         <description>Tajik</description>
+        <member-of>$nonlatin</member-of>
         <countryList>
           <iso3166Id>TJ</iso3166Id>
         </countryList>
@@ -6555,6 +7247,10 @@
         <!-- Keyboard indicator for Thai layouts -->
         <shortDescription>th</shortDescription>
         <description>Thai</description>
+        <membership>
+          <member-of>$nonlatin</member-of>
+          <member-of>$olpclayouts</member-of>
+        </membership>
         <countryList>
           <iso3166Id>TH</iso3166Id>
         </countryList>
@@ -6619,6 +7315,10 @@
         <!-- Keyboard indicator for Turkish layouts -->
         <shortDescription>tr</shortDescription>
         <description>Turkish</description>
+        <membership>
+          <member-of>$olpclayouts</member-of>
+          <member-of>$sun_custom</member-of>
+        </membership>
         <countryList>
           <iso3166Id>TR</iso3166Id>
         </countryList>
@@ -6692,6 +7392,10 @@
         <!-- Keyboard indicator for Ukrainian layouts -->
         <shortDescription>uk</shortDescription>
         <description>Ukrainian</description>
+        <membership>
+          <member-of>$nonlatin</member-of>
+          <member-of>$sun_custom</member-of>
+        </membership>
         <countryList>
           <iso3166Id>UA</iso3166Id>
         </countryList>
@@ -6777,12 +7481,17 @@
         <!-- Keyboard indicator for Urdu layouts -->
         <shortDescription>ur</shortDescription>
         <description>Urdu (Pakistan)</description>
+        <membership>
+          <member-of>$nonlatin</member-of>
+          <member-of>$olpclayouts</member-of>
+        </membership>
         <countryList>
           <iso3166Id>PK</iso3166Id>
         </countryList>
         <languageList>
           <iso639Id>urd</iso639Id>
         </languageList>
+        <alias category="compatibility" layout="pk" variant="urd" target-variant="urd-phonetic"/>
       </configItem>
       <variantList>
         <variant>
@@ -6827,6 +7536,7 @@
         <!-- Keyboard indicator for Uzbek layouts -->
         <shortDescription>uz</shortDescription>
         <description>Uzbek</description>
+        <member-of>$nonlatin</member-of>
         <countryList>
           <iso3166Id>UZ</iso3166Id>
         </countryList>
@@ -6894,7 +7604,7 @@
     </layout>
     <layout>
       <configItem>
-	<name>custom</name>
+        <name>custom</name>
         <shortDescription>custom</shortDescription>
         <description>A user-defined custom Layout</description>
         <languageList>
@@ -6904,9 +7614,8 @@
       <variantList/>
     </layout>
   </layoutList>
-
   <optionList>
-    <group allowMultipleSelection="true">
+    <group allowMultipleSelection="true" priority="low">
       <!-- The key combination used to switch between groups -->
       <configItem>
         <name>grp</name>
@@ -6964,6 +7673,7 @@
         <configItem>
           <name>grp:toggle</name>
           <description>Right Alt</description>
+          <rule layout="*" layout-range="any" symbols="+AUTO:%i"/>
         </configItem>
       </option>
       <option>
@@ -7012,18 +7722,21 @@
         <configItem>
           <name>grp:shifts_toggle</name>
           <description>Both Shifts together</description>
+          <rule layout="*" layout-range="any" symbols="+AUTO:%i"/>
         </configItem>
       </option>
       <option>
         <configItem>
           <name>grp:alts_toggle</name>
           <description>Both Alts together</description>
+          <rule layout="*" layout-range="any" symbols="+AUTO:%i"/>
         </configItem>
       </option>
       <option>
         <configItem>
           <name>grp:alt_altgr_toggle</name>
           <description>Both Alts together; AltGr alone chooses third level</description>
+          <rule layout="*" layout-range="any" symbols="+AUTO:%i"/>
         </configItem>
       </option>
       <option>
@@ -7048,6 +7761,7 @@
         <configItem>
           <name>grp:rctrl_rshift_toggle</name>
           <description>Right Ctrl+Right Shift</description>
+          <rule layout="*" layout-range="any" symbols="+AUTO:%i"/>
         </configItem>
       </option>
       <option>
@@ -7120,18 +7834,21 @@
         <configItem>
           <name>grp:alt_space_toggle</name>
           <description>Alt+Space</description>
+          <rule layout="*" layout-range="any" symbols="+AUTO:%i"/>
         </configItem>
       </option>
       <option>
         <configItem>
           <name>grp:win_space_toggle</name>
           <description>Win+Space</description>
+          <rule layout="*" layout-range="any" symbols="+AUTO:%i"/>
         </configItem>
       </option>
       <option>
         <configItem>
           <name>grp:ctrl_space_toggle</name>
           <description>Ctrl+Space</description>
+          <rule layout="*" layout-range="any" symbols="+AUTO:%i"/>
         </configItem>
       </option>
       <option>
@@ -7261,6 +7978,7 @@
         <configItem>
           <name>lv3:ralt_alt</name>
           <description>Right Alt never chooses 3rd level</description>
+          <rule layout="*" layout-range="any" symbols="+AUTO:%i"/>
         </configItem>
       </option>
       <option>
@@ -7395,7 +8113,8 @@
           <name>ctrl:swap_lwin_lctl</name>
           <description>Swap Left Win with Left Ctrl</description>
         </configItem>
-      </option><option>
+      </option>
+      <option>
         <configItem>
           <name>ctrl:swap_rwin_rctl</name>
           <description>Swap Right Win with Right Ctrl</description>
@@ -7669,12 +8388,14 @@
         <configItem>
           <name>caps:digits_row</name>
           <description>Caps Lock gives digits on the digits row (Azerty layouts)</description>
+          <rule layout="$azerty" layout-range="any" symbols="+AUTO:%i"/>
         </configItem>
       </option>
       <option>
         <configItem>
           <name>caps:digits_row_independent_lock</name>
           <description>Shift + Caps locks the digits on the digits row, Caps Lock alone behaves as usual (Azerty layouts)</description>
+          <rule layout="$azerty" layout-range="any" symbols="+AUTO:%i"/>
         </configItem>
       </option>
       <option>
@@ -7965,12 +8686,14 @@
         <configItem>
           <name>misc:typo</name>
           <description>Enable extra typographic characters</description>
+          <rule layout="*" layout-range="any" symbols="+typo(base):%i"/>
         </configItem>
       </option>
       <option>
         <configItem>
           <name>misc:apl</name>
           <description>Enable APL overlay characters</description>
+          <rule layout="*" layout-range="any" symbols="+apl(level3):%i"/>
         </configItem>
       </option>
       <option>
@@ -8315,9 +9038,9 @@
         <configItem>
           <name>custom:types</name>
           <description>Use user-defined custom XKB types</description>
+          <rule types="+custom" priority="lowest"/>
         </configItem>
       </option>
     </group>
   </optionList>
-
 </xkbConfigRegistry>
