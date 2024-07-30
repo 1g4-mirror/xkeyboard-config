@@ -7,9 +7,21 @@
 set -e
 
 pwd="$PWD"
-tmpdir=$(mktemp -d xkeyboard-config.XXXXXX)
-scriptdir=$(dirname "$0")
-ROOT=$(realpath "$scriptdir/..")
+tmpdir=$(mktemp --tmpdir --directory xkeyboard-config.XXXXXX)
+PROJECT_ROOT=$(realpath "$(dirname "$0")/..")
+if [ -z "$1" ]
+then
+  XKB_ROOT=$PROJECT_ROOT
+else
+  XKB_ROOT=$(realpath "$1")
+fi
+
+if [ -z "$2" ]
+then
+  XKB_RULES_ROOT=$XKB_ROOT
+else
+  XKB_RULES_ROOT=$(realpath "$2")
+fi
 
 cd "$tmpdir" || exit 1
 
@@ -18,7 +30,10 @@ registry_names=registry_names.lst
 group_names=group_names.lst
 
 # Convert base.xml and base.extras.xml to a list of `layout(variant):"blah blah"` lines
-xsltproc "$ROOT"/tests/reg2ll.xsl "$ROOT"/rules/base.xml "$ROOT"/rules/base.extras.xml | grep -v sun_type > $registry_names
+xsltproc "$PROJECT_ROOT/tests/reg2ll.xsl" \
+         "$XKB_RULES_ROOT/rules/base.xml" \
+         "$XKB_RULES_ROOT/rules/base.extras.xml" \
+  | grep -v sun_type > $registry_names
 
 # Filter out empty lines and the custom layout
 grep -v -e '^$' \
@@ -31,7 +46,7 @@ mv $registry_names.tmp $registry_names
 # name[Group1]="blah blah" and print out a line `filename(variant):"blah blah"`.
 # Ideally that file should then match the base{.extras}.xml extracted names, i.e.
 # the two files are in sync.
-for sym in $(find "$ROOT"/symbols/ -type f -maxdepth 1); do
+for sym in $(find "$XKB_ROOT/symbols/" -maxdepth 1 -type f); do
   if [ -f "$sym" ]; then
     id="$(basename "$sym")"
     export id

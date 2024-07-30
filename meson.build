@@ -72,7 +72,8 @@ if xsltproc.found()
                           install_dir: dir_man7)
 
   verify_group_names = find_program('tests/verify-group-names.sh')
-  test('verify group names', verify_group_names)
+  test('verify group names', verify_group_names,
+       args: [meson.project_source_root(), meson.build_root()])
 endif
 
 # pytest suite
