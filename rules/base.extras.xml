@@ -611,6 +611,26 @@
             </languageList>
           </configItem>
         </variant>
+        <variant>
+          <configItem popularity="exotic">
+            <name>graphite</name>
+            <shortDescription>graphite</shortDescription>
+            <description>English (Graphite)</description>
+            <languageList>
+              <iso639Id>eng</iso639Id>
+            </languageList>
+          </configItem>
+        </variant>
+        <variant>
+          <configItem popularity="exotic">
+            <name>graphite_angle</name>
+            <shortDescription>graphite angle mod</shortDescription>
+            <description>English (Graphite Angle)</description>
+            <languageList>
+              <iso639Id>eng</iso639Id>
+            </languageList>
+          </configItem>
+        </variant>
       </variantList>
     </layout>
     <layout>
