@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xkbConfigRegistry SYSTEM "xkb-dev.dtd">
+<!--
+This file is for compatibility aliases.
+-->
+<xkbConfigRegistry>
+  <modelList/>
+  <layoutList/>
+  <optionList>
+    <group>
+      <configItem>
+        <name>ctrl</name>
+      </configItem>
+      <option>
+        <!-- Delete this option alias in September 2027 -->
+        <configItem>
+          <name>ctrl:swapcaps_and_switch_layout</name>
+          <rule symbols="+ctrl(swapcaps)+group(lctrl_toggle)" category="compatibility"/>
+        </configItem>
+      </option>
+      <option>
+        <!-- Delete this option alias in September 2027 -->
+        <configItem>
+          <name>ctrl:swapcaps_hyper</name>
+          <rule symbols="+ctrl(hyper_capscontrol)" category="compatibility"/>
+        </configItem>
+      </option>
+    </group>
+    <group priority="low">
+      <configItem>
+        <name>grp</name>
+      </configItem>
+      <option>
+        <!-- Delete this option alias in July 2027 -->
+        <configItem>
+          <name>grp:shift_caps_switch</name>
+          <rule symbols="+group(caps_select)" category="compatibility"/>
+        </configItem>
+      </option>
+      <option>
+        <!-- Delete this option alias in July 2027 -->
+        <configItem>
+          <name>grp:win_menu_switch</name>
+          <rule symbols="+group(win_menu_select)" category="compatibility"/>
+        </configItem>
+      </option>
+      <option>
+        <!-- Delete this option alias in July 2027 -->
+        <configItem>
+          <name>grp:lctrl_rctrl_switch</name>
+          <rule symbols="+group(ctrl_select)" category="compatibility"/>
+        </configItem>
+      </option>
+    </group>
+  </optionList>
+</xkbConfigRegistry>

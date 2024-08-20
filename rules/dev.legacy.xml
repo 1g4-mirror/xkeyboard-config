@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xkbConfigRegistry SYSTEM "xkb-dev.dtd">
+<!--
+This file is for entries that are not exposed in base*.xml files and are not
+aliases, which may question their relevance.
+-->
+<xkbConfigRegistry>
+  <modelList>
+    <model>
+      <configItem>
+        <name>ataritt</name>
+        <rules>
+          <rule keycodes="ataritt(de)" rules="base"/>
+          <rule layout="$nonlatin" layout-range="single" symbols="xfree68_vndr/ataritt(us)+%l%(v):2"/>
+          <rule layout="*" layout-range="first" symbols="xfree68_vndr/ataritt(us)+%l[%i]%(v[%i]):%i"/>
+        </rules>
+      </configItem>
+    </model>
+    <model>
+      <configItem>
+        <name>amiga</name>
+        <rules>
+          <rule keycodes="amiga(de)" rules="base"/>
+          <rule layout="$nonlatin" layout-range="single" symbols="xfree68_vndr/amiga(usa1)+%l%(v):2"/>
+          <rule layout="*" layout-range="first" symbols="xfree68_vndr/amiga(usa1)+%l[%i]%(v[%i]):%i"/>
+        </rules>
+      </configItem>
+    </model>
+    <model>
+      <configItem>
+        <name>jollasbj</name>
+        <member-of>$jollamodels</member-of>
+        <rules>
+          <rule layout="$nonlatin" layout-range="single" symbols="jolla_vndr/sbj(common)+us+%l%(v):2"/>
+          <rule layout="*" layout-range="first" symbols="jolla_vndr/sbj(common)+%l[%i]%(v[%i]):%i"/>
+        </rules>
+      </configItem>
+    </model>
+    <model>
+      <configItem>
+        <name>olpcm</name>
+        <rules>
+          <rule keycodes="evdev+olpc(olpcm)" rules="evdev"/>
+          <rule layout="*" layout-range="single" compat="olpc"/>
+          <rule layout="$olpclayouts" layout-range="single" symbols="olpc+%l%(m)"/>
+          <rule layout="*" layout-range="single" symbols="olpc+%l%(v)"/>
+        </rules>
+      </configItem>
+    </model>
+    <model>
+      <configItem>
+        <name>logicdpa</name>
+        <rule symbols="+inet(logicda)" rules="base"/>
+      </configItem>
+    </model>
+    <model>
+      <configItem>
+        <name>logiciink</name>
+        <rule symbols="+inet(logicink)" rules="base"/>
+      </configItem>
+    </model>
+    <model>
+      <configItem>
+        <name>ltcd</name>
+        <rule symbols="+inet(logicda)" rules="base"/>
+      </configItem>
+    </model>
+    <model>
+      <configItem>
+        <name>sl-c3x00</name>
+        <rule layout="*" layout-range="single" symbols="pc+sharp_vndr/sl-c3x00(basic)"/>
+      </configItem>
+    </model>
+    <model>
+      <configItem>
+        <name>ws003sh</name>
+        <rule layout="*" layout-range="single" symbols="pc+sharp_vndr/ws003sh(basic)"/>
+      </configItem>
+    </model>
+    <model>
+      <configItem>
+        <name>ws007sh</name>
+        <rule layout="*" layout-range="single" symbols="pc+sharp_vndr/ws007sh(basic)"/>
+      </configItem>
+    </model>
+    <model>
+      <configItem>
+        <name>ws011sh</name>
+        <rule layout="*" layout-range="single" symbols="pc+sharp_vndr/ws011sh(basic)"/>
+      </configItem>
+    </model>
+    <model>
+      <configItem>
+        <name>ws020sh</name>
+        <rule layout="*" layout-range="single" symbols="pc+sharp_vndr/ws020sh(basic)"/>
+      </configItem>
+    </model>
+    <model>
+      <configItem>
+        <name>intel</name>
+        <member-of rules="base">$inetkbds</member-of>
+      </configItem>
+    </model>
+    <model>
+      <configItem>
+        <name>hpxe4xxx</name>
+        <membership>
+          <member-of rules="base">$inetkbds</member-of>
+          <member-of rules="base">$inetmediakbds</member-of>
+        </membership>
+      </configItem>
+    </model>
+    <model>
+      <configItem>
+        <!-- FIXME: Looks bogus name -->
+        <name>evdev</name>
+        <member-of rules="base">$inetkbds</member-of>
+      </configItem>
+    </model>
+    <model>
+      <configItem>
+        <name>hpxe4xxx</name>
+      </configItem>
+    </model>
+    <model>
+      <configItem>
+        <name>chicony042</name>
+        <member-of rules="base">$inetmediakbds</member-of>
+      </configItem>
+    </model>
+  </modelList>
+  <layoutList>
+    <layout>
+      <configItem>
+        <name>jv</name>
+        <member-of>$nonlatin</member-of>
+      </configItem>
+    </layout>
+    <layout>
+      <configItem>
+        <name>---VARIANTS ONLY---</name>
+      </configItem>
+      <variantList>
+        <variant>
+          <configItem>
+            <name>suncompat</name>
+            <membership>
+              <member-of>$sun_compat</member-of>
+              <member-of>$sun_var</member-of>
+            </membership>
+          </configItem>
+        </variant>
+        <variant>
+          <configItem>
+            <name>sun_type6_suncompat</name>
+            <membership>
+              <member-of>$sun_compat</member-of>
+              <member-of>$sun_var</member-of>
+            </membership>
+          </configItem>
+        </variant>
+      </variantList>
+    </layout>
+  </layoutList>
+  <optionList/>
+</xkbConfigRegistry>

@@ -55,9 +55,13 @@ container-prep:
   variables:
     GIT_STRATEGY: none
     # minimal set of packages required to build xkeyboard-config.
-    BASE_PACKAGES: 'xorg-util-macros gettext pkg-config gcc grep m4 python meson ninja git diffutils'
+    BASE_PACKAGES: >
+      xorg-util-macros gettext pkg-config gcc grep m4 python meson ninja
+      git diffutils
     # extra packages we need for various tests
-    EXTRA_PACKAGES: 'tree libxml2 bison xorg-xkbcomp python-pytest python-libevdev python-yaml python-pycountry python-jinja yq libxkbcommon libxslt ruff'
+    EXTRA_PACKAGES: >
+      tree libxml2 libxslt bison xorg-xkbcomp python-pytest python-libevdev
+      python-yaml python-pycountry python-jinja python-lxml yq libxkbcommon ruff
     FDO_DISTRIBUTION_PACKAGES: $BASE_PACKAGES $EXTRA_PACKAGES
 
 
@@ -249,10 +253,11 @@ xmllint:
 match group names to registry:
   extends:
     - .default_setup
-  needs: ['container-prep']
+  dependencies: ['meson_install']
+  needs: ['meson_install']
   stage: test
   script:
-    - "./tests/verify-group-names.sh"
+    - ./tests/verify-group-names.sh "$INSTDIR/share/X11/xkb"
 
 
 # libxkbcommon's xkbcli list prints out YAML-like format, if yq cannot parse it, our

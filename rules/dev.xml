@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xkbConfigRegistry SYSTEM "xkb-dev.dtd">
+<!--
+This file is for special entries (wildcards, groups) that cannot appear
+in base*.xml but are required for rules generation.
+-->
+<xkbConfigRegistry>
+  <modelList>
+    <model>
+      <configItem>
+        <name>*</name>
+        <rules>
+          <rule keycodes="evdev" rules="evdev"/>
+          <rule keycodes="xfree86" rules="base"/>
+          <rule geometry="pc(pc104)"/>
+          <rule layout="*" layout-range="first" compat="complete"/>
+          <rule symbols="+inet(evdev)" rules="evdev"/>
+          <rule layout="$nonlatin" layout-range="single" symbols="pc+us+%l%(v):2"/>
+          <rule layout="$sun_custom" layout-range="single" variant="$sun_var" symbols="pc+sun_vndr/%l%(v)"/>
+          <rule layout="*" layout-range="first" symbols="pc+%l[%i]%(v[%i]):%i"/>
+          <rule layout="*" layout-range="later" symbols="+%l[%i]%(v[%i]):%i"/>
+          <rule types="complete"/>
+        </rules>
+      </configItem>
+    </model>
+    <model>
+      <configItem>
+        <name>empty</name>
+        <rules>
+          <rule keycodes="empty" rules="base"/>
+          <rule layout="*" layout-range="single" symbols="empty(basic)" priority="highest"/>
+        </rules>
+      </configItem>
+    </model>
+    <!-- Groups -->
+    <model>
+      <configItem>
+        <name>$pcmodels</name>
+        <description>PC models</description>
+        <rule geometry="pc(%m)"/>
+      </configItem>
+    </model>
+    <model>
+      <configItem>
+        <name>$jollamodels</name>
+        <description>Jolla devices and keyboards</description>
+        <rule keycodes="evdev+jolla(jolla)" rules="evdev"/>
+      </configItem>
+    </model>
+    <model>
+      <configItem>
+        <name>$sun</name>
+        <rules>
+          <rule keycodes="sun(type6_usb)" rules="base"/>
+          <rule symbols="+sun_vndr/solaris(defaults)" rules="base"/>
+          <rule layout="$sun_custom" layout-range="first" symbols="pc+sun_vndr/%l[%i]%(v[%i]):%i"/>
+          <rule layout="$sun_custom" layout-range="later" symbols="+sun_vndr/%l[%i]%(v[%i]):%i"/>
+        </rules>
+      </configItem>
+    </model>
+    <model rules="base">
+      <configItem>
+        <name>$sun_jp</name>
+        <rule keycodes="sun(type6_jp_usb)" rules="base"/>
+      </configItem>
+    </model>
+    <model rules="base">
+      <configItem>
+        <name>$inetkbds</name>
+        <rule symbols="+inet(%m)" rules="base"/>
+      </configItem>
+    </model>
+    <model rules="base">
+      <configItem>
+        <name>$inetmediakbds</name>
+      </configItem>
+    </model>
+    <model>
+      <configItem>
+        <name>$msmodels</name>
+        <description>Microsoft models (using MS geometry)</description>
+        <rule geometry="microsoft(natural)"/>
+      </configItem>
+    </model>
+    <model>
+      <configItem>
+        <name>$tmgeometries</name>
+        <description>TypeMatrix geometries</description>
+        <rule geometry="typematrix(%m)"/>
+      </configItem>
+    </model>
+    <model>
+      <configItem>
+        <name>$thinkpads</name>
+      </configItem>
+    </model>
+    <model>
+      <configItem>
+        <name>$applealu</name>
+        <rules>
+          <rule keycodes="macintosh(alukbd)" rules="base"/>
+          <rule geometry="macintosh(%m)"/>
+          <rule symbols="+inet(apple)" rules="base"/>
+          <rule layout="$macvendorlayouts" layout-range="first" symbols="macintosh_vndr/apple(alukbd)+macintosh_vndr/%l[%i]%(v[%i]):%i"/>
+          <rule layout="*" layout-range="first" symbols="macintosh_vndr/apple(alukbd)+%l[%i]%(v[%i]):%i"/>
+          <rule types="complete+numpad(mac)"/>
+        </rules>
+      </configItem>
+    </model>
+  </modelList>
+  <layoutList>
+    <layout>
+      <configItem>
+        <name>*</name>
+        <rule layout-range="first" keycodes="+aliases(qwerty)"/>
+      </configItem>
+    </layout>
+    <layout>
+      <configItem>
+        <name>empty</name>
+        <rule model="*" layout-range="single" symbols="empty(basic)" priority="highest"/>
+      </configItem>
+    </layout>
+    <!-- Groups -->
+    <layout disabled="true">
+      <configItem>
+        <name>$nonlatin</name>
+        <description>
+          If you want non-latin layouts to implicitly include the en_US layout,
+          then uncomment the following lines:
+        </description>
+      </configItem>
+    </layout>
+    <layout>
+      <configItem>
+        <name>$azerty</name>
+        <description>
+          The countries that predominantly have AZERTY layouts:
+        </description>
+        <rule layout-range="first" keycodes="+aliases(azerty)"/>
+      </configItem>
+    </layout>
+    <layout>
+      <configItem>
+        <name>$qwertz</name>
+        <description>
+          The countries that predominantly have QWERTZ layouts:
+        </description>
+        <rule layout-range="first" keycodes="+aliases(qwertz)"/>
+      </configItem>
+    </layout>
+    <layout>
+      <configItem>
+        <name>$macvendorlayouts</name>
+      </configItem>
+    </layout>
+    <layout>
+      <configItem>
+        <name>$olpclayouts</name>
+        <description>Country files that provide specializations for the OLPC:</description>
+      </configItem>
+    </layout>
+    <layout>
+      <configItem>
+        <name>$sun_custom</name>
+        <description>Sun Type_6_7 keyboards with custom layouts</description>
+      </configItem>
+      <variantList>
+        <variant>
+          <configItem>
+            <name>$sun_var</name>
+          </configItem>
+        </variant>
+        <variant>
+          <configItem>
+            <name>$sun_compat</name>
+          </configItem>
+        </variant>
+      </variantList>
+    </layout>
+  </layoutList>
+  <optionList/>
+</xkbConfigRegistry>
