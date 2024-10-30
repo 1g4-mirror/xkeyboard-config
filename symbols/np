@@ -67,10 +67,10 @@ xkb_symbols "olpc" {
     name[Group1]= "Nepali";
 
     key <TLDE>	{[  U091E,  U0965  ]}; // NYA; double danda
-    key <AE01>	{[  U0967,  0x10FFFFD  ]}; // Nepali digit one; U091C+U094D+U091E
+    key <AE01>	{[  U0967,  UFFFFD ]}; // Nepali digit one; U091C+U094D+U091E
     key <AE02>	{[  U0968,  U0908  ]}; // Nepali digit two;
     key <AE03>	{[  U0969,  U0918  ]}; // Nepali digit three;
-    key <AE04>	{[  U096A,  0x10FFFFC  ]}; // Nepali digit four; U0926+U094D+U0927
+    key <AE04>	{[  U096A,  UFFFFC ]}; // Nepali digit four; U0926+U094D+U0927
     key <AE05>	{[  U096B,  U091B  ]}; // Nepali digit five
     key <AE06>	{[  U096C,  U091F  ]}; // Nepali digit six
     key <AE07>	{[  U096D,  U0920  ]}; // Nepali digit seven
@@ -81,41 +81,41 @@ xkb_symbols "olpc" {
     key <AE12>	{[  U200C,  U0902  ]}; // ZERO-WIDTH-NON-JOINER (ZWNJ); SIGN ANUSVARA
     key <BKSL>	{[  U094D,  U200D  ]}; // SIGN VIRAMA; ZERO-WIDTH-JOINER (ZWJ)
 
-    key <AD01>	{[  0x10FFFFB,  0x10FFFFA  ]}; // U0924+U094D+U0930; U0924+U094D+U0924
-    key <AD02>	{[  U0927,  0x10FFFF9  ]}; // DHA; U0921+U094D+U0922
-    key <AD03>	{[  U092D,  U0910  ]}; // BHA, AI
-    key <AD04>	{[  U091A,  0x10FFFF8  ]}; // CA; U0926+U094D+U0935
-    key <AD05>	{[  U0924,  0x10FFFF7  ]}; // TA; U091F+U094D+U091F
-    key <AD06>	{[  U0925,  0x10FFFF6  ]}; // THA; U0920+U094D+U0920
-    key <AD07>	{[  U0917,  U090A  ]}; // GA, UU
-    key <AD08>	{[  U0937,  0x10FFFF5  ]}; // SSA; U0915+U094D+U0937
-    key <AD09>	{[  U092F,  U0907  ]}; // YA, I
-    key <AD10>	{[  U0909,  U090F  ]}; // U, E
-    key <AD11>	{[  0x10FFFF4,  U0943  ]}; // U0928+U094D+ZWJ; VOWEL SIGN VOCALIC R
-    key <AD12>	{[  U0947,  U0948  ]}; // SIGN E; SIGN AI
+    key <AD01>	{[  UFFFFB, UFFFFA  ]}; // U0924+U094D+U0930; U0924+U094D+U0924
+    key <AD02>	{[  U0927,  UFFFF9  ]}; // DHA; U0921+U094D+U0922
+    key <AD03>	{[  U092D,  U0910   ]}; // BHA, AI
+    key <AD04>	{[  U091A,  UFFFF8  ]}; // CA; U0926+U094D+U0935
+    key <AD05>	{[  U0924,  UFFFF7  ]}; // TA; U091F+U094D+U091F
+    key <AD06>	{[  U0925,  UFFFF6  ]}; // THA; U0920+U094D+U0920
+    key <AD07>	{[  U0917,  U090A   ]}; // GA, UU
+    key <AD08>	{[  U0937,  UFFFF5  ]}; // SSA; U0915+U094D+U0937
+    key <AD09>	{[  U092F,  U0907   ]}; // YA, I
+    key <AD10>	{[  U0909,  U090F   ]}; // U, E
+    key <AD11>	{[  UFFFF4, U0943   ]}; // U0928+U094D+ZWJ; VOWEL SIGN VOCALIC R
+    key <AD12>	{[  U0947,  U0948   ]}; // SIGN E; SIGN AI
 
-    key <AC01>	{[  U092C,  U0906  ]}; // BA, AA
-    key <AC02>	{[  U0915,  0x10FFFF3  ]}; // KA; U0919+U094D+U0915
-    key <AC03>	{[  U092E,  0x10FFFF2  ]}; // MA; U0919+U094D+U0917
-    key <AC04>	{[  U093E,  U0901  ]}; // CANDRABINDU, VOWEL SIGN AA
-    key <AC05>	{[  U0928,  0x10FFFF1  ]}; // NA; U0926+U094D+U0926
-    key <AC06>	{[  U091C,  U091D  ]}; // JA, JHA
-    key <AC07>	{[  U0935,  U094B  ]}; // VA, VOWEL SIGN O
-    key <AC08>	{[  U092A,  U092B  ]}; // PA, PHA
-    key <AC09>	{[  U093F,  U0940  ]}; // VOWEL SIGN I, VOWEL SIGN II
-    key <AC10>	{[  U0938,  0x10FFFF0  ]}; // SA; U091F+U094D+U0920
-    key <AC11>	{[  U0941,  U0942  ]}; // VOWEL SIGN U, VOWEL SIGN UU
+    key <AC01>	{[  U092C,  U0906   ]}; // BA, AA
+    key <AC02>	{[  U0915,  UFFFF3  ]}; // KA; U0919+U094D+U0915
+    key <AC03>	{[  U092E,  UFFFF2  ]}; // MA; U0919+U094D+U0917
+    key <AC04>	{[  U093E,  U0901   ]}; // CANDRABINDU, VOWEL SIGN AA
+    key <AC05>	{[  U0928,  UFFFF1  ]}; // NA; U0926+U094D+U0926
+    key <AC06>	{[  U091C,  U091D   ]}; // JA, JHA
+    key <AC07>	{[  U0935,  U094B   ]}; // VA, VOWEL SIGN O
+    key <AC08>	{[  U092A,  U092B   ]}; // PA, PHA
+    key <AC09>	{[  U093F,  U0940   ]}; // VOWEL SIGN I, VOWEL SIGN II
+    key <AC10>	{[  U0938,  UFFFF0  ]}; // SA; U091F+U094D+U0920
+    key <AC11>	{[  U0941,  U0942   ]}; // VOWEL SIGN U, VOWEL SIGN UU
 
-    key <AB01>	{[  U0936,  0x10FFFEF  ]}; // SHA; U0915+U094D+U0915
-    key <AB02>	{[  U0939,  0x10FFFEE  ]}; // HA; U0939+U094D+U092F
-    key <AB03>	{[  U0905,  U090B  ]}; // A; U0909+U090B
-    key <AB04>	{[  U0916,  U0950  ]}; // KHA, OM
-    key <AB05>	{[  U0926,  U094C  ]}; // DA, VOWEL SIGN AU
-    key <AB06>	{[  U0932,  0x10FFFED  ]}; // LA; U0926+U094D+U092F
-    key <AB07>	{[  U0903,  0x10FFFEC  ]}; // SIGN VISARGA; U0921+U094D+U0921
-    key <AB08>	{[  U093D,  U0919  ]}; // SIGN AVAGRHA; NGA
-    key <AB09>	{[  U0964,  0x10FFFEB  ]}; // DANDA; U0936+U094D+U0930
-    key <AB10>	{[  U0930,  0x10FFFEA  ]}; // RA; U0930+U0941
+    key <AB01>	{[  U0936,  UFFFEF  ]}; // SHA; U0915+U094D+U0915
+    key <AB02>	{[  U0939,  UFFFEE  ]}; // HA; U0939+U094D+U092F
+    key <AB03>	{[  U0905,  U090B   ]}; // A; U0909+U090B
+    key <AB04>	{[  U0916,  U0950   ]}; // KHA, OM
+    key <AB05>	{[  U0926,  U094C   ]}; // DA, VOWEL SIGN AU
+    key <AB06>	{[  U0932,  UFFFED  ]}; // LA; U0926+U094D+U092F
+    key <AB07>	{[  U0903,  UFFFEC  ]}; // SIGN VISARGA; U0921+U094D+U0921
+    key <AB08>	{[  U093D,  U0919   ]}; // SIGN AVAGRHA; NGA
+    key <AB09>	{[  U0964,  UFFFEB  ]}; // DANDA; U0936+U094D+U0930
+    key <AB10>	{[  U0930,  UFFFEA  ]}; // RA; U0930+U0941
 
     include "group(olpc)"
 };
