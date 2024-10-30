@@ -231,8 +231,8 @@ xkb_symbols "cyrlevel3" {
 
 partial alphanumeric_keys
 xkb_symbols "latinunicode" {
-    // This mapping supports the Unicode characters 0x1c4-0x1cc (dz, lj, and nj
-    // as single character). You get the title form with AltGr+Shift.
+    // This mapping supports the Unicode code points U+01C4..U+01CC (dz, lj, and
+    // nj as single character). You get the title form with AltGr+Shift.
 
     include "rs(latin)"
     name[Group1]= "Serbian (Latin, Unicode)";
