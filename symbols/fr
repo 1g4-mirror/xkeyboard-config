@@ -124,9 +124,9 @@ xkb_symbols "oss" {
     key <AE01>	{ [        ampersand,                1,           dead_caron,           dead_ogonek ] }; // & 1 ˇ ˛
     key <AE02>	{ [           eacute,                2,           asciitilde,                Eacute ] }; // é 2 ~ É
     key <AE03>	{ [         quotedbl,                3,           numbersign,            dead_breve ] }; // " 3 # ˘
-    key <AE04>	{ [       apostrophe,                4,            braceleft,             0x1002014 ] }; // ' 4 { — (tiret cadratin)
-    key <AE05>	{ [        parenleft,                5,          bracketleft,             0x1002013 ] }; // ( 5 [ – (tiret demi-cadratin)
-    key <AE06>	{ [            minus,                6,                  bar,             0x1002011 ] }; // - 6 | ‑ (tiret insécable)
+    key <AE04>	{ [       apostrophe,                4,            braceleft,                emdash ] }; // ' 4 { — (tiret cadratin)
+    key <AE05>	{ [        parenleft,                5,          bracketleft,                endash ] }; // ( 5 [ – (tiret demi-cadratin)
+    key <AE06>	{ [            minus,                6,                  bar,                 U2011 ] }; // - 6 | ‑ (tiret insécable)
     key <AE07>	{ [           egrave,                7,                grave,                Egrave ] }; // è 7 ` È
     key <AE08>	{ [       underscore,                8,            backslash,             trademark ] }; // _ 8 \ ™
     key <AE09>	{ [         ccedilla,                9,          asciicircum,              Ccedilla ] }; // ç 9 ^ Ç
@@ -157,7 +157,7 @@ xkb_symbols "oss" {
     key <AC06>	{ [                h,                H,                  eth,                   ETH ] }; // h H ð Ð
     key <AC07>	{ [                j,                J,           udiaeresis,            Udiaeresis ] }; // j J ü Ü
     key <AC08>	{ [                k,                K,           idiaeresis,            Idiaeresis ] }; // k K ï Ï
-    key <AC09>	{ [                l,                L,            0x1000140,             0x100013F ] }; // l L ŀ Ŀ
+    key <AC09>	{ [                l,                L,                U0140,                 U013F ] }; // l L ŀ Ŀ
     key <AC10>	{ [                m,                M,           odiaeresis,            Odiaeresis ] }; // m M ö Ö
     key <AC11>	{ [           ugrave,          percent,           dead_acute,                Ugrave ] }; // ù % ´ Ù
     key <BKSL>	{ [         asterisk,               mu,           dead_grave,           dead_macron ] }; // * µ ` ¯
@@ -167,13 +167,13 @@ xkb_symbols "oss" {
     key <AB01>  { [                w,                W,        guillemotleft,   leftdoublequotemark ] }; // w W « “
     key <AB02>  { [                x,                X,       guillemotright,  rightdoublequotemark ] }; // x X » ”
     key <AB03>  { [                c,                C,            copyright,            registered ] }; // c C © ®
-    key <AB04>  { [                v,                V,            0x100202F,             leftarrow ] }; // v V ⍽ ← (espace fine insécable)
+    key <AB04>  { [                v,                V,                U202F,             leftarrow ] }; // v V ⍽ ← (espace fine insécable)
     key <AB05>  { [                b,                B,            downarrow,               uparrow ] }; // b B ↓ ↑
     key <AB06>  { [                n,                N,              notsign,            rightarrow ] }; // n N ¬ →
-    key <AB07>  { [            comma,         question,         questiondown,             0x1002026 ] }; // , ? ¿ …
-    key <AB08>  { [        semicolon,           period,             multiply,             0x10022C5 ] }; // ; . × ⋅
-    key <AB09>  { [            colon,            slash,             division,             0x1002215 ] }; // : / ÷ ∕
-    key <AB10>  { [           exclam,          section,           exclamdown,             0x1002212 ] }; // ! § ¡ −
+    key <AB07>  { [            comma,         question,         questiondown,              ellipsis ] }; // , ? ¿ …
+    key <AB08>  { [        semicolon,           period,             multiply,                 U22C5 ] }; // ; . × ⋅
+    key <AB09>  { [            colon,            slash,             division,                 U2215 ] }; // : / ÷ ∕
+    key <AB10>  { [           exclam,          section,           exclamdown,                 U2212 ] }; // ! § ¡ −
 };
 
 partial alphanumeric_keys
@@ -596,7 +596,7 @@ xkb_symbols "bepo_afnor" {
 	key <AB08> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ g, G, dead_greek, dagger ] }; // g G µ †
 	key <AB09> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ h, H, dead_belowdot, doubledagger ] }; // h H ̣ ‡
 	key <AB10> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ f, F, dead_ogonek, U26C4 ] }; // f F ˛ ⛄
-	key <SPCE> { type[group1] = "FOUR_LEVEL", [ space, U202F, underscore, nobreakspace ] }; //     _  
+	key <SPCE> { type[group1] = "FOUR_LEVEL", [ space, U202F, underscore, nobreakspace ] }; //     _
 
 	include "level3(ralt_switch)"
 };

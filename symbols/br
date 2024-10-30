@@ -98,7 +98,7 @@ xkb_symbols "olpc" {
     key <AC11> { [   dead_tilde, dead_circumflex                                ] };
 
     key <AB01> { [            z,               Z,           bar                 ] };
-    key <AB03> { [            c,               C,     0x10020A2                 ] };
+    key <AB03> { [            c,               C,         U20A2                 ] };
     key <AB09> { [       period,         greater,     backslash                 ] };
     key <AB10> { [    semicolon,           colon                                ] };
 
