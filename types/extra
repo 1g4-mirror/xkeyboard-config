@@ -160,4 +160,23 @@ default partial xkb_types "default" {
 	level_name[Level4] = "Shift AltGr";
 	level_name[Level5] = "Lock";
     };
+
+    type "FOUR_LEVEL_WITH_ALTERNATIVE_BASE_SYMBOLS" {
+	modifiers = Shift + Mod3 + LevelThree;
+	map[None] = Level1;
+	map[Shift] = Level2;
+	map[LevelThree] = Level3;
+	map[LevelThree+Mod3] = Level3;
+	map[Shift+LevelThree] = Level4;
+	map[Shift+LevelThree+Mod3] = Level4;
+	// Alternative base symbols (used by qwerty_shortcuts)
+	map[Mod3] = Level5;
+	map[Shift+Mod3] = Level6;
+	level_name[Level1] = "Base";
+	level_name[Level2] = "Shift";
+	level_name[Level3] = "AltGr";
+	level_name[Level4] = "Shift AltGr";
+	level_name[Level5] = "Alternative base symbols";
+	level_name[Level6] = "Alternative shift symbols";
+    };
 };

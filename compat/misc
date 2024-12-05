@@ -126,3 +126,37 @@ partial xkb_compatibility "assign_shift_right_action" {
 	action = SetMods(modifiers = Shift);
     };
 };
+
+partial xkb_compatibility "qwerty_shortcuts" {
+	virtual_modifiers  Alt,Meta,Super;
+	interpret Control_L {
+		action = SetMods(modifiers=Control+Mod3);
+	};
+	interpret Control_R {
+		action = SetMods(modifiers=Control+Mod3);
+	};
+	interpret Alt_L+Any {
+		virtualModifier= Alt;
+		action = SetMods(modifiers=Alt+Mod3);
+	};
+	interpret Alt_R+Any {
+		virtualModifier= Alt;
+		action = SetMods(modifiers=Alt+Mod3);
+	};
+	interpret Meta_L+Any {
+		virtualModifier= Meta;
+		action = SetMods(modifiers=Meta+Mod3);
+	};
+	interpret Meta_R+Any {
+		virtualModifier= Meta;
+		action = SetMods(modifiers=Meta+Mod3);
+	};
+	interpret Super_L+Any {
+		virtualModifier= Super;
+		action = SetMods(modifiers=Super+Mod3);
+	};
+	interpret Super_R+Any {
+		virtualModifier= Super;
+		action = SetMods(modifiers=Super+Mod3);
+	};
+};
