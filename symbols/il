@@ -71,6 +71,65 @@ xkb_symbols "basic" {
     include "level3(ralt_switch)"
 };
 
+partial alphanumeric_keys
+xkb_symbols "basic_qt_fix" {
+
+    key.type[Group1] = "FOUR_LEVEL_WITH_ALTERNATIVE_BASE_SYMBOLS_QT_FIX";
+
+    key <TLDE>	{[    grave,	 asciitilde	, semicolon,	asciitilde,	U05F3	]};  // geresh
+    key <AE01>	{[ 	 1,	 exclam		, 1,		exclam			]};
+    key <AE02>	{[ 	 2,	 at		, 2,		at			]};
+    key <AE03>	{[ 	 3,	 numbersign	, 3,		numbersign,	EuroSign]};
+    key <AE04>	{[ 	 4,	 dollar		, 4,		dollar,		NewSheqelSign	]};
+    key <AE05>	{[ 	 5,	 percent	, 5,		percent,	degree	]};
+    key <AE06>	{[ 	 6,	 asciicircum	, 6,		asciicircum,	U05AB	]};  // ole
+    key <AE07>	{[ 	 7,	 ampersand	, 7,		ampersand,	U05BD	]};  // meteg
+    key <AE08>	{[ 	 8,	 asterisk	, 8,		asterisk,	multiply]};
+    key <AE09>	{[ 	 9,	 parenleft	, 9,		parenright,	U200E	]};  // LRM
+    key <AE10>	{[ 	 0,	 parenright	, 0,		parenleft,	U200F	]};  // RLM
+    key <AE11>	{[    minus,	 underscore	, minus,	underscore,	U05BE	]};  // maqaf
+    key <AE12>	{[    equal,	 plus		, equal,	plus,		endash	]};
+
+    key <AD01>	{[ 	 q,	 Q		, slash,		Q,		U05C2	]};  // Sin Dot
+    key <AD02>	{[ 	 w,	 W		, apostrophe,		W,		U05C1	]};  // Shin Dot
+    key <AD03>	{[ 	 e,	 E		, hebrew_qoph,		E,		U05B8	]};  // Qamats
+    key <AD04>	{[ 	 r,	 R		, hebrew_resh,		R,		U05B3	]};  // Hataf Qamats
+    key <AD05>	{[ 	 t,	 T		, hebrew_aleph,	T			]};
+    key <AD06>	{[ 	 y,	 Y		, hebrew_tet,		Y,		U05F0	]};  // Yiddish Double Vav
+    key <AD07>	{[ 	 u,	 U		, hebrew_waw,		U,		U05B9	]};  // Holam
+    key <AD08>	{[ 	 i,	 I		, hebrew_finalnun,	I			]};
+    key <AD09>	{[ 	 o,	 O		, hebrew_finalmem,	O			]};
+    key <AD10>	{[ 	 p,	 P		, hebrew_pe,		P,		U05B7	]};  // Patah
+    key <AD11>	{[  bracketleft,  braceleft	, bracketright,	braceright,	U05B2	]}; // Hataf Patah
+    key <AD12>	{[  bracketright, braceright	, bracketleft,		braceleft,	U05BF	]}; // Rafe
+
+    key <AC01>	{[ 	 a,	 A		, hebrew_shin,		A,		U05B0	]};  // shva
+    key <AC02>	{[ 	 s,	 S		, hebrew_dalet,	S,		U05BC	]};  // dagesh
+    key <AC03>	{[ 	 d,	 D		, hebrew_gimel,	D			]};
+    key <AC04>	{[ 	 f,	 F		, hebrew_kaph,		F			]};
+    key <AC05>	{[ 	 g,	 G		, hebrew_ayin,		G,		U05F1	]};  // Yiddish vav yod
+    key <AC06>	{[ 	 h,	 H		, hebrew_yod,		H,		U05F2	]};  // Yiddish double yod
+    key <AC07>	{[ 	 j,	 J		, hebrew_chet,		J,		U05B4	]};  // hiriq
+    key <AC08>	{[ 	 k,	 K		, hebrew_lamed,	K			]};
+    key <AC09>	{[ 	 l,	 L		, hebrew_finalkaph,	L,		rightdoublequotemark	]};
+    key <AC10>	{[  semicolon,	 colon		, hebrew_finalpe,	colon,		doublelowquotemark	]};
+    key <AC11>	{[  apostrophe,	 quotedbl	, comma,		quotedbl,	U05F4	]}; // Gershayim
+    key <BKSL>	{[  backslash,	 bar		, backslash,		bar,		U05BB	]}; // Qubuts
+
+    key <AB01>	{[ 	 z,	 Z		, hebrew_zain,		Z			]};
+    key <AB02>	{[ 	 x,	 X		, hebrew_samech,	X,		U05B6	]};  // segol
+    key <AB03>	{[ 	 c,	 C		, hebrew_bet,		C,		U05B1	]};  // hataf segol
+    key <AB04>	{[ 	 v,	 V		, hebrew_he,		V			]};
+    key <AB05>	{[ 	 b,	 B		, hebrew_nun,		B,		none,		U05C6	]};  // nun hafukha
+    key <AB06>	{[ 	 n,	 N		, hebrew_mem,		N			]};
+    key <AB07>	{[ 	 m,	 M		, hebrew_zade,		M,		U05B5	]};  // tsere
+    key <AB08>	{[    comma,	 less		, hebrew_taw,		greater,	rightsinglequotemark	]};
+    key <AB09>	{[   period,	 greater	, hebrew_finalzade,	less,		singlelowquotemark	]};
+    key <AB10>	{[    slash,	 question	, period,		question,	division]};
+
+    include "level3(ralt_switch)"
+};
+
 // This implements part 2 of the Israeli SI-1452 standard (from 2018).
 // Comma, period, slash, and apostrophe are placed where they are in the
 // basic US layout too.  This means that Taw and Finalzade are moved to

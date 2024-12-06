@@ -8318,6 +8318,18 @@
         </configItem>
       </option>
     </group>
+    <group allowMultipleSelection="false">
+      <configItem>
+        <name>shortcuts</name>
+        <description>Force the shortcuts to specific symbols</description>
+      </configItem>
+      <option>
+        <configItem>
+          <name>shortcuts:qwerty</name>
+          <description>Force shortcut symbols to US Qwerty</description>
+        </configItem>
+      </option>
+    </group>
     <group allowMultipleSelection="true">
       <configItem>
         <name>fkeys</name>

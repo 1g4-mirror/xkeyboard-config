@@ -32,6 +32,7 @@ parts = [
     '0038-layout2option_symbols.part',
     '0039-layout3option_symbols.part',
     '0040-layout4option_symbols.part',
+    '0041-option_compat.part',
      # 0042-option_symbols.part is generated from base{.extras}.xml
      # 0043-option_compat.part is generated from base{.extras}.xml
      # 0044-option_types.part is generated from base{.extras}.xml
