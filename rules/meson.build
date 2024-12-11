@@ -17,13 +17,14 @@ parts = [
     '0070-options_keycodes.part',
     '0080-modellayout_geometry.part',
     '0090-model_geometry.part',
+    '0101-model_symbols.part',
+    '0102-@0@.model_symbols.part',
+    '0103-@0@.modellayout_symbols1.part',
     '0130-modellayout_symbols.part',
     '0160-modellayout1_symbols.part',
     '0180-modellayout2_symbols.part',
     '0200-modellayout3_symbols.part',
     '0220-modellayout4_symbols.part',
-    '0260-@0@.model_symbols.part',
-    '0270-@0@.modellayout_symbols1.part',
     '0330-modellayout_compat.part',
     '0340-modellayout1_compat.part',
     '0350-model_types.part',
@@ -79,7 +80,7 @@ if get_option('compat-rules')
   # two sets of files are generated: ml_s.part and mlv_s.part
   # each with the level name in the filename
   lvl_ml_s = {
-    '0': '0120-ml_s.part',
+    '0': '0120-ml_s.part', # FIXME
     '1': '0150-ml1_s.part',
     '2': '0170-ml2_s.part',
     '3': '0190-ml3_s.part',
@@ -87,19 +88,19 @@ if get_option('compat-rules')
   }
 
   lvl_mlv_s = {
-    '0': '0100-mlv_s.part',
-    '1': '0140-ml1v1_s.part',
-    '2': '0230-ml2v2_s.part',
-    '3': '0240-ml3v3_s.part',
-    '4': '0250-ml4v4_s.part',
+    '0': '0135-mlv_s.part',
+    '1': '0165-ml1v1_s.part',
+    '2': '0185-ml2v2_s.part',
+    '3': '0205-ml3v3_s.part',
+    '4': '0225-ml4v4_s.part',
   }
 
   lvl_mlv_s_vendors = {
-    '0': '0111-mlv_s.part',
-    '1': '0141-ml1v1_s.part',
-    '2': '0231-ml2v2_s.part',
-    '3': '0241-ml3v3_s.part',
-    '4': '0251-ml4v4_s.part',
+    '0': '0136-mlv_s.part',
+    '1': '0166-ml1v1_s.part',
+    '2': '0186-ml2v2_s.part',
+    '3': '0206-ml3v3_s.part',
+    '4': '0226-ml4v4_s.part',
   }
 
   foreach lvl: [0, 1, 2, 3, 4]
