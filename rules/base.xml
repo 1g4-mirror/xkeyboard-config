@@ -5067,6 +5067,18 @@
             <description>Korean (101/104-key compatible)</description>
           </configItem>
         </variant>
+        <variant>
+          <configItem>
+            <name>sebeolsik_final</name>
+            <description>Korean (Three-set, 3-91 Final)</description>
+          </configItem>
+        </variant>
+        <variant>
+          <configItem>
+            <name>sebeolsik_390</name>
+            <description>Korean (Three-set, 3-90)</description>
+          </configItem>
+        </variant>
       </variantList>
     </layout>
     <layout>
