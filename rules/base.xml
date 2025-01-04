@@ -4807,6 +4807,17 @@
         </variant>
         <variant>
           <configItem>
+            <name>lontara-phonetic</name>
+            <description>Buginese (Lontara, phonetic)</description>
+            <languageList>
+              <iso639Id>bug</iso639Id>
+              <iso639Id>mak</iso639Id>
+              <iso639Id>mdr</iso639Id>
+            </languageList>
+          </configItem>
+        </variant>
+        <variant>
+          <configItem>
             <name>javanese</name>
             <description>Javanese</description>
           </configItem>
