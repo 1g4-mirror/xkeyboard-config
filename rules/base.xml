@@ -6659,6 +6659,12 @@
         </variant>
         <variant>
           <configItem>
+            <name>alt_dvp</name>
+            <description>Turkish (Alt-Programmer Dvorak)</description>
+          </configItem>
+        </variant>
+        <variant>
+          <configItem>
             <name>ku</name>
             <!-- Keyboard indicator for Kurdish layouts -->
             <shortDescription>ku</shortDescription>
