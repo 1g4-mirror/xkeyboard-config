@@ -34,7 +34,7 @@ class Header:
             return self
 
 
-def handle_file(path: Path) -> tuple[Header, Path]:
+def handle_file(path: Path, counter: int) -> tuple[Header, Path]:
     """
     Return a tuple of (header, path) for the file at path.
     If the file does not have a header, the header is the empty string.
@@ -49,19 +49,31 @@ def handle_file(path: Path) -> tuple[Header, Path]:
             # Get merge mode: we do not want to mix rules sets with
             # explicit and implicit merge modes.
             has_explicit_merge_mode: bool | None = None
+            has_inet_kbds_group = False
             for line in fd:
                 if line.startswith("! "):
                     break
                 entry = line.split("//")[0].split()
                 if not entry:
                     continue
+                has_inet_kbds_group |= "$inetmediakbds" in entry
                 section = entry[-1]
                 if section.startswith("+") or section.startswith("|"):
                     has_explicit_merge_mode = True
                 # Ensure any explicit merge mode takes precedence
                 elif has_explicit_merge_mode is None:
                     has_explicit_merge_mode = False
-            return header.set_merge_mode(bool(has_explicit_merge_mode)), path
+            # [HACK] Special case for `model = symbols`
+            if header.key == ("!", "model", "=", "symbols"):
+                header = dataclasses.replace(header, key=header.key + (str(counter),))
+            # [HACK] Special case for `$inetmediakbds jp = +jp(henkan)`.
+            elif (
+                header.key == ("!", "model", "layout", "=", "symbols")
+                and has_inet_kbds_group
+            ):
+                header = dataclasses.replace(header, key=header.key + (str(counter),))
+            header = header.set_merge_mode(bool(has_explicit_merge_mode))
+            return header, path
         else:
             return Header.empty(), path
 
@@ -94,10 +106,10 @@ def merge(dest: TextIO, files):
     sections: dict[tuple[str, ...], list[Path]] = defaultdict(
         list, ((h.key, []) for h in section_names)
     )
-    for path in files:
+    for n, path in enumerate(files):
         # Files may exist in srcdir or builddir, depending whether they're
         # generated
-        header, path = handle_file(path)
+        header, path = handle_file(path, n)
         if header.key not in sections:
             section_names.append(header)
         sections[header.key].append(path)

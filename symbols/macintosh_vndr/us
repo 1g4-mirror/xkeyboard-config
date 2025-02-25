@@ -60,7 +60,4 @@ default xkb_symbols "extended" {
     key <SPCE> {	[  space			]	};
 
     include "eurosign(e)"
-    include "keypad(overlay)"
-
-    key <KPEQ> {	[  equal			]	};
 };

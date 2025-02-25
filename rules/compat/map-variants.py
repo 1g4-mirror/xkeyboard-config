@@ -120,11 +120,11 @@ def write_rules(
 ):
     index = f"[{number}]" if number > 0 else ""
     if write_header:
-        variant = f"\t\tvariant{index}" if expect_variant else "\t\t"
+        variant = f"\tvariant{index}" if expect_variant else "\t"
         dest.write(f"! model		layout{index}{variant}	=	symbols\n")
 
     # symbols is
-    #   +layout(variant):2
+    #   +layout(variant):n
     # and where the number is 1, we have a base and drop the suffix, i.e.
     # the above becomes
     #   pc+layout(variant)
@@ -142,14 +142,10 @@ def write_rules(
         else:
             second_layout = str(l2) if l2.variant else f"{l2.layout}%(v{index})"
         second_layout = second_layout.replace("[%i]", index)
-        if number <= 1:
-            base = l2.symbols_prefix or "pc"
-        else:
-            base = ""
         model = l1.model if l1.model != "*" else "*\t"
         dest.write(
-            "  {}	{}{}	=	{}+{}{}\n".format(
-                model, l1.layout, variant, base, second_layout, suffix
+            "  {}	{}{}	=	+{}{}\n".format(
+                model, l1.layout, variant, second_layout, suffix
             )
         )
 
