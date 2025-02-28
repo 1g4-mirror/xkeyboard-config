@@ -1,4 +1,7 @@
 ! model		layout[4]	=	symbols
+  applealu_jis	jp			=	+macintosh_vndr/jp(mac):4
+  applealu_jis	us			=	+macintosh_vndr/jp(usmac):4
+  applealu_iso	us			=	+macintosh_vndr/us(intl):4
  $applealu	$macvendorlayouts	=	+macintosh_vndr/%l[4]:4
  $sun		$sun_custom	=	+sun_vndr/%l[4]%(v[4]):4
   *		*		=	+%l[4]%(v[4]):4

@@ -4,7 +4,7 @@ xkb_symbols "basic" {
     // Describes the differences between a very simple International English
     // keyboard and a very simple U.K. keyboard layout
 
-    include "macintosh_vndr/us(applealu_iso)"
+    include "macintosh_vndr/us(intl)"
 
     name[Group1]= "United Kingdom - Mac";
 
