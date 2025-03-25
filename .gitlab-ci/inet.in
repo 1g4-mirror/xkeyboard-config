@@ -112,6 +112,7 @@ xkb_symbols "evdev" {
     // <ZEHA> is sometimes used for touchpad toggle keys, while the usual
     // Japanese Henkaku/Zankaku keys use <HZTG>.
     key <ZEHA>   {      [ XF86TouchpadToggle    ]       };
+    key <FK24>   {      [ F24, XF86TouchpadToggle ], type[Group1] = "PC_CONTROL_SUPER_LEVEL2" };
 
 //  key <I120>   {      [ ]       }; // KEY_MACRO
     key <I126>   {      [ plusminus             ]       };
@@ -197,6 +198,7 @@ xkb_symbols "evdev" {
     key <FK16>   {      [ XF86Launch7       ]       };
     key <FK17>   {      [ XF86Launch8       ]       };
     key <FK18>   {      [ XF86Launch9       ]       };
+    key <FK19>   {      [ F19               ]       };
 
     @evdevsyms@
 };
