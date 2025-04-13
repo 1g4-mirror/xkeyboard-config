@@ -4,9 +4,9 @@ xkb_symbols "basic" {
     // Describes the differences between a very simple International English
     // keyboard and a very simple U.K. keyboard layout
 
-    include "macintosh_vndr/us(applealu_iso)"
+    include "macintosh_vndr/us(iso)"
 
-    name[Group1]= "United Kingdom - Mac";
+    name[Group1]= "English (United Kingdom, Macintosh)";
 
     key <AE02> {	[               2,              at,         EuroSign	]	};
     key <AE03> {	[               3,        sterling,       numbersign	]	};
