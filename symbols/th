@@ -195,3 +195,67 @@ xkb_symbols "olpc" {
 
     include "group(olpc)"
 };
+
+// Manoonchai layout, by Pawat Nakpiphatkul <guitar.pawat@gmail.com>.
+// From https://github.com/Manoonchai/Manoonchai/releases/tag/v1.0
+partial alphanumeric_keys
+xkb_symbols "mnc" {
+
+    name[Group1]= "Thai (Manoonchai)";
+
+
+    key <TLDE>  {[ grave,               asciitilde,         grave,              Voidsymbol  ]};
+    key <AE01>  {[ 1,                   exclam,             Thai_leknung,       Voidsymbol  ]};
+    key <AE02>  {[ 2,                   at,                 Thai_leksong,       Voidsymbol  ]};
+    key <AE03>  {[ 3,                   numbersign,         Thai_leksam,        Voidsymbol  ]};
+    key <AE04>  {[ 4,                   dollar,             Thai_leksi,         Voidsymbol  ]};
+    key <AE05>  {[ 5,                   percent,            Thai_lekha,         Voidsymbol  ]};
+    key <AE06>  {[ 6,                   asciicircum,        Thai_lekhok,        Voidsymbol  ]};
+    key <AE07>  {[ 7,                   ampersand,          Thai_lekchet,       Voidsymbol  ]};
+    key <AE08>  {[ 8,                   asterisk,           Thai_lekpaet,       Voidsymbol  ]};
+    key <AE09>  {[ 9,                   parenleft,          Thai_lekkao,        Voidsymbol  ]};
+    key <AE10>  {[ 0,                   parenright,         Thai_leksun,        Voidsymbol  ]};
+    key <AE11>  {[ minus,               underscore,         division,           Voidsymbol  ]};
+    key <AE12>  {[ equal,               plus,               multiply,           Voidsymbol  ]};
+
+    key <AD01>  {[ Thai_saraaimaimuan,  Thai_thophuthao,    Voidsymbol,         Voidsymbol  ]};
+    key <AD02>  {[ Thai_totao,          Thai_topatak,       Voidsymbol,         Voidsymbol  ]};
+    key <AD03>  {[ Thai_hohip,          Thai_soso,          Voidsymbol,         Voidsymbol  ]};
+    key <AD04>  {[ Thai_loling,         Thai_yoying,        Voidsymbol,         Voidsymbol  ]};
+    key <AD05>  {[ Thai_sosua,          Thai_fofan,         Voidsymbol,         Voidsymbol  ]};
+    key <AD06>  {[ Thai_popla,          Thai_choching,      Voidsymbol,         Voidsymbol  ]};
+    key <AD07>  {[ Thai_maihanakat,     Thai_saraue,        Thai_phinthu,       Voidsymbol  ]};
+    key <AD08>  {[ Thai_kokai,          Thai_thothong,      Voidsymbol,         Voidsymbol  ]};
+    key <AD09>  {[ Thai_sarai,          Thai_thothan,       Voidsymbol,         Voidsymbol  ]};
+    key <AD10>  {[ Thai_bobaimai,       Thai_dochada,       Voidsymbol,         Voidsymbol  ]};
+    key <AD11>  {[ Thai_maitaikhu,      Thai_khorakhang,    bracketleft,        braceleft   ]};
+    key <AD12>  {[ Thai_lochula,        Thai_thonangmontho, bracketright,       braceright  ]};
+
+    key <AC01>  {[ Thai_ngongu,         Thai_sorusi,        U25CC,              Voidsymbol  ]}; // ◌
+    key <AC02>  {[ Thai_sarae,          Thai_thothung,      U0E4F,              Voidsymbol  ]}; // ๏
+    key <AC03>  {[ Thai_rorua,          Thai_saraae,        U0E5B,              Voidsymbol  ]}; // ๛
+    key <AC04>  {[ Thai_nonu,           Thai_chochang,      Thai_baht,          Voidsymbol  ]};
+    key <AC05>  {[ Thai_moma,           Thai_phophan,       Voidsymbol,         Voidsymbol  ]};
+    key <AC06>  {[ Thai_oang,           Thai_phophung,      Thai_nikhahit,      Voidsymbol  ]};
+    key <AC07>  {[ Thai_saraaa,         Thai_saraam,        Thai_lakkhangyao,   Voidsymbol  ]};
+    key <AC08>  {[ Thai_maiek,          Thai_khokhai,       Thai_khokhuat,      Voidsymbol  ]};
+    key <AC09>  {[ Thai_maitho,         Thai_sarao,         Voidsymbol,         Voidsymbol  ]};
+    key <AC10>  {[ Thai_wowaen,         Thai_phosamphao,    semicolon,          colon       ]};
+    key <AC11>  {[ Thai_sarauee,        quotedbl,           apostrophe,         quotedbl    ]};
+    key <BKSL>  {[ Thai_paiyannoi,      Thai_chochoe,       backslash,          bar         ]};
+
+    key <AB01>  {[ Thai_sarau,          Thai_ru,            Thai_lu,            Voidsymbol  ]};
+    key <AB02>  {[ Thai_saraaimaimalai, Thai_fofa,          Voidsymbol,         Voidsymbol  ]};
+    key <AB03>  {[ Thai_thothahan,      Thai_maiyamok,      U0E5A,              Voidsymbol  ]}; // ๚
+    key <AB04>  {[ Thai_yoyak,          Thai_nonen,         Voidsymbol,         Voidsymbol  ]};
+    key <AB05>  {[ Thai_chochan,        Thai_maitri,        Voidsymbol,         Voidsymbol  ]};
+    key <AB06>  {[ Thai_khokhwai,       Thai_maichattawa,   Thai_khokhon,       Voidsymbol  ]};
+    key <AB07>  {[ Thai_saraii,         Thai_thanthakhat,   U0E4E,              Voidsymbol  ]}; //  ๎
+    key <AB08>  {[ Thai_dodek,          Thai_sosala,        comma,              less        ]};
+    key <AB09>  {[ Thai_saraa,          Thai_honokhuk,      period,             greater     ]};
+    key <AB10>  {[ Thai_sarauu,         question,           slash,              question    ]};
+    key <SPCE>  {[ space,               space,              space,              space       ]};
+    key <KPDL>  {[ period,              period,             period,             period      ]};
+
+    include "level3(ralt_switch)"
+};
