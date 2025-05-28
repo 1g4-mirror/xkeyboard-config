@@ -12,57 +12,57 @@ default partial alphanumeric_keys
 xkb_symbols "basic" {
    name[Group1]= "Dari";
 
-   key <TLDE> { [ 0x100200d, 0x10000f7, dead_tilde ] };
-   key <AE01> { [ 0x10006f1, exclam, 0x1000060 ] };
-   key <AE02> { [ 0x10006f2, 0x100066c, 0x1000040 ] };
-   key <AE03> { [ 0x10006f3, 0x100066b, numbersign ] };
-   key <AE04> { [ 0x10006f4, 0x100e60b, 0x1000024] };
-   key <AE05> { [ 0x10006f5, 0x100066a, 0x1000025 ] };
-   key <AE06> { [ 0x10006f6, multiply, 0x100005e ] };
-   key <AE07> { [ 0x10006f7, Arabic_comma, 0x1000026 ] };
-   key <AE08> { [ 0x10006f8, asterisk, 0x1002022 ] };
-   key <AE09> { [ 0x10006f9, 0x1000029, 0x100200e ] };
-   key <AE10> { [ 0x10006f0, 0x1000028, 0x100200f ] };
-   key <AE11> { [ minus, Arabic_tatweel, 0x100005f ] };
+   key <TLDE> { [ U200D, U00F7, dead_tilde ] };
+   key <AE01> { [ U06F1, exclam, U0060 ] };
+   key <AE02> { [ U06F2, U066C, U0040 ] };
+   key <AE03> { [ U06F3, U066B, numbersign ] };
+   key <AE04> { [ U06F4, UE60B, U0024] };
+   key <AE05> { [ U06F5, U066A, U0025 ] };
+   key <AE06> { [ U06F6, multiply, U005E ] };
+   key <AE07> { [ U06F7, Arabic_comma, U0026 ] };
+   key <AE08> { [ U06F8, asterisk, U2022 ] };
+   key <AE09> { [ U06F9, U0029, U200E ] };
+   key <AE10> { [ U06F0, U0028, U200F ] };
+   key <AE11> { [ minus, Arabic_tatweel, U005F ] };
    key <AE12> { [ equal, plus ] };
 
-   key <AD01> { [ Arabic_dad, Arabic_sukun, 0x10000b0 ] };
+   key <AD01> { [ Arabic_dad, Arabic_sukun, U00B0 ] };
    key <AD02> { [ Arabic_sad, Arabic_dammatan ] };
-   key <AD03> { [ Arabic_theh, Arabic_kasratan, 0x10020ac ] };
-   key <AD04> { [ Arabic_qaf, Arabic_fathatan, 0x100fd3e ] };
-   key <AD05> { [ Arabic_feh, Arabic_damma, 0x100fd3f ] };
-   key <AD06> { [ Arabic_ghain, Arabic_kasra, 0x100e656] };
-   key <AD07> { [ Arabic_ain, Arabic_fatha, 0x100e659] };
-   key <AD08> { [ Arabic_heh, Arabic_shadda, 0x1000655] };
-   key <AD09> { [ Arabic_khah, bracketright, 0x1000027] };
-   key <AD10> { [ Arabic_hah, bracketleft, 0x1000022] };
-   key <AD11> { [ Arabic_jeem, braceright, 0x1000681 ] };
-   key <AD12> { [ 0x1000686, braceleft, 0x1000685 ] };
+   key <AD03> { [ Arabic_theh, Arabic_kasratan, U20AC ] };
+   key <AD04> { [ Arabic_qaf, Arabic_fathatan, UFD3E ] };
+   key <AD05> { [ Arabic_feh, Arabic_damma, UFD3F ] };
+   key <AD06> { [ Arabic_ghain, Arabic_kasra, UE656] };
+   key <AD07> { [ Arabic_ain, Arabic_fatha, UE659] };
+   key <AD08> { [ Arabic_heh, Arabic_shadda, U0655] };
+   key <AD09> { [ Arabic_khah, bracketright, U0027] };
+   key <AD10> { [ Arabic_hah, bracketleft, U0022] };
+   key <AD11> { [ Arabic_jeem, braceright, U0681 ] };
+   key <AD12> { [ U0686, braceleft, U0685 ] };
 
-   key <AC01> { [ Arabic_sheen, Arabic_hamzaonwaw, 0x100069a ] };
-   key <AC02> { [ Arabic_seen, Arabic_hamzaonyeh, 0x10006cd ] };
-   key <AC03> { [ 0x10006cc, Arabic_yeh, 0x1000649 ] };
-   key <AC04> { [ Arabic_beh, Arabic_hamzaunderalef, 0x10006d0 ] };
-   key <AC05> { [ Arabic_lam, Arabic_hamzaonalef, 0x10006b7 ] };
-   key <AC06> { [ Arabic_alef, Arabic_maddaonalef, 0x1000671 ] };
-   key <AC07> { [ Arabic_teh, Arabic_tehmarbuta, 0x100067c ] };
-   key <AC08> { [ Arabic_noon, 0x10000bb, 0x10006bc ] };
-   key <AC09> { [ Arabic_meem, 0x10000ab, 0x10006ba ] };
-   key <AC10> { [ 0x10006a9, colon, 0x100003b ] };
-   key <AC11> { [ 0x10006af, Arabic_semicolon, 0x10006ab ] };
+   key <AC01> { [ Arabic_sheen, Arabic_hamzaonwaw, U069A ] };
+   key <AC02> { [ Arabic_seen, Arabic_hamzaonyeh, U06CD ] };
+   key <AC03> { [ U06CC, Arabic_yeh, U0649 ] };
+   key <AC04> { [ Arabic_beh, Arabic_hamzaunderalef, U06D0 ] };
+   key <AC05> { [ Arabic_lam, Arabic_hamzaonalef, U06B7 ] };
+   key <AC06> { [ Arabic_alef, Arabic_maddaonalef, U0671 ] };
+   key <AC07> { [ Arabic_teh, Arabic_tehmarbuta, U067C ] };
+   key <AC08> { [ Arabic_noon, U00BB, U06BC ] };
+   key <AC09> { [ Arabic_meem, U00AB, U06BA ] };
+   key <AC10> { [ U06A9, colon, U003B ] };
+   key <AC11> { [ U06AF, Arabic_semicolon, U06AB ] };
 
-   key <BKSL> { [ backslash, bar, 0x100003f ] };
+   key <BKSL> { [ backslash, bar, U003F ] };
 
-   key <AB01> { [ Arabic_zah, Arabic_kaf, 0x10006d2] };
-   key <AB02> { [ Arabic_tah, 0x1000653 , 0x1000691 ] };
-   key <AB03> { [ Arabic_zain, 0x1000698, 0x1000696 ] };
-   key <AB04> { [ Arabic_ra, 0x1000670 , 0x1000693 ] };
-   key <AB05> { [ Arabic_thal, 0x100200c, 0x1000688  ] };
-   key <AB06> { [ Arabic_dal, 0x1000654, 0x1000689 ] };
-   key <AB07> { [ 0x100067e, Arabic_hamza, 0x1000679 ] };
-   key <AB08> { [ Arabic_waw, greater, 0x100002c ] };
-   key <AB09> { [ period, less, 0x10006c7 ] };
-   key <AB10> { [ slash, Arabic_question_mark, 0x10006c9 ] };
+   key <AB01> { [ Arabic_zah, Arabic_kaf, U06D2] };
+   key <AB02> { [ Arabic_tah, U0653 , U0691 ] };
+   key <AB03> { [ Arabic_zain, U0698, U0696 ] };
+   key <AB04> { [ Arabic_ra, U0670 , U0693 ] };
+   key <AB05> { [ Arabic_thal, U200C, U0688  ] };
+   key <AB06> { [ Arabic_dal, U0654, U0689 ] };
+   key <AB07> { [ U067E, Arabic_hamza, U0679 ] };
+   key <AB08> { [ Arabic_waw, greater, U002C ] };
+   key <AB09> { [ period, less, U06C7 ] };
+   key <AB10> { [ slash, Arabic_question_mark, U06C9 ] };
 
    include "nbsp(zwnj2nb3)"
    include "level3(ralt_switch)"
@@ -72,57 +72,57 @@ partial alphanumeric_keys
 xkb_symbols "ps" {
    name[Group1]= "Pashto";
 
-   key <TLDE> { [ 0x100200d, 0x10000f7, dead_tilde ] };
-   key <AE01> { [ 0x10006f1, exclam, 0x1000060 ] };
-   key <AE02> { [ 0x10006f2, 0x100066c, 0x1000040 ] };
-   key <AE03> { [ 0x10006f3, 0x100066b, numbersign ] };
-   key <AE04> { [ 0x10006f4, 0x100e60b, 0x1000024] };
-   key <AE05> { [ 0x10006f5, 0x100066a, 0x1000025 ] };
-   key <AE06> { [ 0x10006f6, multiply, 0x100005e ] };
-   key <AE07> { [ 0x10006f7, 0x10000bb, 0x1000026 ] };
-   key <AE08> { [ 0x10006f8, 0x10000ab, 0x1002022 ] };
-   key <AE09> { [ 0x10006f9, 0x1000029, 0x100200e ] };
-   key <AE10> { [ 0x10006f0, 0x1000028, 0x100200f ] };
-   key <AE11> { [ minus, Arabic_tatweel, 0x100005f ] };
+   key <TLDE> { [ U200D, U00F7, dead_tilde ] };
+   key <AE01> { [ U06F1, exclam, U0060 ] };
+   key <AE02> { [ U06F2, U066C, U0040 ] };
+   key <AE03> { [ U06F3, U066B, numbersign ] };
+   key <AE04> { [ U06F4, UE60B, U0024] };
+   key <AE05> { [ U06F5, U066A, U0025 ] };
+   key <AE06> { [ U06F6, multiply, U005E ] };
+   key <AE07> { [ U06F7, U00BB, U0026 ] };
+   key <AE08> { [ U06F8, U00AB, U2022 ] };
+   key <AE09> { [ U06F9, U0029, U200E ] };
+   key <AE10> { [ U06F0, U0028, U200F ] };
+   key <AE11> { [ minus, Arabic_tatweel, U005F ] };
    key <AE12> { [ equal, plus ] };
 
-   key <AD01> { [ Arabic_dad, Arabic_sukun, 0x10000b0 ] };
-   key <AD02> { [ Arabic_sad, Arabic_dammatan, 0x1000653 ] };
-   key <AD03> { [ Arabic_theh, Arabic_kasratan, 0x10020ac ] };
-   key <AD04> { [ Arabic_qaf, Arabic_fathatan, 0x100fd3e ] };
-   key <AD05> { [ Arabic_feh, Arabic_damma, 0x100fd3f ] };
-   key <AD06> { [ Arabic_ghain, Arabic_kasra, 0x100e656] };
-   key <AD07> { [ Arabic_ain, Arabic_fatha, 0x100e659] };
-   key <AD08> { [ Arabic_heh, Arabic_shadda, 0x1000670] };
-   key <AD09> { [ Arabic_khah, 0x1000681, 0x1000027] };
-   key <AD10> { [ Arabic_hah, 0x1000685, 0x1000022] };
-   key <AD11> { [ Arabic_jeem, 0x100005d, 0x100007d ] };
-   key <AD12> { [ 0x1000686, 0x100005b, 0x100007b ] };
+   key <AD01> { [ Arabic_dad, Arabic_sukun, U00B0 ] };
+   key <AD02> { [ Arabic_sad, Arabic_dammatan, U0653 ] };
+   key <AD03> { [ Arabic_theh, Arabic_kasratan, U20AC ] };
+   key <AD04> { [ Arabic_qaf, Arabic_fathatan, UFD3E ] };
+   key <AD05> { [ Arabic_feh, Arabic_damma, UFD3F ] };
+   key <AD06> { [ Arabic_ghain, Arabic_kasra, UE656] };
+   key <AD07> { [ Arabic_ain, Arabic_fatha, UE659] };
+   key <AD08> { [ Arabic_heh, Arabic_shadda, U0670] };
+   key <AD09> { [ Arabic_khah, U0681, U0027] };
+   key <AD10> { [ Arabic_hah, U0685, U0022] };
+   key <AD11> { [ Arabic_jeem, U005D, U007D ] };
+   key <AD12> { [ U0686, U005B, U007B ] };
 
-   key <AC01> { [ Arabic_sheen, 0x100069a ] };
-   key <AC02> { [ Arabic_seen, Arabic_hamzaonyeh, 0x10006d2 ] };
-   key <AC03> { [ 0x10006cc, Arabic_yeh, 0x1000649 ] };
-   key <AC04> { [ Arabic_beh, 0x100067e, 0x10006ba ] };
-   key <AC05> { [ Arabic_lam, Arabic_hamzaonalef, 0x10006b7 ] };
-   key <AC06> { [ Arabic_alef, Arabic_maddaonalef, 0x1000671 ] };
-   key <AC07> { [ Arabic_teh, 0x100067c, 0x1000679 ] };
-   key <AC08> { [ Arabic_noon, 0x10006bc, 0x100003e ] };
-   key <AC09> { [ Arabic_meem, 0x1000629, 0x100003c ] };
-   key <AC10> { [ 0x10006a9, colon, 0x1000643 ] };
-   key <AC11> { [ 0x10006ab, Arabic_semicolon, 0x10006af ] };
+   key <AC01> { [ Arabic_sheen, U069A ] };
+   key <AC02> { [ Arabic_seen, Arabic_hamzaonyeh, U06D2 ] };
+   key <AC03> { [ U06CC, Arabic_yeh, U0649 ] };
+   key <AC04> { [ Arabic_beh, U067E, U06BA ] };
+   key <AC05> { [ Arabic_lam, Arabic_hamzaonalef, U06B7 ] };
+   key <AC06> { [ Arabic_alef, Arabic_maddaonalef, U0671 ] };
+   key <AC07> { [ Arabic_teh, U067C, U0679 ] };
+   key <AC08> { [ Arabic_noon, U06BC, U003E ] };
+   key <AC09> { [ Arabic_meem, U0629, U003C ] };
+   key <AC10> { [ U06A9, colon, U0643 ] };
+   key <AC11> { [ U06AB, Arabic_semicolon, U06AF ] };
 
-   key <BKSL> { [ backslash, 0x100002a, 0x100007c ] };
+   key <BKSL> { [ backslash, U002A, U007C ] };
 
-   key <AB01> { [ 0x10006cd, 0x1000638, 0x100003f] };
-   key <AB02> { [ 0x10006d0, 0x1000637, 0x100003b ] };
-   key <AB03> { [ Arabic_zain, 0x1000698, 0x1000655 ] };
-   key <AB04> { [ Arabic_ra, 0x1000621, 0x1000654 ] };
-   key <AB05> { [ Arabic_thal, 0x100200c, 0x1000625  ] };
-   key <AB06> { [ Arabic_dal, 0x1000689, 0x1000688 ] };
-   key <AB07> { [ 0x1000693, 0x1000624, 0x1000691 ] };
-   key <AB08> { [ Arabic_waw, 0x100060c, 0x100002c ] };
-   key <AB09> { [ 0x1000696, 0x100002e, 0x10006c7 ] };
-   key <AB10> { [ slash, Arabic_question_mark, 0x10006c9 ] };
+   key <AB01> { [ U06CD, U0638, U003F] };
+   key <AB02> { [ U06D0, U0637, U003B ] };
+   key <AB03> { [ Arabic_zain, U0698, U0655 ] };
+   key <AB04> { [ Arabic_ra, U0621, U0654 ] };
+   key <AB05> { [ Arabic_thal, U200C, U0625  ] };
+   key <AB06> { [ Arabic_dal, U0689, U0688 ] };
+   key <AB07> { [ U0693, U0624, U0691 ] };
+   key <AB08> { [ Arabic_waw, U060C, U002C ] };
+   key <AB09> { [ U0696, U002E, U06C7 ] };
+   key <AB10> { [ slash, Arabic_question_mark, U06C9 ] };
 
    include "nbsp(zwnj2nb3)"
    include "level3(ralt_switch)"
@@ -132,57 +132,57 @@ partial alphanumeric_keys
 xkb_symbols "uz" {
    name[Group1]= "Uzbek (Afghanistan)";
 
-   key <TLDE> { [ 0x100200d, 0x10000f7, dead_tilde ] };
-   key <AE01> { [ 0x10006f1, exclam, 0x1000060 ] };
-   key <AE02> { [ 0x10006f2, 0x100066c, 0x1000040 ] };
-   key <AE03> { [ 0x10006f3, 0x100066b, numbersign ] };
-   key <AE04> { [ 0x10006f4, 0x100e60b, 0x1000024] };
-   key <AE05> { [ 0x10006f5, 0x100066a, 0x1000025 ] };
-   key <AE06> { [ 0x10006f6, multiply, 0x100005e ] };
-   key <AE07> { [ 0x10006f7, Arabic_comma, 0x1000026 ] };
-   key <AE08> { [ 0x10006f8, asterisk, 0x1002022 ] };
-   key <AE09> { [ 0x10006f9, 0x1000029, 0x100200e ] };
-   key <AE10> { [ 0x10006f0, 0x1000028, 0x100200f ] };
-   key <AE11> { [ minus, Arabic_tatweel, 0x100005f ] };
+   key <TLDE> { [ U200D, U00F7, dead_tilde ] };
+   key <AE01> { [ U06F1, exclam, U0060 ] };
+   key <AE02> { [ U06F2, U066C, U0040 ] };
+   key <AE03> { [ U06F3, U066B, numbersign ] };
+   key <AE04> { [ U06F4, UE60B, U0024] };
+   key <AE05> { [ U06F5, U066A, U0025 ] };
+   key <AE06> { [ U06F6, multiply, U005E ] };
+   key <AE07> { [ U06F7, Arabic_comma, U0026 ] };
+   key <AE08> { [ U06F8, asterisk, U2022 ] };
+   key <AE09> { [ U06F9, U0029, U200E ] };
+   key <AE10> { [ U06F0, U0028, U200F ] };
+   key <AE11> { [ minus, Arabic_tatweel, U005F ] };
    key <AE12> { [ equal, plus ] };
 
-   key <AD01> { [ Arabic_dad, Arabic_sukun, 0x10000b0 ] };
-   key <AD02> { [ Arabic_sad, Arabic_dammatan, 0x1000653 ] };
-   key <AD03> { [ Arabic_theh, Arabic_kasratan, 0x10020ac ] };
-   key <AD04> { [ Arabic_qaf, Arabic_fathatan, 0x100fd3e ] };
-   key <AD05> { [ Arabic_feh, Arabic_damma, 0x100fd3f ] };
-   key <AD06> { [ Arabic_ghain, Arabic_kasra, 0x100e656] };
-   key <AD07> { [ Arabic_ain, Arabic_fatha, 0x100e659] };
-   key <AD08> { [ Arabic_heh, Arabic_shadda, 0x1000670] };
-   key <AD09> { [ Arabic_khah, bracketright, 0x1000027] };
-   key <AD10> { [ Arabic_hah, bracketleft, 0x1000022] };
-   key <AD11> { [ Arabic_jeem, braceright, 0x1000681 ] };
-   key <AD12> { [ 0x1000686, braceleft, 0x1000685 ] };
+   key <AD01> { [ Arabic_dad, Arabic_sukun, U00B0 ] };
+   key <AD02> { [ Arabic_sad, Arabic_dammatan, U0653 ] };
+   key <AD03> { [ Arabic_theh, Arabic_kasratan, U20AC ] };
+   key <AD04> { [ Arabic_qaf, Arabic_fathatan, UFD3E ] };
+   key <AD05> { [ Arabic_feh, Arabic_damma, UFD3F ] };
+   key <AD06> { [ Arabic_ghain, Arabic_kasra, UE656] };
+   key <AD07> { [ Arabic_ain, Arabic_fatha, UE659] };
+   key <AD08> { [ Arabic_heh, Arabic_shadda, U0670] };
+   key <AD09> { [ Arabic_khah, bracketright, U0027] };
+   key <AD10> { [ Arabic_hah, bracketleft, U0022] };
+   key <AD11> { [ Arabic_jeem, braceright, U0681 ] };
+   key <AD12> { [ U0686, braceleft, U0685 ] };
 
-   key <AC01> { [ Arabic_sheen, Arabic_hamzaonwaw, 0x100069a ] };
-   key <AC02> { [ Arabic_seen, Arabic_hamzaonyeh, 0x10006cd ] };
-   key <AC03> { [ 0x10006cc, Arabic_yeh, 0x1000649 ] };
-   key <AC04> { [ Arabic_beh, 0x10006d0, 0x1000643 ] };
-   key <AC05> { [ Arabic_lam, Arabic_hamzaonalef, 0x10006b7 ] };
-   key <AC06> { [ Arabic_alef, Arabic_maddaonalef, 0x1000671 ] };
-   key <AC07> { [ Arabic_teh, Arabic_tehmarbuta, 0x100067c ] };
-   key <AC08> { [ Arabic_noon, 0x10000bb, 0x10006bc ] };
-   key <AC09> { [ Arabic_meem, 0x10000ab, 0x10006ba ] };
-   key <AC10> { [ 0x10006a9, colon, 0x100003b ] };
-   key <AC11> { [ 0x10006af, Arabic_semicolon, 0x10006ab ] };
+   key <AC01> { [ Arabic_sheen, Arabic_hamzaonwaw, U069A ] };
+   key <AC02> { [ Arabic_seen, Arabic_hamzaonyeh, U06CD ] };
+   key <AC03> { [ U06CC, Arabic_yeh, U0649 ] };
+   key <AC04> { [ Arabic_beh, U06D0, U0643 ] };
+   key <AC05> { [ Arabic_lam, Arabic_hamzaonalef, U06B7 ] };
+   key <AC06> { [ Arabic_alef, Arabic_maddaonalef, U0671 ] };
+   key <AC07> { [ Arabic_teh, Arabic_tehmarbuta, U067C ] };
+   key <AC08> { [ Arabic_noon, U00BB, U06BC ] };
+   key <AC09> { [ Arabic_meem, U00AB, U06BA ] };
+   key <AC10> { [ U06A9, colon, U003B ] };
+   key <AC11> { [ U06AF, Arabic_semicolon, U06AB ] };
 
-   key <BKSL> { [ backslash, bar, 0x100003f ] };
+   key <BKSL> { [ backslash, bar, U003F ] };
 
-   key <AB01> { [ Arabic_zah, 0x10006c9, 0x10006d2] };
-   key <AB02> { [ Arabic_tah, 0x10006c7, 0x1000691 ] };
-   key <AB03> { [ Arabic_zain, 0x1000698, 0x1000696 ] };
-   key <AB04> { [ Arabic_ra, 0x1000625, 0x1000693 ] };
-   key <AB05> { [ Arabic_thal, 0x100200c, 0x1000688  ] };
-   key <AB06> { [ Arabic_dal, 0x1000654, 0x1000689 ] };
-   key <AB07> { [ 0x100067e, Arabic_hamza, 0x1000679 ] };
-   key <AB08> { [ Arabic_waw, greater, 0x100002c ] };
+   key <AB01> { [ Arabic_zah, U06C9, U06D2] };
+   key <AB02> { [ Arabic_tah, U06C7, U0691 ] };
+   key <AB03> { [ Arabic_zain, U0698, U0696 ] };
+   key <AB04> { [ Arabic_ra, U0625, U0693 ] };
+   key <AB05> { [ Arabic_thal, U200C, U0688  ] };
+   key <AB06> { [ Arabic_dal, U0654, U0689 ] };
+   key <AB07> { [ U067E, Arabic_hamza, U0679 ] };
+   key <AB08> { [ Arabic_waw, greater, U002C ] };
    key <AB09> { [ period, less ] };
-   key <AB10> { [ slash, Arabic_question_mark, 0x1000655 ] };
+   key <AB10> { [ slash, Arabic_question_mark, U0655 ] };
 
    include "nbsp(zwnj2nb3)"
    include "level3(ralt_switch)"
@@ -193,57 +193,57 @@ xkb_symbols "ps-olpc" {
 
    name[Group1]= "Pashto (Afghanistan, OLPC)";
 
-   key <TLDE> { [ 0x100200D, 0x1000654, grave ] }; // zero width joiner, Arabic hamza above
-   key <AE01> { [ 0x10006F1, exclam, asciitilde ] }; // Arabic one
-   key <AE02> { [ 0x10006F2, 0x100066C, at ] }; // Arabic two, Arabic thousands separator
-   key <AE03> { [ 0x10006F3, 0x100066B, numbersign ] }; // Arabic three, Arabic decimal separator
-   key <AE04> { [ 0x10006F4, 0x100060B, dollar ] }; // Arabic four, Afghani sign
-   key <AE05> { [ 0x10006F5, 0x100066A, percent ] }; // Arabic five, Arabic percent sign
-   key <AE06> { [ 0x10006F6, multiply, asciicircum ] }; // Arabic six
-   key <AE07> { [ 0x10006F7, guillemotright, ampersand ] }; // Arabic seven
-   key <AE08> { [ 0x10006F8, guillemotleft, 0x100066D ] }; // Arabic eight, Arabic five-pointed star
-   key <AE09> { [ 0x10006F9, parenright, enfilledcircbullet ] }; // Arabic nine
-   key <AE10> { [ 0x10006F0, parenleft, degree ] }; // Arabic zero
-   key <AE11> { [ minus, 0x1000640, underscore ] }; // Arabic tatweel
+   key <TLDE> { [ U200D, U0654, grave ] }; // zero width joiner, Arabic hamza above
+   key <AE01> { [ U06F1, exclam, asciitilde ] }; // Arabic one
+   key <AE02> { [ U06F2, U066C, at ] }; // Arabic two, Arabic thousands separator
+   key <AE03> { [ U06F3, U066B, numbersign ] }; // Arabic three, Arabic decimal separator
+   key <AE04> { [ U06F4, U060B, dollar ] }; // Arabic four, Afghani sign
+   key <AE05> { [ U06F5, U066A, percent ] }; // Arabic five, Arabic percent sign
+   key <AE06> { [ U06F6, multiply, asciicircum ] }; // Arabic six
+   key <AE07> { [ U06F7, guillemotright, ampersand ] }; // Arabic seven
+   key <AE08> { [ U06F8, guillemotleft, U066D ] }; // Arabic eight, Arabic five-pointed star
+   key <AE09> { [ U06F9, parenright, enfilledcircbullet ] }; // Arabic nine
+   key <AE10> { [ U06F0, parenleft, degree ] }; // Arabic zero
+   key <AE11> { [ minus, U0640, underscore ] }; // Arabic tatweel
    key <AE12> { [ equal, plus, division ] };
 
-   key <AD01> { [ 0x1000636, 0x1000652, EuroSign ] }; // Arabic dad, Arabic sukun
-   key <AD02> { [ 0x1000635, 0x100064C, 0x1000671 ] }; // Arabic sad, Arabic dammatan, Arabic alef walsa
-   key <AD03> { [ 0x100062B, 0x100064D, 0x1000649 ] }; // Arabic theh, Arabic kasratan, Arabic alef maksura initial form
-   key <AD04> { [ 0x1000642, 0x100064B, 0x100200E ] }; // Arabic qaf, Arabic fathatan, left-to-right mark
-   key <AD05> { [ 0x1000641, 0x100064F, 0x100200F ] }; // Arabic feh, Arabic damma, right-to-left mark
-   key <AD06> { [ 0x100063A, 0x1000650, 0x100e653 ] }; // Arabic ghain, Arabic kasra, Arabic alef with madda above
-   key <AD07> { [ 0x1000639, 0x100064E, 0x100e659 ] }; // Arabic ain, Arabic fatha, Arabic zwarakay
-   key <AD08> { [ 0x1000647, 0x1000651, 0x1000670 ] }; // Arabic heh, Arabic shadda, Arabic superscript alef
-   key <AD09> { [ 0x100062E, 0x1000681, apostrophe ] }; // Arabic khah, Arabic hah with hamza above
-   key <AD10> { [ 0x100062D, 0x1000685, quotedbl ] }; // Arabic hah, Arabic hah with three dots above
-   key <AD11> { [ 0x100062C, bracketright, braceleft ] }; // Arabic jeem
-   key <AD12> { [ 0x1000686, bracketleft, braceright ] }; // Arabic tcheh
+   key <AD01> { [ U0636, U0652, EuroSign ] }; // Arabic dad, Arabic sukun
+   key <AD02> { [ U0635, U064C, U0671 ] }; // Arabic sad, Arabic dammatan, Arabic alef walsa
+   key <AD03> { [ U062B, U064D, U0649 ] }; // Arabic theh, Arabic kasratan, Arabic alef maksura initial form
+   key <AD04> { [ U0642, U064B, U200E ] }; // Arabic qaf, Arabic fathatan, left-to-right mark
+   key <AD05> { [ U0641, U064F, U200F ] }; // Arabic feh, Arabic damma, right-to-left mark
+   key <AD06> { [ U063A, U0650, UE653 ] }; // Arabic ghain, Arabic kasra, Arabic alef with madda above
+   key <AD07> { [ U0639, U064E, UE659 ] }; // Arabic ain, Arabic fatha, Arabic zwarakay
+   key <AD08> { [ U0647, U0651, U0670 ] }; // Arabic heh, Arabic shadda, Arabic superscript alef
+   key <AD09> { [ U062E, U0681, apostrophe ] }; // Arabic khah, Arabic hah with hamza above
+   key <AD10> { [ U062D, U0685, quotedbl ] }; // Arabic hah, Arabic hah with three dots above
+   key <AD11> { [ U062C, bracketright, braceleft ] }; // Arabic jeem
+   key <AD12> { [ U0686, bracketleft, braceright ] }; // Arabic tcheh
 
-   key <AC01> { [ 0x1000634, 0x100069A ] }; // Arabic sheen, Arabic seen with dot below and dot above
-   key <AC02> { [ 0x1000633, 0x10006CD ] }; // Arabic seen, Arabic yeh with tail
-   key <AC03> { [ 0x10006CC, 0x100064A, 0x10006D2 ] }; // Farsi yeh, Arabic yeh, Arabic yeh barree
-   key <AC04> { [ 0x1000628, 0x100067E, 0x10006BA ] }; // Arabic beh, Arabic peh, Arabic noon ghunna
-   key <AC05> { [ 0x1000644, 0x1000623, 0x10006B7 ] }; // Arabic lam, Arabic hamza on alef, Arabic alef with hamza above
-   key <AC06> { [ 0x1000627, 0x1000622, 0x1000625 ] }; // Arabic alef, Arabic madda on alef, Arabic alef with hamza below
-   key <AC07> { [ 0x100062A, 0x100067C, 0x1000679 ] }; // Arabic teh, Arabic teh with ring, Arabic tteh
-   key <AC08> { [ 0x1000646, 0x10006BC, greater ] }; // Arabic noon, Arabic noon with ring
-   key <AC09> { [ 0x1000645, 0x1000629, less ] }; // Arabic meem, Arabic teh marbuta
-   key <AC10> { [ 0x10006A9, colon, 0x1000643 ] }; // Arabic keheh, Arabic kaf
-   key <AC11> { [ 0x10006AB, 0x100061B, 0x10006AF ] }; // Arabic kaf with ring, Arabic semicolon, Arabic gaf
+   key <AC01> { [ U0634, U069A ] }; // Arabic sheen, Arabic seen with dot below and dot above
+   key <AC02> { [ U0633, U06CD ] }; // Arabic seen, Arabic yeh with tail
+   key <AC03> { [ U06CC, U064A, U06D2 ] }; // Farsi yeh, Arabic yeh, Arabic yeh barree
+   key <AC04> { [ U0628, U067E, U06BA ] }; // Arabic beh, Arabic peh, Arabic noon ghunna
+   key <AC05> { [ U0644, U0623, U06B7 ] }; // Arabic lam, Arabic hamza on alef, Arabic alef with hamza above
+   key <AC06> { [ U0627, U0622, U0625 ] }; // Arabic alef, Arabic madda on alef, Arabic alef with hamza below
+   key <AC07> { [ U062A, U067C, U0679 ] }; // Arabic teh, Arabic teh with ring, Arabic tteh
+   key <AC08> { [ U0646, U06BC, greater ] }; // Arabic noon, Arabic noon with ring
+   key <AC09> { [ U0645, U0629, less ] }; // Arabic meem, Arabic teh marbuta
+   key <AC10> { [ U06A9, colon, U0643 ] }; // Arabic keheh, Arabic kaf
+   key <AC11> { [ U06AB, U061B, U06AF ] }; // Arabic kaf with ring, Arabic semicolon, Arabic gaf
 
    key <BKSL> { [ backslash, asterisk, bar ] };
 
-   key <AB01> { [ 0x1000638, 0x1000626, question] }; // Arabic zah, Arabic yeh with hamza above
-   key <AB02> { [ 0x10006D0, 0x1000637, semicolon ] }; // Arabic tah, Arabic E
-   key <AB03> { [ 0x1000632, 0x1000698 ] }; // Arabic zain, Arabic jeh
-   key <AB04> { [ 0x1000631, 0x1000621 ] }; // Arabic reh, Arabic hamza
-   key <AB05> { [ 0x1000630, 0x100200C ] }; // Arabic thal, zero width non-joiner
-   key <AB06> { [ 0x100062F, 0x1000689, 0x1000688 ] }; // Arabic dal, Arabic dal with ring, Arabic ddal
-   key <AB07> { [ 0x1000693, 0x1000624, 0x1000691 ] }; // Arabic reh with ring, Arabic waw with hamza above, Arabic rreh
-   key <AB08> { [ 0x1000648, period, comma ] }; // Arabic waw, Arabic comma
-   key <AB09> { [ 0x1000696, 0x100002E, 0x10006C7 ] }; // Arabic reh with dot below and dot above, full stop, Arabic letter U
-   key <AB10> { [ slash, 0x100061F, 0x10006C9 ] }; // Arabic question mark, Arabic kirghiz yu
+   key <AB01> { [ U0638, U0626, question] }; // Arabic zah, Arabic yeh with hamza above
+   key <AB02> { [ U06D0, U0637, semicolon ] }; // Arabic tah, Arabic E
+   key <AB03> { [ U0632, U0698 ] }; // Arabic zain, Arabic jeh
+   key <AB04> { [ U0631, U0621 ] }; // Arabic reh, Arabic hamza
+   key <AB05> { [ U0630, U200C ] }; // Arabic thal, zero width non-joiner
+   key <AB06> { [ U062F, U0689, U0688 ] }; // Arabic dal, Arabic dal with ring, Arabic ddal
+   key <AB07> { [ U0693, U0624, U0691 ] }; // Arabic reh with ring, Arabic waw with hamza above, Arabic rreh
+   key <AB08> { [ U0648, period, comma ] }; // Arabic waw, Arabic comma
+   key <AB09> { [ U0696, U002E, U06C7 ] }; // Arabic reh with dot below and dot above, full stop, Arabic letter U
+   key <AB10> { [ slash, U061F, U06C9 ] }; // Arabic question mark, Arabic kirghiz yu
 
    include "nbsp(zwnj2nb3)"
    include "group(olpc)"
@@ -259,57 +259,57 @@ xkb_symbols "fa-olpc" {
 
    name[Group1]= "Dari (Afghanistan, OLPC)";
 
-   key <TLDE> { [ 0x100200D, division, asciitilde ] }; // zero width joiner
-   key <AE01> { [ 0x10006F1, exclam, grave ] }; // Arabic one
-   key <AE02> { [ 0x10006F2, 0x100066C, at ] }; // Arabic two, Arabic thousands separator
-   key <AE03> { [ 0x10006F3, 0x100066B, numbersign ] }; // Arabic three, Arabic decimal separator
-   key <AE04> { [ 0x10006F4, 0x100060B, dollar ] }; // Arabic four, Afghani sign
-   key <AE05> { [ 0x10006F5, 0x100066A, percent ] }; // Arabic five, Arabic percent sign
-   key <AE06> { [ 0x10006F6, multiply, asciicircum ] }; // Arabic six
-   key <AE07> { [ 0x10006F7, 0x100060C, ampersand ] }; // Arabic seven, Arabic comma
-   key <AE08> { [ 0x10006F8, asterisk, enfilledcircbullet ] }; // Arabic eight
-   key <AE09> { [ 0x10006F9, parenright, 0x100200E ] }; // Arabic nine, left-to-right mark
-   key <AE10> { [ 0x10006F0, parenleft, 0x100200F ] }; // Arabic zero, right-to-left mark
-   key <AE11> { [ minus, 0x1000640, underscore ] }; // Arabic tatweel
+   key <TLDE> { [ U200D, division, asciitilde ] }; // zero width joiner
+   key <AE01> { [ U06F1, exclam, grave ] }; // Arabic one
+   key <AE02> { [ U06F2, U066C, at ] }; // Arabic two, Arabic thousands separator
+   key <AE03> { [ U06F3, U066B, numbersign ] }; // Arabic three, Arabic decimal separator
+   key <AE04> { [ U06F4, U060B, dollar ] }; // Arabic four, Afghani sign
+   key <AE05> { [ U06F5, U066A, percent ] }; // Arabic five, Arabic percent sign
+   key <AE06> { [ U06F6, multiply, asciicircum ] }; // Arabic six
+   key <AE07> { [ U06F7, U060C, ampersand ] }; // Arabic seven, Arabic comma
+   key <AE08> { [ U06F8, asterisk, enfilledcircbullet ] }; // Arabic eight
+   key <AE09> { [ U06F9, parenright, U200E ] }; // Arabic nine, left-to-right mark
+   key <AE10> { [ U06F0, parenleft, U200F ] }; // Arabic zero, right-to-left mark
+   key <AE11> { [ minus, U0640, underscore ] }; // Arabic tatweel
    key <AE12> { [ equal, plus ] };
 
-   key <AD01> { [ 0x1000636, 0x1000652, degree ] }; // Arabic dad, Arabic sukun
-   key <AD02> { [ 0x1000635, 0x100064C ] }; // Arabic sad, Arabic dammatan
-   key <AD03> { [ 0x100062B, 0x100064D, EuroSign ] }; // Arabic theh, Arabic kasratan
-   key <AD04> { [ 0x1000642, 0x100064B, 0x100FD3E ] }; // Arabic qaf, Arabic fathatan, ornate left paren
-   key <AD05> { [ 0x1000641, 0x100064F, 0x100FD3F ] }; // Arabic feh, Arabic damma, ornate right paren
-   key <AD06> { [ 0x100063A, 0x1000650, 0x1000656 ] }; // Arabic ghain, Arabic kasra, Arabic subscript alef
-   key <AD07> { [ 0x1000639, 0x100064E, 0x100e659 ] }; // Arabic ain, Arabic fatha, Arabic zwarakay
-   key <AD08> { [ 0x1000647, 0x1000651, 0x1000655 ] }; // Arabic heh, Arabic shadda, Arabic hamza below
-   key <AD09> { [ 0x100062E, bracketright, apostrophe ] }; // Arabic khah
-   key <AD10> { [ 0x100062D, bracketleft, quotedbl ] }; // Arabic hah
-   key <AD11> { [ 0x100062C, braceright, 0x1000681 ] }; // Arabic jeem, Arabic hah with hamza above
-   key <AD12> { [ 0x1000686, braceleft, 0x1000685 ] }; // Arabic tcheh, Arabic hah with three dots above
+   key <AD01> { [ U0636, U0652, degree ] }; // Arabic dad, Arabic sukun
+   key <AD02> { [ U0635, U064C ] }; // Arabic sad, Arabic dammatan
+   key <AD03> { [ U062B, U064D, EuroSign ] }; // Arabic theh, Arabic kasratan
+   key <AD04> { [ U0642, U064B, UFD3E ] }; // Arabic qaf, Arabic fathatan, ornate left paren
+   key <AD05> { [ U0641, U064F, UFD3F ] }; // Arabic feh, Arabic damma, ornate right paren
+   key <AD06> { [ U063A, U0650, U0656 ] }; // Arabic ghain, Arabic kasra, Arabic subscript alef
+   key <AD07> { [ U0639, U064E, UE659 ] }; // Arabic ain, Arabic fatha, Arabic zwarakay
+   key <AD08> { [ U0647, U0651, U0655 ] }; // Arabic heh, Arabic shadda, Arabic hamza below
+   key <AD09> { [ U062E, bracketright, apostrophe ] }; // Arabic khah
+   key <AD10> { [ U062D, bracketleft, quotedbl ] }; // Arabic hah
+   key <AD11> { [ U062C, braceright, U0681 ] }; // Arabic jeem, Arabic hah with hamza above
+   key <AD12> { [ U0686, braceleft, U0685 ] }; // Arabic tcheh, Arabic hah with three dots above
 
-   key <AC01> { [ 0x1000634, 0x1000624, 0x100069A ] }; // Arabic sheen, Arabic waw with hamza above, Arabic seen with dot below and dot above
-   key <AC02> { [ 0x1000633, 0x1000626, 0x10006CD ] }; // Arabic seen, Arabic yeh with hamza above, Arabic yeh with tail
-   key <AC03> { [ 0x10006CC, 0x100064A, 0x1000649 ] }; // Farsi yeh, Arabic yeh, Arabic alef maksura
-   key <AC04> { [ 0x1000628, 0x1000625, 0x10006D0 ] }; // Arabic beh, Arabic alef with hamza below, Arabic e
-   key <AC05> { [ 0x1000644, 0x1000623, 0x10006B7 ] }; // Arabic lam, Arabic hamza on alef, Arabic alef with hamza above
-   key <AC06> { [ 0x1000627, 0x1000622, 0x1000671 ] }; // Arabic alef, Arabic madda on alef, Arabic alef wasla
-   key <AC07> { [ 0x100062A, 0x1000629, 0x100067C ] }; // Arabic teh, Arabic teh marbuta, Arabic tteh
-   key <AC08> { [ 0x1000646, guillemotright, 0x10006BC ] }; // Arabic noon, Arabic noon with ring
-   key <AC09> { [ 0x1000645, guillemotleft, 0x10006BA ] }; // Arabic meem, Arabic noon ghunna
-   key <AC10> { [ 0x10006A9, colon, semicolon ] }; // Arabic keheh
-   key <AC11> { [ 0x10006AF, 0x100061B, 0x10006AB ] }; // Arabic gaf, Arabic semicolon, Arabic kaf with ring
+   key <AC01> { [ U0634, U0624, U069A ] }; // Arabic sheen, Arabic waw with hamza above, Arabic seen with dot below and dot above
+   key <AC02> { [ U0633, U0626, U06CD ] }; // Arabic seen, Arabic yeh with hamza above, Arabic yeh with tail
+   key <AC03> { [ U06CC, U064A, U0649 ] }; // Farsi yeh, Arabic yeh, Arabic alef maksura
+   key <AC04> { [ U0628, U0625, U06D0 ] }; // Arabic beh, Arabic alef with hamza below, Arabic e
+   key <AC05> { [ U0644, U0623, U06B7 ] }; // Arabic lam, Arabic hamza on alef, Arabic alef with hamza above
+   key <AC06> { [ U0627, U0622, U0671 ] }; // Arabic alef, Arabic madda on alef, Arabic alef wasla
+   key <AC07> { [ U062A, U0629, U067C ] }; // Arabic teh, Arabic teh marbuta, Arabic tteh
+   key <AC08> { [ U0646, guillemotright, U06BC ] }; // Arabic noon, Arabic noon with ring
+   key <AC09> { [ U0645, guillemotleft, U06BA ] }; // Arabic meem, Arabic noon ghunna
+   key <AC10> { [ U06A9, colon, semicolon ] }; // Arabic keheh
+   key <AC11> { [ U06AF, U061B, U06AB ] }; // Arabic gaf, Arabic semicolon, Arabic kaf with ring
 
    key <BKSL> { [ backslash, bar, question ] };
 
-   key <AB01> { [ 0x1000638, 0x1000643, 0x10006D2 ] }; // Arabic zah, Arabic kaf, Arabic yeh barree
-   key <AB02> { [ 0x1000637, 0x1000653, 0x1000691 ] }; // Arabic tah, Arabic maddah above, Arabic rreh
-   key <AB03> { [ 0x1000632, 0x1000698, 0x1000696 ] }; // Arabic zain, Arabic jeh,  Arabic reh with dot below and dot above
-   key <AB04> { [ 0x1000631, 0x1000670, 0x1000693 ] }; // Arabic reh, Arabic superscript alef, Arabic reh with ring
-   key <AB05> { [ 0x1000630, 0x100200C, 0x1000688 ] }; // Arabic thal, zero width non-joiner, Arabic ddal
-   key <AB06> { [ 0x100062F, 0x1000654, 0x1000689 ] }; // Arabic dal, Arabic hamza above, Arabic dal with ring
-   key <AB07> { [ 0x100067E, 0x1000621, 0x1000679 ] }; // Arabic peh, Arabic hamza, Arabic tteh
-   key <AB08> { [ 0x1000648, greater, comma ] }; // Arabic waw
-   key <AB09> { [ period, less, 0x10006C7 ] }; // Arabic u
-   key <AB10> { [ slash, 0x100061F, 0x10006C9 ] }; // Arabic question mark, Arabic kirghiz yu
+   key <AB01> { [ U0638, U0643, U06D2 ] }; // Arabic zah, Arabic kaf, Arabic yeh barree
+   key <AB02> { [ U0637, U0653, U0691 ] }; // Arabic tah, Arabic maddah above, Arabic rreh
+   key <AB03> { [ U0632, U0698, U0696 ] }; // Arabic zain, Arabic jeh,  Arabic reh with dot below and dot above
+   key <AB04> { [ U0631, U0670, U0693 ] }; // Arabic reh, Arabic superscript alef, Arabic reh with ring
+   key <AB05> { [ U0630, U200C, U0688 ] }; // Arabic thal, zero width non-joiner, Arabic ddal
+   key <AB06> { [ U062F, U0654, U0689 ] }; // Arabic dal, Arabic hamza above, Arabic dal with ring
+   key <AB07> { [ U067E, U0621, U0679 ] }; // Arabic peh, Arabic hamza, Arabic tteh
+   key <AB08> { [ U0648, greater, comma ] }; // Arabic waw
+   key <AB09> { [ period, less, U06C7 ] }; // Arabic u
+   key <AB10> { [ slash, U061F, U06C9 ] }; // Arabic question mark, Arabic kirghiz yu
 
    include "nbsp(zwnj2nb3)"
    include "group(olpc)"
@@ -320,57 +320,57 @@ xkb_symbols "uz-olpc" {
 
    name[Group1]= "Uzbek (Afghanistan, OLPC)";
 
-   key <TLDE> { [ 0x100200D, division, asciitilde ] }; // zero width joiner
-   key <AE01> { [ 0x10006F1, exclam, grave ] }; // Arabic one
-   key <AE02> { [ 0x10006F2, 0x100066C, at ] }; // Arabic two, Arabic thousands separator
-   key <AE03> { [ 0x10006F3, 0x100066B, numbersign ] }; // Arabic three, Arabic decimal separator
-   key <AE04> { [ 0x10006F4, 0x100060B, dollar ] }; // Arabic four, Afghani sign
-   key <AE05> { [ 0x10006F5, 0x100066A, percent ] }; // Arabic five, Arabic percent sign
-   key <AE06> { [ 0x10006F6, multiply, asciicircum ] }; // Arabic six
-   key <AE07> { [ 0x10006F7, 0x100060C, ampersand ] }; // Arabic seven, Arabic comma
-   key <AE08> { [ 0x10006F8, asterisk, enfilledcircbullet ] }; // Arabic eight
-   key <AE09> { [ 0x10006F9, parenright, 0x100200E ] }; // Arabic nine, left-to-right mark
-   key <AE10> { [ 0x10006F0, parenleft, 0x100200F ] }; // Arabic zero, right-to-left mark
-   key <AE11> { [ minus, 0x1000640, underscore ] }; // Arabic tatweel
+   key <TLDE> { [ U200D, division, asciitilde ] }; // zero width joiner
+   key <AE01> { [ U06F1, exclam, grave ] }; // Arabic one
+   key <AE02> { [ U06F2, U066C, at ] }; // Arabic two, Arabic thousands separator
+   key <AE03> { [ U06F3, U066B, numbersign ] }; // Arabic three, Arabic decimal separator
+   key <AE04> { [ U06F4, U060B, dollar ] }; // Arabic four, Afghani sign
+   key <AE05> { [ U06F5, U066A, percent ] }; // Arabic five, Arabic percent sign
+   key <AE06> { [ U06F6, multiply, asciicircum ] }; // Arabic six
+   key <AE07> { [ U06F7, U060C, ampersand ] }; // Arabic seven, Arabic comma
+   key <AE08> { [ U06F8, asterisk, enfilledcircbullet ] }; // Arabic eight
+   key <AE09> { [ U06F9, parenright, U200E ] }; // Arabic nine, left-to-right mark
+   key <AE10> { [ U06F0, parenleft, U200F ] }; // Arabic zero, right-to-left mark
+   key <AE11> { [ minus, U0640, underscore ] }; // Arabic tatweel
    key <AE12> { [ equal, plus ] };
 
-   key <AD01> { [ 0x1000636, 0x1000652, degree ] }; // Arabic dad, Arabic sukun
-   key <AD02> { [ 0x1000635, 0x100064C, 0x1000653 ] }; // Arabic sad, Arabic dammatan, Arabic maddah above
-   key <AD03> { [ 0x100062B, 0x100064D, EuroSign ] }; // Arabic theh, Arabic kasratan
-   key <AD04> { [ 0x1000642, 0x100064B, 0x100FD3E ] }; // Arabic qaf, Arabic fathatan, ornate left paren
-   key <AD05> { [ 0x1000641, 0x100064F, 0x100FD3F ] }; // Arabic feh, Arabic damma, ornate right paren
-   key <AD06> { [ 0x100063A, 0x1000650, 0x1000656 ] }; // Arabic ghain, Arabic kasra, Arabic subscript alef
-   key <AD07> { [ 0x1000639, 0x100064E, 0x100e659 ] }; // Arabic ain, Arabic fatha, Arabic zwarakay
-   key <AD08> { [ 0x1000647, 0x1000651, 0x1000670 ] }; // Arabic heh, Arabic shadda, Arabic superscript alef
-   key <AD09> { [ 0x100062E, bracketright, apostrophe ] }; // Arabic khah
-   key <AD10> { [ 0x100062D, bracketleft, quotedbl ] }; // Arabic hah
-   key <AD11> { [ 0x100062C, braceright, 0x1000681 ] }; // Arabic jeem, Arabic hah with hamza above
-   key <AD12> { [ 0x1000686, braceleft, 0x1000685 ] }; // Arabic tcheh, Arabic hah with three dots above
+   key <AD01> { [ U0636, U0652, degree ] }; // Arabic dad, Arabic sukun
+   key <AD02> { [ U0635, U064C, U0653 ] }; // Arabic sad, Arabic dammatan, Arabic maddah above
+   key <AD03> { [ U062B, U064D, EuroSign ] }; // Arabic theh, Arabic kasratan
+   key <AD04> { [ U0642, U064B, UFD3E ] }; // Arabic qaf, Arabic fathatan, ornate left paren
+   key <AD05> { [ U0641, U064F, UFD3F ] }; // Arabic feh, Arabic damma, ornate right paren
+   key <AD06> { [ U063A, U0650, U0656 ] }; // Arabic ghain, Arabic kasra, Arabic subscript alef
+   key <AD07> { [ U0639, U064E, UE659 ] }; // Arabic ain, Arabic fatha, Arabic zwarakay
+   key <AD08> { [ U0647, U0651, U0670 ] }; // Arabic heh, Arabic shadda, Arabic superscript alef
+   key <AD09> { [ U062E, bracketright, apostrophe ] }; // Arabic khah
+   key <AD10> { [ U062D, bracketleft, quotedbl ] }; // Arabic hah
+   key <AD11> { [ U062C, braceright, U0681 ] }; // Arabic jeem, Arabic hah with hamza above
+   key <AD12> { [ U0686, braceleft, U0685 ] }; // Arabic tcheh, Arabic hah with three dots above
 
-   key <AC01> { [ 0x1000634, 0x1000624, 0x100069A ] }; // Arabic sheen, Arabic waw with hamza above, Arabic seen with dot below and dot above
-   key <AC02> { [ 0x1000633, 0x1000626, 0x10006CD ] }; // Arabic seen, Arabic yeh with hamza above, Arabic yeh with tail
-   key <AC03> { [ 0x10006CC, 0x100064A, 0x1000649 ] }; // Farsi yeh, Arabic yeh, Arabic alef maksura
-   key <AC04> { [ 0x1000628, 0x10006D0, 0x1000643  ] }; // Arabic beh, Arabic e, Arabic kaf
-   key <AC05> { [ 0x1000644, 0x1000623, 0x10006B7 ] }; // Arabic lam, Arabic hamza on alef, Arabic alef with hamza above
-   key <AC06> { [ 0x1000627, 0x1000622, 0x1000671 ] }; // Arabic alef, Arabic madda on alef, Arabic alef wasla
-   key <AC07> { [ 0x100062A, 0x1000629, 0x100067C ] }; // Arabic teh, Arabic teh marbuta, Arabic tteh
-   key <AC08> { [ 0x1000646, guillemotright, 0x10006BC ] }; // Arabic noon, Arabic noon with ring
-   key <AC09> { [ 0x1000645, guillemotleft, 0x10006BA ] }; // Arabic meem, Arabic noon ghunna
-   key <AC10> { [ 0x10006A9, colon, semicolon ] }; // Arabic keheh
-   key <AC11> { [ 0x10006AF, 0x100061B, 0x10006AB ] }; // Arabic gaf, Arabic semicolon, Arabic kaf with ring
+   key <AC01> { [ U0634, U0624, U069A ] }; // Arabic sheen, Arabic waw with hamza above, Arabic seen with dot below and dot above
+   key <AC02> { [ U0633, U0626, U06CD ] }; // Arabic seen, Arabic yeh with hamza above, Arabic yeh with tail
+   key <AC03> { [ U06CC, U064A, U0649 ] }; // Farsi yeh, Arabic yeh, Arabic alef maksura
+   key <AC04> { [ U0628, U06D0, U0643  ] }; // Arabic beh, Arabic e, Arabic kaf
+   key <AC05> { [ U0644, U0623, U06B7 ] }; // Arabic lam, Arabic hamza on alef, Arabic alef with hamza above
+   key <AC06> { [ U0627, U0622, U0671 ] }; // Arabic alef, Arabic madda on alef, Arabic alef wasla
+   key <AC07> { [ U062A, U0629, U067C ] }; // Arabic teh, Arabic teh marbuta, Arabic tteh
+   key <AC08> { [ U0646, guillemotright, U06BC ] }; // Arabic noon, Arabic noon with ring
+   key <AC09> { [ U0645, guillemotleft, U06BA ] }; // Arabic meem, Arabic noon ghunna
+   key <AC10> { [ U06A9, colon, semicolon ] }; // Arabic keheh
+   key <AC11> { [ U06AF, U061B, U06AB ] }; // Arabic gaf, Arabic semicolon, Arabic kaf with ring
 
    key <BKSL> { [ backslash, bar, question ] };
 
-   key <AB01> { [ 0x1000638, 0x10006C9, 0x10006D2 ] }; // Arabic zah, Arabic kirghiz yu, Arabic yeh barree
-   key <AB02> { [ 0x1000637, 0x10006C7, 0x1000691 ] }; // Arabic tah, Arabic u, Arabic rreh
-   key <AB03> { [ 0x1000632, 0x1000698, 0x1000696 ] }; // Arabic zain, Arabic jeh,  Arabic reh with dot below and dot above
-   key <AB04> { [ 0x1000631, 0x1000625, 0x1000693 ] }; // Arabic reh, Arabic alef with hamza below, Arabic reh with ring
-   key <AB05> { [ 0x1000630, 0x100200C, 0x1000688 ] }; // Arabic thal, zero width non-joiner, Arabic ddal
-   key <AB06> { [ 0x100062F, 0x1000654, 0x1000689 ] }; // Arabic dal, Arabic hamza above, Arabic dal with ring
-   key <AB07> { [ 0x100067E, 0x1000621, 0x1000679 ] }; // Arabic peh, Arabic hamza, Arabic tteh
-   key <AB08> { [ 0x1000648, greater, comma ] }; // Arabic waw
+   key <AB01> { [ U0638, U06C9, U06D2 ] }; // Arabic zah, Arabic kirghiz yu, Arabic yeh barree
+   key <AB02> { [ U0637, U06C7, U0691 ] }; // Arabic tah, Arabic u, Arabic rreh
+   key <AB03> { [ U0632, U0698, U0696 ] }; // Arabic zain, Arabic jeh,  Arabic reh with dot below and dot above
+   key <AB04> { [ U0631, U0625, U0693 ] }; // Arabic reh, Arabic alef with hamza below, Arabic reh with ring
+   key <AB05> { [ U0630, U200C, U0688 ] }; // Arabic thal, zero width non-joiner, Arabic ddal
+   key <AB06> { [ U062F, U0654, U0689 ] }; // Arabic dal, Arabic hamza above, Arabic dal with ring
+   key <AB07> { [ U067E, U0621, U0679 ] }; // Arabic peh, Arabic hamza, Arabic tteh
+   key <AB08> { [ U0648, greater, comma ] }; // Arabic waw
    key <AB09> { [ period, less ] };
-   key <AB10> { [ slash, 0x100061F, 0x1000655 ] }; // Arabic question mark, Arabic hamza below
+   key <AB10> { [ slash, U061F, U0655 ] }; // Arabic question mark, Arabic hamza below
 
    include "nbsp(zwnj2nb3)"
    include "group(olpc)"

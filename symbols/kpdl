@@ -41,7 +41,7 @@ xkb_symbols "dotoss" {
 
     key.type[Group1]="FOUR_LEVEL_MIXED_KEYPAD" ;
 
-    key <KPDL> { [ KP_Delete, period, comma, 0x100202F ] }; // <delete> . , ⍽ (narrow no-break space)
+    key <KPDL> { [ KP_Delete, period, comma, U202F ] }; // <delete> . , ⍽ (narrow no-break space)
 };
 
 
@@ -61,7 +61,7 @@ xkb_symbols "commaoss" {
 
     key.type[Group1]="FOUR_LEVEL_MIXED_KEYPAD" ;
 
-    key <KPDL> { [ KP_Delete, comma, period, 0x100202F ] }; // <delete> , . ⍽ (narrow no-break space)
+    key <KPDL> { [ KP_Delete, comma, period, U202F ] }; // <delete> , . ⍽ (narrow no-break space)
 };
 
 
@@ -71,7 +71,7 @@ xkb_symbols "momayyezoss" {
 
     key.type[Group1]="FOUR_LEVEL_MIXED_KEYPAD" ;
 
-    key <KPDL> { [ KP_Delete, 0x100066B, comma, 0x100202F ] }; // <delete> ? , ⍽ (narrow no-break space)
+    key <KPDL> { [ KP_Delete, U066B, comma, U202F ] }; // <delete> ? , ⍽ (narrow no-break space)
 };
 
 
@@ -81,7 +81,7 @@ xkb_symbols "kposs" {
 
     key.type[Group1]="FOUR_LEVEL_MIXED_KEYPAD" ;
 
-    key <KPDL> { [ KP_Delete, KP_Decimal, KP_Separator, 0x100202F ] }; // <delete> ? ? ⍽ (narrow no-break space)
+    key <KPDL> { [ KP_Delete, KP_Decimal, KP_Separator, U202F ] }; // <delete> ? ? ⍽ (narrow no-break space)
 };
 
 // Spreadsheets may be configured to use the dot as decimal

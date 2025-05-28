@@ -260,11 +260,11 @@ xkb_symbols "ossmath" {
 
     key.type[Group1]="CTRL+ALT" ;
 
-    key <KPDV> { [   KP_Divide, 0x1002215, 0x10000F7, VoidSymbol,     XF86_Ungrab ] }; // / ∕ ÷     <XF86_Ungrab>
-    key <KPMU> { [ KP_Multiply, 0x10022C5, 0x10000D7, VoidSymbol,  XF86_ClearGrab ] }; // * ⋅ ×  <XF86_ClearGrab>
-    key <KPSU> { [ KP_Subtract, 0x1002212, 0x1002212, VoidSymbol, XF86_Prev_VMode ] }; // - − − <XF86_Prev_VMode>
+    key <KPDV> { [   KP_Divide, U2215, division, VoidSymbol,     XF86_Ungrab ] }; // / ∕ ÷     <XF86_Ungrab>
+    key <KPMU> { [ KP_Multiply, U22C5, multiply, VoidSymbol,  XF86_ClearGrab ] }; // * ⋅ ×  <XF86_ClearGrab>
+    key <KPSU> { [ KP_Subtract, U2212,    U2212, VoidSymbol, XF86_Prev_VMode ] }; // - − − <XF86_Prev_VMode>
 
-    key <KPAD> { [      KP_Add, 0x100002B, 0x100002B, VoidSymbol, XF86_Next_VMode ] }; // + + + <XF86_Next_VMode>
+    key <KPAD> { [      KP_Add,  plus,     plus, VoidSymbol, XF86_Next_VMode ] }; // + + + <XF86_Next_VMode>
 };
 
 
@@ -287,11 +287,11 @@ xkb_symbols "futuremath" {
 
     key.type[Group1]="FOUR_LEVEL_X" ;
 
-    key <KPDV> { [ 0x1002215,   KP_Divide, 0x10000F7,     XF86_Ungrab ] }; // ∕ / ÷     <XF86_Ungrab>
-    key <KPMU> { [ 0x10022C5, KP_Multiply, 0x10000D7,  XF86_ClearGrab ] }; // ⋅ * ×  <XF86_ClearGrab>
-    key <KPSU> { [ 0x1002212, KP_Subtract, 0x1002212, XF86_Prev_VMode ] }; // − - − <XF86_Prev_VMode>
+    key <KPDV> { [ U2215,   KP_Divide, division,     XF86_Ungrab ] }; // ∕ / ÷     <XF86_Ungrab>
+    key <KPMU> { [ U22C5, KP_Multiply, multiply,  XF86_ClearGrab ] }; // ⋅ * ×  <XF86_ClearGrab>
+    key <KPSU> { [ U2212, KP_Subtract,    U2212, XF86_Prev_VMode ] }; // − - − <XF86_Prev_VMode>
 
-    key <KPAD> { [ 0x100002B,      KP_Add, 0x100002B, XF86_Next_VMode ] }; // + + + <XF86_Next_VMode>
+    key <KPAD> { [  plus,      KP_Add,     plus, XF86_Next_VMode ] }; // + + + <XF86_Next_VMode>
 };
 
 
@@ -427,19 +427,19 @@ xkb_symbols "ossnumber" {
 
     key.type[Group1]="FOUR_LEVEL_MIXED_KEYPAD" ;
 
-    key <KP7>  { [   KP_Home,   KP_7, 0x1002196, 0x10021D6 ] }; //   <home> 7 ↖ ⇖
-    key <KP8>  { [     KP_Up,   KP_8, 0x1002191, 0x10021D1 ] }; //     <up> 8 ↑ ⇑
-    key <KP9>  { [  KP_Prior,   KP_9, 0x1002197, 0x10021D7 ] }; //  <prior> 9 ↗ ⇗
+    key <KP7>  { [   KP_Home,   KP_7, U2196, U21D6 ] }; //   <home> 7 ↖ ⇖
+    key <KP8>  { [     KP_Up,   KP_8, U2191, U21D1 ] }; //     <up> 8 ↑ ⇑
+    key <KP9>  { [  KP_Prior,   KP_9, U2197, U21D7 ] }; //  <prior> 9 ↗ ⇗
 
-    key <KP4>  { [   KP_Left,   KP_4, 0x1002190, 0x10021D0 ] }; //   <left> 4 ← ⇐
-    key <KP5>  { [  KP_Begin,   KP_5, 0x1002194, 0x10021D4 ] }; //  <begin> 5 ↔ ⇔
-    key <KP6>  { [  KP_Right,   KP_6, 0x1002192, 0x10021D2 ] }; //  <right> 6 → ⇒
+    key <KP4>  { [   KP_Left,   KP_4, U2190, U21D0 ] }; //   <left> 4 ← ⇐
+    key <KP5>  { [  KP_Begin,   KP_5, U2194, U21D4 ] }; //  <begin> 5 ↔ ⇔
+    key <KP6>  { [  KP_Right,   KP_6, U2192, U21D2 ] }; //  <right> 6 → ⇒
 
-    key <KP1>  { [    KP_End,   KP_1, 0x1002199, 0x10021D9 ] }; //    <end> 1 ↙ ⇙
-    key <KP2>  { [   KP_Down,   KP_2, 0x1002193, 0x10021D3 ] }; //   <down> 2 ↓ ⇓
-    key <KP3>  { [   KP_Next,   KP_3, 0x1002198, 0x10021D8 ] }; //   <next> 3 ↘ ⇘
+    key <KP1>  { [    KP_End,   KP_1, U2199, U21D9 ] }; //    <end> 1 ↙ ⇙
+    key <KP2>  { [   KP_Down,   KP_2, U2193, U21D3 ] }; //   <down> 2 ↓ ⇓
+    key <KP3>  { [   KP_Next,   KP_3, U2198, U21D8 ] }; //   <next> 3 ↘ ⇘
 
-    key <KP0>  { [ KP_Insert,   KP_0, 0x1002195, 0x10021D5 ] }; // <insert> 0 ↕ ⇕
+    key <KP0>  { [ KP_Insert,   KP_0, U2195, U21D5 ] }; // <insert> 0 ↕ ⇕
 };
 
 
@@ -467,19 +467,19 @@ xkb_symbols "ossnumber_wang" {
 
     key.type[Group1]="FOUR_LEVEL_MIXED_KEYPAD" ;
 
-    key <KP7>  { [   KP_Home,   KP_7,         less, 0x1002196 ] }; //   <home> 7 < ↖
-    key <KP8>  { [     KP_Up,   KP_8,      greater, 0x1002191 ] }; //     <up> 8 > ↑
-    key <KP9>  { [  KP_Prior,   KP_9,  asciicircum, 0x1002197 ] }; //  <prior> 9 ^ ↗
+    key <KP7>  { [   KP_Home,   KP_7,         less, U2196 ] }; //   <home> 7 < ↖
+    key <KP8>  { [     KP_Up,   KP_8,      greater, U2191 ] }; //     <up> 8 > ↑
+    key <KP9>  { [  KP_Prior,   KP_9,  asciicircum, U2197 ] }; //  <prior> 9 ^ ↗
 
-    key <KP4>  { [   KP_Left,   KP_4,  bracketleft, 0x1002190 ] }; //   <left> 4 [ ←
-    key <KP5>  { [  KP_Begin,   KP_5, bracketright, 0x1002194 ] }; //  <begin> 5 ] ↔
-    key <KP6>  { [  KP_Right,   KP_6,       dollar, 0x1002192 ] }; //  <right> 6 $ →
+    key <KP4>  { [   KP_Left,   KP_4,  bracketleft, U2190 ] }; //   <left> 4 [ ←
+    key <KP5>  { [  KP_Begin,   KP_5, bracketright, U2194 ] }; //  <begin> 5 ] ↔
+    key <KP6>  { [  KP_Right,   KP_6,       dollar, U2192 ] }; //  <right> 6 $ →
 
-    key <KP1>  { [    KP_End,   KP_1,    ampersand, 0x1002199 ] }; //    <end> 1 & ↙
-    key <KP2>  { [   KP_Down,   KP_2,           at, 0x1002193 ] }; //   <down> 2 @ ↓
-    key <KP3>  { [   KP_Next,   KP_3,   numbersign, 0x1002198 ] }; //   <next> 3 # ↘
+    key <KP1>  { [    KP_End,   KP_1,    ampersand, U2199 ] }; //    <end> 1 & ↙
+    key <KP2>  { [   KP_Down,   KP_2,           at, U2193 ] }; //   <down> 2 @ ↓
+    key <KP3>  { [   KP_Next,   KP_3,   numbersign, U2198 ] }; //   <next> 3 # ↘
 
-    key <KP0>  { [ KP_Insert,   KP_0,   apostrophe, 0x1002195 ] }; // <insert> 0 ' ↕
+    key <KP0>  { [ KP_Insert,   KP_0,   apostrophe, U2195 ] }; // <insert> 0 ' ↕
 };
 
 // Standard base "pc" layout only contains cursor keys, and then gets

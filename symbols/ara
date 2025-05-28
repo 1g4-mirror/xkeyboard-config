@@ -296,10 +296,10 @@ xkb_symbols "mac" {
     key <AC01> {[     Arabic_sheen,  guillemotright     ]};
     key <AC02> {[      Arabic_seen,  guillemotleft      ]};
     key <AC03> {[       Arabic_yeh,  Arabic_alefmaksura ]};
-    key <AC04> {[       Arabic_beh,  0x1000670          ]};
+    key <AC04> {[       Arabic_beh,  U0670              ]};
     key <AC05> {[       Arabic_lam,  none               ]};
     key <AC06> {[      Arabic_alef,  Arabic_maddaonalef ]};
-    key <AC07> {[       Arabic_teh,  0x1000671          ]};
+    key <AC07> {[       Arabic_teh,  U0671              ]};
     key <AC08> {[      Arabic_noon,  none               ]};
     key <AC09> {[      Arabic_meem,  none               ]};
     key <AC10> {[       Arabic_kaf,  colon              ]};

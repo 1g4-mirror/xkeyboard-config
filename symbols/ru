@@ -311,7 +311,7 @@ xkb_symbols "os_legacy" {
 
     key <TLDE> { [  Cyrillic_e,  Cyrillic_E                              ] };
     key <AC07> { [  Cyrillic_o,  Cyrillic_O,  Cyrillic_io,  Cyrillic_IO  ] };
-    key <AC11> { [  0x010004D5,  0x010004D4                              ] };
+    key <AC11> { [       U04D5,       U04D4                              ] };
 };
 
 partial alphanumeric_keys
@@ -322,7 +322,7 @@ xkb_symbols "os_winkeys" {
 
     key <TLDE> { [  Cyrillic_e,  Cyrillic_E                              ] };
     key <AC07> { [  Cyrillic_o,  Cyrillic_O,  Cyrillic_io,  Cyrillic_IO  ] };
-    key <AC11> { [  0x010004D5,  0x010004D4                              ] };
+    key <AC11> { [       U04D5,       U04D4                              ] };
 };
 
 partial alphanumeric_keys
@@ -331,10 +331,10 @@ xkb_symbols "cv" {
     include "ru(winkeys)"
     name[Group1]= "Chuvash";
 
-    key <AD03> { [   Cyrillic_u,   Cyrillic_U,  0x010004f3,  0x010004f2 ] };
-    key <AD05> { [  Cyrillic_ie,  Cyrillic_IE,  0x010004d7,  0x010004d6 ] };
-    key <AC04> { [   Cyrillic_a,   Cyrillic_A,  0x010004d1,  0x010004d0 ] };
-    key <AB03> { [  Cyrillic_es,  Cyrillic_ES,  0x010004ab,  0x010004aa ] };
+    key <AD03> { [   Cyrillic_u,   Cyrillic_U,      U04F3,      U04F2 ] };
+    key <AD05> { [  Cyrillic_ie,  Cyrillic_IE,      U04D7,      U04D6 ] };
+    key <AC04> { [   Cyrillic_a,   Cyrillic_A,      U04D1,      U04D0 ] };
+    key <AB03> { [  Cyrillic_es,  Cyrillic_ES,      U04AB,      U04AA ] };
 
     include "level3(ralt_switch)"
 };
@@ -350,11 +350,11 @@ xkb_symbols "udm" {
     key <AE03> { [  parenright,  numerosign,   3,   3  ] };
     key <AE04> { [       colon,   semicolon,   4,   4  ] };
     key <AE05> { [    asterisk,     percent,   5,   5  ] };
-    key <AE06> { [  0x010004dd,  0x010004dc,   6,   6  ] };
-    key <AE07> { [  0x010004e7,  0x010004e6,   7,   7  ] };
-    key <AE08> { [  0x010004f5,  0x010004f4,   8,   8  ] };
-    key <AE09> { [  0x010004e5,  0x010004e4,   9,   9  ] };
-    key <AE10> { [  0x010004df,  0x010004de,   0,   0  ] };
+    key <AE06> { [       U04DD,       U04DC,   6,   6  ] };
+    key <AE07> { [       U04E7,       U04E6,   7,   7  ] };
+    key <AE08> { [       U04F5,       U04F4,   8,   8  ] };
+    key <AE09> { [       U04E5,       U04E4,   9,   9  ] };
+    key <AE10> { [       U04DF,       U04DE,   0,   0  ] };
 
     include "level3(ralt_switch)"
 };
@@ -491,11 +491,11 @@ xkb_symbols "bak" {
     key <TLDE> { [         Cyrillic_schwa,         Cyrillic_SCHWA,  Cyrillic_io,   Cyrillic_IO  ] };
     key <AE01> { [                 exclam,               quotedbl,            1,             1  ] };
     key <AE02> { [         Cyrillic_o_bar,         Cyrillic_O_bar,            2,             2  ] };
-    key <AE03> { [             0x010004a1,             0x010004a0,            3,             3  ] };
+    key <AE03> { [                  U04A1,                  U04A0,            3,             3  ] };
     key <AE04> { [       Cyrillic_ghe_bar,       Cyrillic_GHE_bar,            4,             4  ] };
-    key <AE05> { [             0x010004ab,             0x010004aa,            5,             5  ] };
+    key <AE05> { [                  U04AB,                  U04AA,            5,             5  ] };
     key <AE06> { [                  colon,              semicolon,            6,             6  ] };
-    key <AE07> { [             0x01000499,             0x01000498,            7,             7  ] };
+    key <AE07> { [                  U0499,                  U0498,            7,             7  ] };
     key <AE08> { [          Cyrillic_shha,          Cyrillic_SHHA,            8,             8  ] };
     key <AE09> { [               question,              parenleft,            9,             9  ] };
     key <AE10> { [             numerosign,             parenright,            0,             0  ] };
