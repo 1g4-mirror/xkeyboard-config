@@ -15,11 +15,11 @@ xkb_symbols "basic" {
     key <AE11>	{ [apostrophe,   question,    backslash, questiondown ]	};
     key <AE12>	{ [exclamdown, questiondown, dead_cedilla, dead_ogonek]	};
 
-    key <AD11>	{ [dead_grave, dead_circumflex, bracketleft, dead_abovering ] };
+    key <AD11>	{ [dead_grave, dead_circumflex, bracketleft, dead_caron ] };
     key <AD12>	{ [      plus,   asterisk, bracketright,  dead_macron ]	};
 
-    key <AC10>	{ [    ntilde, Ntilde,   dead_tilde, dead_doubleacute ]	};
-    key <AC11>	{ [dead_acute, dead_diaeresis, braceleft,  dead_caron ]	};
+    key <AC10>	{ [    ntilde,     Ntilde, dead_tilde, dead_abovering ]	};
+    key <AC11>	{ [dead_acute, dead_diaeresis, braceleft, dead_doubleacute ] };
     key <BKSL>	{ [  ccedilla,   Ccedilla,   braceright,   dead_breve ]	};
 
     include "level3(ralt_switch)"
@@ -41,11 +41,11 @@ xkb_symbols "nodeadkeys" {
     name[Group1]="Spanish (no dead keys)";
 
     key <AE12>	{ [exclamdown, questiondown,     cedilla,      ogonek ]	};
-    key <AD11>	{ [     grave, asciicircum,  bracketleft,      degree ]	};
+    key <AD11>	{ [     grave, asciicircum,  bracketleft,       caron ]	};
     key <AD12>	{ [      plus,   asterisk, bracketright,       macron ]	};
     key <AC07>	{ [         j,          J,          ezh,          EZH ] };
-    key <AC10>	{ [    ntilde,     Ntilde,   asciitilde,  doubleacute ]	};
-    key <AC11>	{ [     acute,  diaeresis,    braceleft,        caron ]	};
+    key <AC10>	{ [    ntilde,     Ntilde,   asciitilde,       degree ]	};
+    key <AC11>	{ [     acute,  diaeresis,    braceleft,  doubleacute ]	};
     key <BKSL>	{ [  ccedilla,   Ccedilla,   braceright,        breve ]	};
     key <AB10>	{ [     minus, underscore,     ellipsis,     abovedot ]	};
 };
@@ -66,7 +66,7 @@ xkb_symbols "dvorak" {
     key <AE07> {[          7, slash, onehalf, seveneighths		]};
     key <AE08> {[          8, parenleft, oneeighth, threeeighths	]};
     key <AE09> {[          9, parenright, asciicircum			]};
-    key <AE10> {[          0, equal, grave, dead_doubleacute		]};
+    key <AE10> {[          0, equal, grave, dead_tilde			]};
     key <AE11> {[ apostrophe, question, dead_macron, dead_ogonek	]};
     key <AE12> {[ exclamdown, questiondown, dead_breve, dead_abovedot	]};
 
@@ -93,7 +93,7 @@ xkb_symbols "dvorak" {
     key <AC08> {[          t, T, thorn, THORN				]};
     key <AC09> {[          n, N, eng, ENG				]};
     key <AC10> {[          s, S, ssharp, section			]};
-    key <AC11> {[ dead_acute, dead_diaeresis, braceleft, dead_tilde	]};
+    key <AC11> {[ dead_acute, dead_diaeresis, braceleft, dead_doubleacute	]};
     key <BKSL> {[   ccedilla, Ccedilla, braceright, dead_cedilla	]};
 
     key <LSGT> {[       less, greater, guillemotleft, guillemotright	]};
@@ -223,7 +223,7 @@ xkb_symbols "deadtilde" {
     name[Group1]="Spanish (dead tilde)";
 
     key <AE04>	{ [         4,     dollar,   dead_tilde,       dollar ]	};
-    key <AC10>	{ [    ntilde, Ntilde,   asciitilde, dead_doubleacute ]	};
+    key <AC10>	{ [    ntilde,     Ntilde, asciitilde, dead_abovering ]	};
 };
 
 partial alphanumeric_keys
