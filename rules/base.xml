@@ -7969,6 +7969,12 @@
       </option>
       <option>
         <configItem>
+          <name>hyper:mod2</name>
+          <description>Map Hyper to Mod2 (conflict with NumLock)</description>
+        </configItem>
+      </option>
+      <option>
+        <configItem>
           <name>hyper:mod3</name>
           <description>Map Hyper to Mod3 (conflict with LevelFive)</description>
         </configItem>
