@@ -48,6 +48,70 @@ xkb_symbols "tw" {
     include "level3(ralt_switch)"
 };
 
+// Based on Apple's Zhuyin keyboard:
+// https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MXCL3TA?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1729134348404
+partial alphanumeric_keys
+xkb_symbols "bopomofo" {
+    name[Group1] = "Chinese (Bopomofo)";
+
+    key <TLDE> { [ UFF40              , UFF5E        , UFE4F         , U301C    ] }; // ｀ ～ ﹏ 〜
+    key <AE01> { [ U3105              , UFF01        , UFF11         ] }; // ㄅ ！ １
+    key <AE02> { [ U3109              , UFF20        , UFF12         , U3003 ] }; // ㄉ ＠ ２ 〃
+    key <AE03> { [ caron              , UFF03        , UFF13         ] }; // ˇ ＃ ３
+    key <AE04> { [ U02CB              , UFF04        , UFF14         , UFFE0    ] }; // ˋ ＄ ４ ￠
+    key <AE05> { [ U3113              , UFF05        , UFF15         ] }; // ㄓ ％ ５
+    key <AE06> { [ U02CA              , UFF3E        , UFF16         ] }; // ˊ ＾ ６
+    key <AE07> { [ abovedot           , UFF06        , UFF17         , multiply ] }; // ˙ ＆ ７ ×
+    key <AE08> { [ U311A              , UFF0A        , UFF18         , U203B    ] }; // ㄚ ＊ ８ ※
+    key <AE09> { [ U311E              , UFF08        , UFF19         , U3008    ] }; // ㄞ （ ９ 〈
+    key <AE10> { [ U3122              , UFF09        , UFF10         , U3009    ] }; // ㄢ ） ０ 〉
+    key <AE11> { [ U3126              , emdash       , UFF3F         , UFF0D    ] }; // ㄦ — ＿ －
+    key <AE12> { [ UFF1D              , UFF0B        , UFF1C         , UFF1E    ] }; // ＝ ＋ ＜ ＞
+
+    key <AD01> { [ U3106              , UFF31        , UFF51         ] }; // ㄆ Ｑ ｑ
+    key <AD02> { [ U310A              , UFF37        , UFF57         , UFFE6    ] }; // ㄊ Ｗ ｗ ￦
+    key <AD03> { [ U310D              , UFF25        , UFF45         ] }; // ㄍ Ｅ ｅ
+    key <AD04> { [ U3110              , UFF32        , UFF52         ] }; // ㄐ Ｒ ｒ
+    key <AD05> { [ U3114              , UFF34        , UFF54         ] }; // ㄔ Ｔ ｔ
+    key <AD06> { [ U3117              , UFF39        , UFF59         , UFFE5    ] }; // ㄗ Ｙ ｙ ￥
+    key <AD07> { [ U3127              , UFF35        , UFF55         ] }; // ㄧ Ｕ ｕ
+    key <AD08> { [ U311B              , UFF29        , UFF49         ] }; // ㄛ Ｉ ｉ
+    key <AD09> { [ U311F              , UFF2F        , UFF4F         ] }; // ㄟ Ｏ ｏ
+    key <AD10> { [ U3123              , UFF30        , UFF50         ] }; // ㄣ Ｐ ｐ
+    key <AD11> { [ kana_openingbracket, U300E        , UFF3B         , UFF5B    ] }; // 「 『 ［ ｛
+    key <AD12> { [ kana_closingbracket, U300F        , UFF3D         , UFF5D    ] }; // 」 』 ］ ｝
+    key <BKSL> { [ kana_comma         , UFF5C        , UFF3C         , UFFE4    ] }; // 、 ｜ ＼ ￤
+
+    replace key <CAPS> { [ ISO_Next_Group ], type[Group1] = "ONE_LEVEL" };
+    key <AC01> { [ U3107              , UFF21        , UFF41         ] }; // ㄇ Ａ ａ
+    key <AC02> { [ U310B              , UFF33        , UFF53         ] }; // ㄋ Ｓ ｓ
+    key <AC03> { [ U310E              , UFF24        , UFF44         ] }; // ㄎ Ｄ ｄ
+    key <AC04> { [ U3111              , UFF26        , UFF46         ] }; // ㄑ Ｆ ｆ
+    key <AC05> { [ U3115              , UFF27        , UFF47         ] }; // ㄕ Ｇ ｇ
+    key <AC06> { [ U3118              , UFF28        , UFF48         ] }; // ㄘ Ｈ ｈ
+    key <AC07> { [ U3128              , UFF2A        , UFF4A         ] }; // ㄨ Ｊ ｊ
+    key <AC08> { [ U311C              , UFF2B        , UFF4B         ] }; // ㄜ Ｋ ｋ
+    key <AC09> { [ U3120              , UFF2C        , UFF4C         ] }; // ㄠ Ｌ ｌ
+    key <AC10> { [ U3124              , UFF1A        , UFF1B         ] }; // ㄤ ： ；
+    key <AC11> { [ UFF07              , UFF02        , U3010         , U3011 ] }; // ＇ ＂ 【 】
+
+    key <LSGT> { [ U3016              , U3017        , U3014         , U3015 ] }; // 〖 〗 〔 〕
+    key <AB01> { [ U3108              , UFF3A        , UFF5A         ] }; // ㄈ Ｚ ｚ
+    key <AB02> { [ U310C              , UFF38        , UFF58         ] }; // ㄌ Ｘ ｘ
+    key <AB03> { [ U310F              , UFF23        , UFF43         ] }; // ㄏ Ｃ ｃ
+    key <AB04> { [ U3112              , UFF36        , UFF56         ] }; // ㄒ Ｖ ｖ
+    key <AB05> { [ U3116              , UFF22        , UFF42         ] }; // ㄖ Ｂ ｂ
+    key <AB06> { [ U3119              , UFF2E        , UFF4E         ] }; // ㄙ Ｎ ｎ
+    key <AB07> { [ U3129              , UFF2D        , UFF4D         ] }; // ㄩ Ｍ ｍ
+    key <AB08> { [ U311D              , UFF0C        , periodcentered, U300A    ] }; // ㄝ ， · 《
+    key <AB09> { [ U3121              , kana_fullstop, UFF0E         , U300B    ] }; // ㄡ 。 ． 》
+    key <AB10> { [ U3125              , UFF1F        , UFF0F         , U2026    ] }; // ㄥ ？ ／ …
+
+    key <SPCE> { [space               , space        , U3000         , U02C9    ] }; //    　 ˉ
+
+    include "level3(ralt_switch)"
+};
+
 partial alphanumeric_keys
 xkb_symbols "indigenous" {
 
