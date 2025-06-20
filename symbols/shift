@@ -1,18 +1,17 @@
 // Cancel CapsLock when a Shift key is pressed.
+//
+// The usual workflow expected with this option is:
+// - `<CapsLock>` ↓↑: `Caps` is locked
+// - type caps letters
+// - `<Shift>` ↓: `Caps` is unlocked, `Shift` is set
+// - optionally type some more upper case letters: tolerance to sync with `Shift`
+// - `<Shift>` ↑: `Shift` is unset
+// - type in lower case
+//
+// A side effect is that both `<Shift>` keys together trigger CapsLock.
 partial modifier_keys
 xkb_symbols "breaks_caps" {
-    key <LFSH> {
-	type[group1] = "ALPHABETIC",
-	symbols[group1] = [ Shift_L, Shift_L ],
-	actions[group1] = [ SetMods(modifiers=Shift),
-			    SetMods(modifiers=Shift+Lock,clearLocks) ]
-    };
-    key <RTSH> {
-	type[group1] = "ALPHABETIC",
-	symbols[group1] = [ Shift_R, Shift_R ],
-	actions[group1] = [ SetMods(modifiers=Shift),
-			    SetMods(modifiers=Shift+Lock,clearLocks) ]
-    };
+    include "shift(both_capslock_cancel)"
 };
 
 
