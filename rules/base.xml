@@ -3017,8 +3017,20 @@
         </variant>
         <variant>
           <configItem>
+            <name>colemak_sym</name>
+            <description>English (Colemak, modified symbols)</description>
+          </configItem>
+        </variant>
+        <variant>
+          <configItem>
             <name>colemak_dh</name>
             <description>English (Colemak-DH)</description>
+          </configItem>
+        </variant>
+        <variant>
+          <configItem>
+            <name>colemak_dh_sym</name>
+            <description>English (Colemak-DH, modified symbols)</description>
           </configItem>
         </variant>
         <variant>
@@ -3029,8 +3041,20 @@
         </variant>
         <variant>
           <configItem>
+            <name>colemak_dh_wide_sym</name>
+            <description>English (Colemak-DH Wide, modified symbols)</description>
+          </configItem>
+        </variant>
+        <variant>
+          <configItem>
             <name>colemak_dh_ortho</name>
             <description>English (Colemak-DH Ortholinear)</description>
+          </configItem>
+        </variant>
+        <variant>
+          <configItem>
+            <name>colemak_dh_ortho_sym</name>
+            <description>English (Colemak-DH Ortholinear, modified symbols)</description>
           </configItem>
         </variant>
         <variant>
@@ -3041,8 +3065,20 @@
         </variant>
         <variant>
           <configItem>
+            <name>colemak_dh_iso_sym</name>
+            <description>English (Colemak-DH ISO, modified symbols)</description>
+          </configItem>
+        </variant>
+        <variant>
+          <configItem>
             <name>colemak_dh_wide_iso</name>
             <description>English (Colemak-DH Wide ISO)</description>
+          </configItem>
+        </variant>
+        <variant>
+          <configItem>
+            <name>colemak_dh_wide_iso_sym</name>
+            <description>English (Colemak-DH Wide ISO, modified symbols)</description>
           </configItem>
         </variant>
         <variant>
