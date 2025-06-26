@@ -6587,6 +6587,12 @@
             <description>Thai (Pattachote)</description>
           </configItem>
         </variant>
+        <variant>
+          <configItem>
+            <name>mnc</name>
+            <description>Thai (Manoonchai)</description>
+          </configItem>
+        </variant>
       </variantList>
     </layout>
     <layout>
