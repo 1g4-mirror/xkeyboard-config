@@ -6,7 +6,7 @@ xkb_symbols "basic" {
 
     include "macintosh_vndr/us(applealu_iso)"
 
-    name[Group1]= "United Kingdom - Mac";
+    name[Group1]= "English (UK, Macintosh)";
 
     key <AE02> {	[               2,              at,         EuroSign	]	};
     key <AE03> {	[               3,        sterling,       numbersign	]	};

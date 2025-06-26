@@ -29,7 +29,7 @@
 default
 xkb_symbols "extended" {
 
-    name[Group1]= "France - Mac";
+    name[Group1]= "French (Macintosh)";
 
     key <TLDE> {	[	   at,	  numbersign,	periodcentered,		ydiaeresis	]	};
     key <AE01> {	[   ampersand,	  1,	  	VoidSymbol,	  	dead_acute	]	}; // MISSING: Apple
@@ -92,7 +92,7 @@ xkb_symbols "extended" {
 
 xkb_symbols "nodeadkeys" {
 include "macintosh_vndr/fr(extended)"
-    name[Group1]= "France - Mac, no dead keys";
+    name[Group1]= "French (Macintosh, no dead keys)";
 
     key <AE01> {	[   ampersand,	  1,	  	VoidSymbol,	  	acute	]	}; // MISSING: Apple
     key <AD11> {	[asciicircum,diaeresis,ocircumflex, 		Ocircumflex	]	};

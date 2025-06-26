@@ -3090,13 +3090,13 @@
         <variant>
           <configItem>
             <name>dvorak-mac</name>
-            <description>English (Macintosh, Dvorak, ANSI)</description>
+            <description>English (Dvorak, Macintosh, ANSI)</description>
           </configItem>
         </variant>
         <variant>
           <configItem>
             <name>dvorak-mac-iso</name>
-            <description>English (Macintosh, Dvorak, ISO)</description>
+            <description>English (Dvorak, Macintosh, ISO)</description>
           </configItem>
         </variant>
         <variant>

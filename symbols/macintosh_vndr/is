@@ -56,7 +56,7 @@
 
 default partial alphanumeric_keys
 xkb_symbols "basic" {
-    name[Group1]= "Iceland - Mac";
+    name[Group1]= "Icelandic (Macintosh)";
 
 	//-- Row 5 (E) --//
 	key <TLDE> {	[	sterling,	section, 	UF8FF,		apostrophe	]	};
@@ -123,5 +123,5 @@ xkb_symbols "basic" {
 partial alphanumeric_keys
 xkb_symbols "nodeadkeys" {
     include	"macintosh_vndr/is(basic)" // for consistent naming
-    name[Group1]= "Iceland - Mac, no dead keys";
+    name[Group1]= "Icelandic (Macintosh, no dead keys)";
 };

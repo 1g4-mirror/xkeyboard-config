@@ -5,7 +5,7 @@ xkb_symbols "basic" {
     // keyboard and a very simple Spanish keyboard.
 
     include "latin"
-    name[Group1]= "Latin American - Mac";
+    name[Group1]= "Spanish (Latin American, Macintosh)";
 
     key <TLDE> {	[     bracketleft,    bracketright,        braceleft,      braceright	]	};
     key <LSGT> {	[            less,         greater,      bracketleft,       braceleft	]	};

@@ -1,7 +1,7 @@
 default
 xkb_symbols "extended" {
 
-    name[Group1]= "Italy - Mac";
+    name[Group1]= "Italian (Macintosh)";
 
     key <LSGT> {	[        less,  greater   	]	};
     key <TLDE> {        [        at,    numbersign,    periodcentered              ]	};
