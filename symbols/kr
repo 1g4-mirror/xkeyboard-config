@@ -53,6 +53,134 @@ xkb_symbols "rctrl_hanja" {
     };
 };
 
+partial function_keys
+xkb_symbols "hangul_locks_group" {
+    key <HNGL> {
+        symbols[Group1] = [ Hangul ],
+        actions[Group1] = [ LockGroup(group=+1) ]
+    };
+};
+
+// The 3-91 Sebeolsik keyboard.
+// https://libhangul.github.io/libhangul-doc/git/group__hangulkeyboards.html
+// https://ko-m-wikipedia-org.translate.goog/wiki/%EC%84%B8%EB%B2%8C%EC%8B%9D_%EC%9E%90%ED%8C%90?_x_tr_sl=ko&_x_tr_tl=en&_x_tr_hl=en
+partial alphanumeric_keys
+xkb_symbols "sebeolsik_final" {
+    name[Group1]= "Korean (Three-set, 3-91 Final)";
+
+    key <TLDE> { [ asterisk          , U203B                ] }; // * ※
+    key <AE01> { [ Hangul_J_Hieuh    , Hangul_J_SsangKiyeog ] }; // ᇂ ᆩ (Jongseong)
+    key <AE02> { [ Hangul_J_SsangSios, Hangul_J_RieulKiyeog ] }; // ᆻ ᆰ (Jongseong)
+    key <AE03> { [ Hangul_J_Pieub    , Hangul_J_Jieuj       ] }; // ᆸ ᆽ (Jongseong)
+    key <AE04> { [ U116D             , Hangul_J_RieulPhieuf ] }; // ᅭ ᆵ (Jungseong, Jongseong)
+    key <AE05> { [ U1172             , Hangul_J_RieulTieut  ] }; // ᅲ ᆴ (Jungseong, Jongseong)
+    key <AE06> { [ U1163             , equal                ] }; // ᅣ = (Jungseong)
+    key <AE07> { [ U1168             , leftdoublequotemark  ] }; // ᅨ “ (Jungseong)
+    key <AE08> { [ U1174             , rightdoublequotemark ] }; // ᅴ ” (Jungseong)
+    key <AE09> { [ U116E             , apostrophe           ] }; // ᅮ ' (Jungseong)
+    key <AE10> { [ U110F             , asciitilde           ] }; // ᄏ ~ (Choseong)
+    key <AE11> { [ parenright        , semicolon            ] }; // ) ;
+    key <AE12> { [ greater           , plus                 ] }; // > +
+
+    key <AD01> { [ Hangul_J_Sios     , Hangul_J_Phieuf      ] }; // ᆺ ᇁ (Jongseong)
+    key <AD02> { [ Hangul_J_Rieul    , Hangul_J_Tieut       ] }; // ᆯ ᇀ (Jongseong)
+    key <AD03> { [ U1167             , Hangul_J_NieunJieuj  ] }; // ᅧ ᆬ (Jungseong, Jongseong)
+    key <AD04> { [ U1162             , Hangul_J_RieulHieuh  ] }; // ᅢ ᆶ (Jungseong, Jongseong)
+    key <AD05> { [ U1165             , Hangul_J_RieulSios   ] }; // ᅥ ᆳ (Jungseong, Jongseong)
+    key <AD06> { [ U1105             , 5                    ] }; // ᄅ 5 (Choseong)
+    key <AD07> { [ U1103             , 6                    ] }; // ᄃ 6 (Choseong)
+    key <AD08> { [ U1106             , 7                    ] }; // ᄆ 7 (Choseong)
+    key <AD09> { [ U110E             , 8                    ] }; // ᄎ 8 (Choseong)
+    key <AD10> { [ U1111             , 9                    ] }; // ᄑ 9 (Choseong)
+    key <AD11> { [ parenleft         , percent              ] }; // ( %
+    key <AD12> { [ less              , slash                ] }; // < /
+    key <BKSL> { [ colon             , WonSign              ] }; // : ₩
+
+    key <AC01> { [ Hangul_J_Ieung    , Hangul_J_Dikeud      ] }; // ᆼ ᆮ (Jongseong)
+    key <AC02> { [ Hangul_J_Nieun    , Hangul_J_NieunHieuh  ] }; // ᆫ ᆭ (Jongseong)
+    key <AC03> { [ U1175             , Hangul_J_RieulPieub  ] }; // ᅵ ᆲ (Jungseong, Jongseong)
+    key <AC04> { [ U1161             , Hangul_J_RieulMieum  ] }; // ᅡ ᆱ (Jungseong, Jongseong)
+    key <AC05> { [ U1173             , U1164                ] }; // ᅳ ᅤ (Jungseong)
+    key <AC06> { [ U1102             , 0                    ] }; // ᄂ 0 (Choseong)
+    key <AC07> { [ U110B             , 1                    ] }; // ᄋ 1 (Choseong)
+    key <AC08> { [ U1100             , 2                    ] }; // ᄀ 2 (Choseong)
+    key <AC09> { [ U110C             , 3                    ] }; // ᄌ 3 (Choseong)
+    key <AC10> { [ U1107             , 4                    ] }; // ᄇ 4 (Choseong)
+    key <AC11> { [ U1110             , periodcentered       ] }; // ᄐ · (Choseong)
+
+    key <AB01> { [ Hangul_J_Mieum    , Hangul_J_Cieuc       ] }; // ᆷ ᆾ (Jongseong)
+    key <AB02> { [ Hangul_J_Kiyeog   , Hangul_J_PieubSios   ] }; // ᆨ ᆹ (Jongseong)
+    key <AB03> { [ U1166             , Hangul_J_Khieuq      ] }; // ᅦ ᆿ (Jungseong, Jongseong)
+    key <AB04> { [ U1169             , Hangul_J_KiyeogSios  ] }; // ᅩ ᆪ (Jungseong, Jongseong)
+    key <AB05> { [ U116E             , question             ] }; // ᅮ ? (Jungseong)
+    key <AB06> { [ U1109             , minus                ] }; // ᄉ - (Choseong)
+    key <AB07> { [ U1112             , quotedbl             ] }; // ᄒ " (Choseong)
+    key <AB08> { [ comma             ] }; // ,
+    key <AB09> { [ period            ] }; // .
+    key <AB10> { [ U1169             , exclam               ] }; // ᅩ ! (Jungseong)
+
+    include "kr(hangul_locks_group)"
+};
+
+// The 3-90 Sebeolsik keyboard.
+partial alphanumeric_keys
+xkb_symbols "sebeolsik_390" {
+    name[Group1]= "Korean (Three-set, 3-90)";
+
+    key <TLDE> { [ grave             , asciitilde           ] }; // ` ~
+    key <AE01> { [ Hangul_J_Hieuh    , Hangul_J_Jieuj       ] }; // ᇂ ᆽ (Jongseong)
+    key <AE02> { [ Hangul_J_SsangSios, at                   ] }; // ᆻ @ (Jongseong)
+    key <AE03> { [ Hangul_J_Pieub    , numbersign           ] }; // ᆸ # (Jongseong)
+    key <AE04> { [ U116D             , dollar               ] }; // ᅭ $ (Jungseong)
+    key <AE05> { [ U1172             , percent              ] }; // ᅲ % (Jungseong, Jongseong)
+    key <AE06> { [ U1163             , asciicircum          ] }; // ᅣ ^ (Jungseong)
+    key <AE07> { [ U1168             , ampersand            ] }; // ᅨ & (Jungseong)
+    key <AE08> { [ U1174             , asterisk             ] }; // ᅴ * (Jungseong)
+    key <AE09> { [ U116E             , parenleft            ] }; // ᅮ ( (Jungseong)
+    key <AE10> { [ U110F             , parenright           ] }; // ᄏ ) (Choseong)
+    key <AE11> { [ minus             , underscore           ] }; // - _
+    key <AE12> { [ equal             , plus                 ] }; // = +
+
+    key <AD01> { [ Hangul_J_Sios     , Hangul_J_Phieuf      ] }; // ᆺ ᇁ (Jongseong)
+    key <AD02> { [ Hangul_J_Rieul    , Hangul_J_Tieut       ] }; // ᆯ ᇀ (Jongseong)
+    key <AD03> { [ U1167             , Hangul_J_Khieuq      ] }; // ᅧ ᆿ (Jungseong, Jongseong)
+    key <AD04> { [ U1162             , U1164                ] }; // ᅢ ᅤ (Jungseong)
+    key <AD05> { [ U1165             , semicolon            ] }; // ᅥ ; (Jungseong)
+    key <AD06> { [ U1105             , less                 ] }; // ᄅ < (Choseong)
+    key <AD07> { [ U1103             , 7                    ] }; // ᄃ 7 (Choseong)
+    key <AD08> { [ U1106             , 8                    ] }; // ᄆ 8 (Choseong)
+    key <AD09> { [ U110E             , 9                    ] }; // ᄎ 9 (Choseong)
+    key <AD10> { [ U1111             , greater              ] }; // ᄑ > (Choseong)
+    key <AD11> { [ bracketleft       , braceleft            ] }; // [ {
+    key <AD12> { [ bracketright      , braceright           ] }; // ] }
+    key <BKSL> { [ WonSign           , bar                  ] }; // ₩ |
+
+    key <AC01> { [ Hangul_J_Ieung    , Hangul_J_Dikeud      ] }; // ᆼ ᆮ (Jongseong)
+    key <AC02> { [ Hangul_J_Nieun    , Hangul_J_NieunHieuh  ] }; // ᆫ ᆭ (Jongseong)
+    key <AC03> { [ U1175             , Hangul_J_RieulKiyeog ] }; // ᅵ ᆰ (Jungseong, Jongseong)
+    key <AC04> { [ U1161             , Hangul_J_SsangKiyeog ] }; // ᅡ ᆩ (Jungseong, Jongseong)
+    key <AC05> { [ U1173             , slash                ] }; // ᅳ / (Jungseong)
+    key <AC06> { [ U1102             , apostrophe           ] }; // ᄂ ' (Choseong)
+    key <AC07> { [ U110B             , 4                    ] }; // ᄋ 4 (Choseong)
+    key <AC08> { [ U1100             , 5                    ] }; // ᄀ 5 (Choseong)
+    key <AC09> { [ U110C             , 6                    ] }; // ᄌ 6 (Choseong)
+    key <AC10> { [ U1107             , colon                ] }; // ᄇ : (Choseong)
+    key <AC11> { [ U1110             , quotedbl             ] }; // ᄐ " (Choseong)
+
+    key <AB01> { [ Hangul_J_Mieum    , Hangul_J_Cieuc       ] }; // ᆷ ᆾ (Jongseong)
+    key <AB02> { [ Hangul_J_Kiyeog   , Hangul_J_PieubSios   ] }; // ᆨ ᆹ (Jongseong)
+    key <AB03> { [ U1166             , Hangul_J_RieulMieum  ] }; // ᅦ ᆱ (Jungseong, Jongseong)
+    key <AB04> { [ U1169             , Hangul_J_RieulHieuh  ] }; // ᅩ ᆶ (Jungseong, Jongseong)
+    key <AB05> { [ U116E             , exclam               ] }; // ᅮ ! (Jungseong)
+    key <AB06> { [ U1109             , 0                    ] }; // ᄉ 0 (Choseong)
+    key <AB07> { [ U1112             , 1                    ] }; // ᄒ 1 (Choseong)
+    key <AB08> { [ comma             , 2                    ] }; // , 2
+    key <AB09> { [ period            , 3                    ] }; // . 3
+    key <AB10> { [ U1169             , question             ] }; // ᅩ ? (Jungseong)
+
+    include "kr(hangul_locks_group)"
+};
+
 // EXTRAS:
 
 partial alphanumeric_keys
