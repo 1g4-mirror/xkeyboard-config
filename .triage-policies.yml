@@ -74,6 +74,22 @@
       and [instructions for Wayland](https://xkbcommon.github.io/libxkbcommon/doc/current/md_doc_user_configuration.html).
     status: "close"
 
+.redirect-translations: &redirect-translations
+  name: "Translations are handled in another project"
+  conditions:
+    labels:
+      - "bugbot::redirect-translations"
+  actions:
+    remove_labels:
+      - "bugbot::redirect-translations"
+    comment: |
+      Hi {{author}}! Thanks for filing this issue/merge request. Translations are handled
+      in [The Translation Project]. Please contact the team corresponding to the relevant
+      language for any bug report or other contribution.
+
+      [The Translation Project]: https://translationproject.org/domain/xkeyboard-config.html
+    status: "close"
+
 ################################################################################
 # Rules
 ################################################################################
@@ -84,8 +100,10 @@ resource_rules:
       - *template-required
       - *insufficient-motivation
       - *too-exotic
+      - *redirect-translations
   merge_requests:
     rules:
       - *template-required
       - *insufficient-motivation
       - *too-exotic
+      - *redirect-translations

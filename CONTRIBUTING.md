@@ -17,6 +17,13 @@ First of all, make sure you read the following:
 [Introduction to XKB]: https://xkbcommon.org/doc/current/xkb-intro.html
 [The XKB file format]: https://xkbcommon.org/doc/current/keymap-text-format-v1.html
 
+## Translations
+
+Translations are handled in [The Translation Project]. Please contact the team
+corresponding to the relevant language for any bug report or other contribution.
+
+[The Translation Project]: https://translationproject.org/domain/xkeyboard-config.html
+
 ## Bug reports
 
 Bugs are reported in our [issue tracker].
