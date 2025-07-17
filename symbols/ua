@@ -160,6 +160,28 @@ xkb_symbols "winkeys" {
     key <AB10>	{[          period,           comma ]};
 };
 
+// Windows Ukrainian (Enhanced) Layout
+partial
+xkb_symbols "winkeysenhanced" {
+
+    include "ua(legacy)"
+
+    name[Group1] = "Ukrainian (Windows Enhanced)";
+
+    key <LSGT> { type="ALPHABETIC", symbols=[ Ukrainian_ghe_with_upturn, Ukrainian_GHE_WITH_UPTURN ] };
+    key <BKSL> { [ backslash, slash ] };
+    key <TLDE> { type="ALPHABETIC", symbols[Group1]=[ apostrophe, U20B4 ] };
+    key <AE03> { [ 3, numerosign ] };
+    key <AE04> { [ 4, semicolon ] };
+    key <AE05> { [ 5, percent ] };
+    key <AE06> { [ 6, colon ] };
+    key <AE07> { [ 7, question ] };
+    key <AE08> { [ 8, asterisk ] };
+    key <AD07> { type = "FOUR_LEVEL_ALPHABETIC", symbols[Group1] = [ Cyrillic_ghe, Cyrillic_GHE, Ukrainian_ghe_with_upturn, Ukrainian_GHE_WITH_UPTURN ] };
+    key <AB10> { [ period, comma ] };
+    include "level3(ralt_switch)"
+};
+
 partial alphanumeric_keys
 xkb_symbols "typewriter" {
 
