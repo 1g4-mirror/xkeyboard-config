@@ -1,0 +1,7 @@
+  * symbols/pk, rules/base.xml: Add "pak_urdu_phonetic" variant to "pk" layout
+    This layout provides phonetic typing for Urdu, mapping English phonetic equivalents to Urdu script.
+    It is a port of the widely-used Windows-only "Pak Urdu Installer" by mBilalm.
+    Includes comprehensive character coverage with over 160 custom key mappings.
+    Adds support for full Urdu typography including diacritics, punctuation, and special symbols.
+    Introduces U+FDFB (ﷻ) mapped to AltGr+Shift+X.
+    Ported by Nashit Ahmed Barq.
