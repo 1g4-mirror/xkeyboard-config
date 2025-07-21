@@ -435,7 +435,7 @@ xkb_symbols "urd-navees" {
     include "level3(ralt_switch)"
 };
 
-// Pak Urdu Phonetic
+// Pak Urdu Phonetic (v1.0)
 //
 // This layout is a faithful port of the widely-used, Windows-only
 // "Pak Urdu Installer" keyboard layout. It brings the same intuitive
