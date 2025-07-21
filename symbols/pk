@@ -516,4 +516,3 @@ xkb_symbols "pak_urdu_phonetic" {
 
     include "level3(ralt_switch)"
 };
-
