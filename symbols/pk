@@ -434,3 +434,86 @@ xkb_symbols "urd-navees" {
 
     include "level3(ralt_switch)"
 };
+
+// Pak Urdu Phonetic
+//
+// This layout is a faithful port of the widely-used, Windows-only
+// "Pak Urdu Installer" keyboard layout. It brings the same intuitive
+// phonetic typing experience to Linux systems via xkeyboard-config.
+//
+// It is the most comprehensive phonetic Urdu typing solution to date,
+// featuring over 160 unique key mappings across four layers:
+// regular, Shift, AltGr (Right Alt), and Shift+AltGr.
+//
+// Designed to support modern and classical Urdu characters, diacritics,
+// punctuation, and extended symbols, Pak Urdu Phonetic ensures
+// complete phonetic coverage for Urdu typists on Linux.
+//
+// *** Credits ***
+// Original layout: mBilalm (https://www.mbilalm.com/pak-urdu-installer.php)
+// XKB port and maintenance: Nashit Ahmad Barq
+// https://github.com/BARQx/pak-urdu-phonetic
+//
+// Last updated: 2025-07-21
+
+
+partial alphanumeric_keys
+xkb_symbols "pak_urdu_phonetic" {
+    name[Group1]= "Urdu (Pak Urdu Phonetic)";
+
+    key <TLDE> { [ U064D, U064B, U06E4, U002E ] };
+    key <AE01> { [ U0031, U0021, U06F1, U0671 ] };
+    key <AE02> { [ U0032, U0040, U06F2, none ] };
+    key <AE03> { [ U0033, U0023, U06F3, none ] };
+    key <AE04> { [ U0034, U0024, U06F4, none ] };
+    key <AE05> { [ U0035, U066A, U06F5, U06EC ] };
+    key <AE06> { [ U0036, U06C2, U06F6, U06EE ] };
+    key <AE07> { [ U0037, U0026, U06F7, U06E7 ] };
+    key <AE08> { [ U0038, U066D, U06F8, U06DE ] };
+    key <AE09> { [ U0039, U0029, U06F9, UFD3E ] };
+    key <AE10> { [ U0030, U0028, U06F0, UFD3F ] };
+    key <AE11> { [ U002D, U0640, U0600, none ] };
+    key <AE12> { [ U0653, U06E4, U0602, none ] };
+
+    key <AD01> { [ U0642, UFDFA, U06E5, U06AA ] };
+    key <AD02> { [ U0648, U0624, U200D, U06E5 ] };
+    key <AD03> { [ U0639, U0611, U06E0, none ] };
+    key <AD04> { [ U0631, U0691, U0613, none ] };
+    key <AD05> { [ U062A, U0679, U200C, none ] };
+    key <AD06> { [ U06D2, U06D3, U0601, U06E6 ] };
+    key <AD07> { [ U0626, U0621, U0654, U0655 ] };
+    key <AD08> { [ U06CC, U0670, U064A, U0649 ] };
+    key <AD09> { [ U06C1, U06C3, U0647, U0629 ] };
+    key <AD10> { [ U067E, U064F, none, U06D7 ] };
+    key <AD11> { [ U064C, U0657, U06E9, U06D6 ] };
+    key <AD12> { [ U0652, U0651, U0658, none ] };
+
+    key <AC01> { [ U0627, U0622, U0623, U0625 ] };
+    key <AC02> { [ U0633, U0635, U06DC, U06EA ] };
+    key <AC03> { [ U062F, U0688, none, none ] };
+    key <AC04> { [ U0641, U0656, none, none ] };
+    key <AC05> { [ U06AF, U063A, none, none ] };
+    key <AC06> { [ U06BE, U062D, none, none ] };
+    key <AC07> { [ U062C, U0636, U06DA, U06ED ] };
+    key <AC08> { [ U06A9, U062E, U0643, none ] };
+    key <AC09> { [ U0644, U0612, U06D9, none ] };
+    key <AC10> { [ U061B, U003A, U201C, U2018 ] };
+    key <AC11> { [ U0027, U0022, U201D, U2019 ] };
+
+    key <AB01> { [ U0632, U0630, U06E1, none ] };
+    key <AB02> { [ U0634, U0698, none, UFDFB ] };
+    key <AB03> { [ U0686, U062B, U06E3, none ] };
+    key <AB04> { [ U0637, U0638, U0615, none ] };
+    key <AB05> { [ U0628, UFDFD, none, none ] };
+    key <AB06> { [ U0646, U06BA, U06E8, U06FF ] };
+    key <AB07> { [ U0645, U0610, U06D8, U06E2 ] };
+    key <AB08> { [ U060C, U0650, U06EB, U060D ] };
+    key <AB09> { [ U06D4, U064E, U06EF, U06DD ] };
+    key <AB10> { [ U002F, U061F, none, U06DB ] };
+
+    key <BKSL> { [ U060E, U0614, U060F, U0603 ] };
+    key <SPCE> { [ U0020, none, none, none ] };
+
+    include "level3(ralt_switch)"
+};
+

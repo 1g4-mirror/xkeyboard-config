@@ -6811,6 +6811,12 @@
         </variant>
         <variant>
           <configItem>
+            <name>pak_urdu_phonetic</name>
+            <description>Urdu (Pak Urdu Phonetic)</description>
+          </configItem>
+        </variant>
+        <variant>
+          <configItem>
             <name>ara</name>
             <!-- Keyboard indicator for Arabic layouts -->
             <shortDescription>ar</shortDescription>
