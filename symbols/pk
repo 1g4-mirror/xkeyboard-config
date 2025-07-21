@@ -451,8 +451,8 @@ xkb_symbols "urd-navees" {
 //
 // *** Credits ***
 // Original layout: mBilalm (https://www.mbilalm.com/pak-urdu-installer.php)
-// XKB port and maintenance: Nashit Ahmad Barq
-// https://github.com/BARQx/pak-urdu-phonetic
+// XKB port and maintenance: Nashit Ahmad Barq (@BARQx)
+// https://barqx.github.io/pak-urdu-phonetic/
 //
 // Last updated: 2025-07-21
 
