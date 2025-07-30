@@ -15,6 +15,10 @@
   applealu_iso	us			=	macintosh_vndr/apple(alukbd)+macintosh_vndr/us(applealu_iso)
  $applealu	$macvendorlayouts	=	macintosh_vndr/apple(alukbd)+macintosh_vndr/%l
  $applealu	*			=	macintosh_vndr/apple(alukbd)+%l%(v)
+  nokiarx44	*			=	nokia_vndr/%m(%l)
+  nokiarx51	cz(qwerty)		=	nokia_vndr/%m(common)+nokia_vndr/%m(cz_qwerty)
+  nokiarx51	*			=	nokia_vndr/%m(common)+nokia_vndr/%m(%l%_v)
+  nokiasu8w	*			=	nokia_vndr/%m(%l)
   olpc		$olpclayouts		=	olpc+%l%(m)
   olpc		*			=	olpc+%l%(v)
   olpcm		$olpclayouts		=	olpc+%l%(m)

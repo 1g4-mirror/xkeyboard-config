@@ -1,5 +1,7 @@
 ! model		layout[3]	=	symbols
   applealu_iso	us			=	+macintosh_vndr/us(applealu_iso):3
  $applealu	$macvendorlayouts	=	+macintosh_vndr/%l[3]:3
+ nokiarx51	cz(qwerty)	=	+nokia_vndr/%m(cz_qwerty):3
+ nokiarx51	*		=	+nokia_vndr/%m(%l[3]%_v[3]):3
  $sun		$sun_custom	=	+sun_vndr/%l[3]:3
   *		*		=	+%l[3]%(v[3]):3
