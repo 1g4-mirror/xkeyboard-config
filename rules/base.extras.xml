@@ -42,6 +42,15 @@
             </languageList>
           </configItem>
         </variant>
+        <variant>
+          <configItem popularity="exotic">
+            <name>got-alt</name>
+            <description>Gothic (Alternative)</description>
+            <languageList>
+              <iso639Id>got</iso639Id>
+            </languageList>
+          </configItem>
+        </variant>
       </variantList>
     </layout>
     <layout>
