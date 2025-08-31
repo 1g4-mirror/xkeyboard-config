@@ -233,7 +233,7 @@ xkb_symbols "got-alt"
 		key <AD10> { [ U10340				           		  ] }; // 𐍀
 		key <AD11> { [ bracketleft,    braceleft, 		U2022 ] }; // [ { •
 		key <AD12> { [ bracketright,   braceright, 		U00B7 ] }; // ] } ·
-	
+
 		key <AC01> { [ U10330				         		  ] }; // 𐌰
 		key <AC02> { [ U10343				         		  ] }; // 𐍃
 		key <AC03> { [ U10333				         		  ] }; // 𐌳
