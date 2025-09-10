@@ -6503,6 +6503,15 @@
       <variantList>
         <variant>
           <configItem>
+            <name>bopomofo</name>
+            <description>Chinese (Bopomofo)</description>
+            <languageList>
+              <iso639Id>zho</iso639Id>
+            </languageList>
+          </configItem>
+        </variant>
+        <variant>
+          <configItem>
             <name>indigenous</name>
             <description>Taiwanese (indigenous)</description>
             <languageList>
