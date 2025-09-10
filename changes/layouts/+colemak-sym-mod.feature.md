@@ -1,0 +1,1 @@
+Colemak: add variants for DreymaR’s “symbols mod”, which moves some of the punctuation keys from their Colemak-standard positions for improved ergonomics. These layouts are documented at <https://dreymar.colemak.org/ergo-mods.html#symbols>.
