@@ -101,6 +101,12 @@ xkb_symbols "evdev" {
     key <HELP>   {      [ Help                  ]       };
     key <LNFD>   {      [ Linefeed              ]       };
 
+    key <FK13>   {      [ F13                   ]       };
+    key <FK14>   {      [ F14                   ]       };
+    key <FK15>   {      [ F15                   ]       };
+    key <FK16>   {      [ F16                   ]       };
+    key <FK17>   {      [ F17                   ]       };
+    key <FK18>   {      [ F18                   ]       };
     key <FK19>   {      [ F19                   ]       };
 // These are historical mappings that must not be removed.
 // xf86-input-libinput and xf86-input-evdev drivers
@@ -193,13 +199,6 @@ xkb_symbols "evdev" {
 
     key <I372>  {       [ XF86Favorites          ]       };
     key <I382>  {       [ XF86Keyboard           ]       };
-
-    key <FK13>   {      [ XF86Tools         ]       };
-    key <FK14>   {      [ XF86Launch5       ]       };
-    key <FK15>   {      [ XF86Launch6       ]       };
-    key <FK16>   {      [ XF86Launch7       ]       };
-    key <FK17>   {      [ XF86Launch8       ]       };
-    key <FK18>   {      [ XF86Launch9       ]       };
 
     @evdevsyms@
 };
