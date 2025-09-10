@@ -6732,6 +6732,12 @@
         </variant>
         <variant>
           <configItem>
+            <name>winkeysenhanced</name>
+            <description>Ukrainian (Windows Enhanced)</description>
+          </configItem>
+        </variant>
+        <variant>
+          <configItem>
             <name>macOS</name>
             <description>Ukrainian (macOS)</description>
           </configItem>
