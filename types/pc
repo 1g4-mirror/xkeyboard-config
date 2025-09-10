@@ -38,6 +38,14 @@ default partial xkb_types "default" {
 	level_name[Level2] = "Control";
     };
 
+    type "PC_CONTROL_SUPER_LEVEL2" {
+	modifiers = Control + Super;
+	map[None] = Level1;
+	map[Control+Super] = Level2;
+	level_name[Level1] = "Base";
+	level_name[Level2] = "Control + Super";
+    };
+
     type "CTRL+ALT" {
 	modifiers = Shift + LevelThree + Control + Alt;
 	map[None] = Level1;
