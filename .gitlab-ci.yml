@@ -179,14 +179,22 @@ meson_install:
 meson_test:
   extends: .meson_build
   stage: build
+  needs:
+    - job: xkbcommon build
+      artifacts: true
   variables:
       NINJA_EXTRA_COMMAND: "test"
+      XKBCOMMON_LIB_PATH: "$XKBCOMMON_INST_DIR/lib/libxkbcommon.so"
 
 meson_dist:
   extends: .meson_build
   stage: build
+  needs:
+    - job: xkbcommon build
+      artifacts: true
   variables:
       NINJA_EXTRA_COMMAND: "dist"
+      XKBCOMMON_LIB_PATH: "$XKBCOMMON_INST_DIR/lib/libxkbcommon.so"
   artifacts:
     name: tarball
     expire_in: 2 weeks
