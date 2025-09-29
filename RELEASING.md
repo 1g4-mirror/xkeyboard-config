@@ -15,19 +15,47 @@
 
 - [ ] Bump the `version` in `meson.build` to `MAJOR.PREV_MINOR.99`.
 
-- [ ] Run `meson setup buildddir; ninja -C builddir dist` to make sure the release is good to go.
+- [ ] Run `meson setup buildddir; meson dist -C builddir` to make sure the release is good to go.
 
-- [ ] Run `meson compile xkeyboard-config-pot` in builddir to update xkeyboard-config.pot file in po subdirectory.
+- [ ] Run `meson compile -C builddir xkeyboard-config-pot` to update `po/xkeyboard-config.pot` file.
 
-- [ ] Commit `meson.build` and `po/xkeyboard-config.pot` to the branch.
+- [ ] Commit `meson.build` and `po/xkeyboard-config.pot` with subject “String freeze MAJOR.MINOR”.
 
-- [ ] Merge the branch `release/MAJOR.PREV_MINOR.99` to `master` on gitlab.
+- [ ] Create a pull request with subject “String freeze MAJOR.MINOR” and
+  description:
 
-- [ ] Send `po/xkeyboard-config.pot` and `builddir/meson-dist/xkeyboard-config-MAJOR.PREV_MINOR.tar.xz` to Translation Project asking for translations update: <coordinator@translationproject.org>
+  > Bump version to send to the [Translation Project]
+  > [Translation Project]: https://translationproject.org/html/maintainers.html
+
+  and ensure *all* CI is green.
+
+- [ ] Merge the pull request.
+
+- [ ] Send `po/xkeyboard-config.pot` and `builddir/meson-dist/xkeyboard-config-MAJOR.PREV_MINOR.tar.xz` to Translation Project asking for translations update: <coordinator@translationproject.org>. See the [instructions from the TP].
+
+[instructions from the TP]: https://translationproject.org/html/maintainers.html
 
 - [ ] Give the Translation Project *2 weeks* to update translations.
 
-#### Prepare the release
+#### Translations update
+
+**Day of the release**
+
+- [ ] Pull the latest [translation files] from Translation Project by executing
+  `scripts/pull_translations.sh`.
+
+- [ ] Trim any superfluous white space from these files.
+
+- [ ] `git commit -m 'Update translations – Thanks to TP'`.
+
+- [ ] Create a pull request with suject “Update translations”
+  and ensure *all* CI is green.
+
+- [ ] Merge the pull request.
+
+[translation files]: https://translationproject.org/domain/xkeyboard-config.html
+
+#### Release
 
 - [ ] Ensure there is no issue in the tracker blocking the release. Make sure
   they have their milestone set to the relevant release and the relevant tag
@@ -40,9 +68,12 @@
 
 - [ ] Bump the `version` in `meson.build`.
 
-- [ ] Pull the latest translations from Translation Project by executing `scripts/pull_translations.sh`.
+- [ ] Update the `ChangeLog.md` file for the release, following
+  [the corresponding instructions](changes/README.md).
 
-- [ ] Run `meson setup buildddir; ninja -C builddir dist` to make sure the release is good to go.
+- [ ] Review the changelog: typos, item order, formatting.
+
+- [ ] Run `meson setup buildddir; meson dist -C builddir` to make sure the release is good to go.
 
 - [ ] Commit `git commit -m 'New version MAJOR.MINOR'`.
 
@@ -50,7 +81,13 @@
 
 - [ ] Merge the pull request.
 
-- [ ] Tag `git switch master && git pull && git tag --annotate -m xkeyboard-config-<MAJOR.MINOR> xkeyboard-config-<MAJOR.MINOR>`.
+- [ ] Tag:
+
+  ```bash
+  git switch master && \
+  git pull && \
+  git tag --annotate -m "xkeyboard-config-<MAJOR.MINOR>" "xkeyboard-config-<MAJOR.MINOR>"
+  ```
 
 - [ ] Push the tag `git push origin xkeyboard-config-<MAJOR.MINOR>`.
 
