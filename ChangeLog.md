@@ -1,3 +1,119 @@
+xkeyboard-config [2.46] - 2025-09-30
+====================================
+
+[2.46]: https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/tree/xkeyboard-config-2.46
+
+# Layouts
+
+## New
+
+- Added Manoonchai layout for Thai as documented in [Github repository](https://github.com/manoonchai/manoonchai?tab=readme-ov-file).
+
+  Contributed by Pawat Nakpiphatkulr
+  ([!820](https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/merge_requests/820))
+- Added ISO/international variants of ANSI and Dvorak US Macintosh layouts.
+
+  Contributed by Katalin Rebhan
+  ([!829](https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/merge_requests/829))
+- Added the Ukrainian (Windows Enhanced) keyboard layout variant (winkeysenhanced) which matches the Windows 11 default.
+
+  Contributed by Alex Dowson
+  ([!838](https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/merge_requests/838))
+- Add `pk(pak_urdu_phonetic)` variant
+  This layout provides phonetic typing for Urdu, mapping English phonetic equivalents to Urdu script.
+  It is a port of the widely-used Windows-only “Pak Urdu Installer” by mBilalm.
+  Includes comprehensive character coverage with over 160 custom key mappings.
+  Adds support for full Urdu typography including diacritics, punctuation, and special symbols.
+  Introduces `U+FDFB` (ﷻ) mapped to `AltGr+Shift+X`.
+
+  Contributed by Nashit Ahmed Barq
+  ([!839](https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/merge_requests/839))
+- Added an alternative variant for Gothic in the Ancient layout.
+
+  Contributed by Garcez
+  ([!845](https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/merge_requests/845))
+
+## Fixes
+
+- Fixed a regression in `us(mac)` layout resulting in the grave/tilde key inverted
+  with the section key.
+
+  Contributed by Katalin Rebhan
+  ([!829](https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/merge_requests/829),
+  [#534](https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/issues/534))
+
+
+# Options
+
+## New
+
+- Added `hyper:mod2` compatibility option, to maps the virtual modifier `Hyper`
+  to `Mod2`; *conflicts with `NumLock`*.
+
+  Use this option if using `Hyper`, `Super` *and* `LevelFive`, e.g. for layouts
+  with 5+ levels. The option `numpad:mac` should be activated as well, in order to
+  enable the numpad.
+
+## Fixes
+
+- Fixed `shift:break_caps` resulting in rEVERSE cAPS if some keys were operated
+  simultaneously with the `Shift` keys when trying to unlock `Caps`.
+  ([#74](https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/issues/74))
+
+
+# Miscellaneous
+
+## New
+
+- inet: Added mapping to the following new keysyms:
+  - `XF86OK`
+  - `XF86Select`
+  - `XF86GoTo`
+  - `XF86Clear`
+  - `XF86Option`
+  - `XF86Time`
+  - `XF86VendorLogo`
+  - `XF86MediaSelectProgramGuide`
+  - `XF86NextFavorite`
+  - `XF86MediaSelectProgramGuide`
+  - `XF86MediaSelectHome`
+  - `XF86MediaLanguageMenu`
+  - `XF86MediaTitleMenu`
+  - `XF86Subtitle`
+  - `XF86AudioChannelMode`
+  - `XF86MediaSelectPC`
+  - `XF86MediaSelectTV`
+  - `XF86MediaSelectCable`
+  - `XF86MediaSelectVCR`
+  - `XF86MediaSelectVCRPlus`
+  - `XF86MediaSelectSatellite`
+  - `XF86MediaSelectCD`
+  - `XF86MediaSelectTape`
+  - `XF86MediaSelectRadio`
+  - `XF86MediaSelectTuner`
+  - `XF86MediaPlayer`
+  - `XF86MediaSelectTeletext`
+  - `XF86MediaSelectAuxiliary`
+
+  Relevant upstream merge request: [xorgproto-93].
+
+  [xorgproto-93]: https://gitlab.freedesktop.org/xorg/proto/xorgproto/-/merge_requests/93
+
+## Fixes
+
+- Fixed `CTRL+ALT` incomplete key type, which prevented using some key combinations:
+  e.g. `Control+Backspace`.
+
+
+# Build system
+
+## Breaking changes
+
+- Remove the build option `xkb-base`, which was ineffectual since the migration
+  from autotools to meson in xkeyboard-config 2.35, published 3 years ago.
+  ([#532](https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/issues/532))
+
+
 xkeyboard-config [2.45] - 2025-06-08
 ====================================
 
