@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: xkeyboard-config 2.44.99\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-05-27 22:48+0000\n"
-"PO-Revision-Date: 2025-05-28 10:52+0200\n"
+"PO-Revision-Date: 2025-07-10 21:09+0200\n"
 "Last-Translator: Jean-Philippe Guérard <jean-philippe.guerard@corbeaunoir.org>\n"
 "Language-Team: French <traduc@traduc.org>\n"
 "Language: fr\n"
@@ -1396,7 +1396,7 @@ msgstr "Danois"
 
 #: rules/base.xml:2396
 msgid "Danish (no dead keys)"
-msgstr "Espagnol (sans touche morte)"
+msgstr "Danois (sans touche morte)"
 
 #: rules/base.xml:2402
 msgid "Danish (Windows)"
