@@ -174,9 +174,16 @@ def test_compat_layout(xkb_base: Path, rules: str, mapping: tuple[Layout, Layout
 
         # [HACK] Fix keycodes aliases
         if alias.layout == "de" and target.layout != "de":
+            # libxkbcommon ≤ 1.11
+            alias_string = alias_string.replace(
+                "<LatZ>         = <AD06>", "<LatY>         = <AD06>"
+            )
+            alias_string = alias_string.replace(
+                "<LatY>         = <AB01>", "<LatZ>         = <AB01>"
+            )
+            # libxkbcommon ≥ 1.12
             alias_string = alias_string.replace("<LatZ> = <AD06>", "<LatZ> = <AB01>")
             alias_string = alias_string.replace("<LatY> = <AB01>", "<LatY> = <AD06>")
-            pass
 
         # [HACK] Discard components names
         alias_string = COMPONENT_NAME_PATTERN.sub(drop_component_name, alias_string)
