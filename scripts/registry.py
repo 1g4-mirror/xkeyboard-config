@@ -16,7 +16,7 @@ import sys
 from collections.abc import Generator, Sequence
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any
+from typing import Any, Sequence
 
 import yaml
 
@@ -87,15 +87,18 @@ class Registry:
         )
 
     @classmethod
-    def load(cls, xkb_root: Path | None = None, rules: str | None = None) -> Registry:
+    def load(
+        cls, xkb_roots: Sequence[Path] | None = None, rules: str | None = None
+    ) -> Registry:
         """
         Run xkbcli list and parse its YAML output.
         """
         args: tuple[str, ...] = ("xkbcli", "list", "--load-exotic")
-        if xkb_root:
+        if xkb_roots:
             # If no xkb config root is provided, we rely on the defaults that xkbcommon
             # will pick. It depends on its built-in defaults and on the environment.
-            args += ("--skip-default-paths", str(xkb_root))
+            args += ("--skip-default-paths",)
+            args += tuple(map(str, xkb_roots))
         if rules:
             # If no rules set is provided, we rely on the default one that xkbcommon
             # will pick. It depends on its built-in default and on the environment.
@@ -121,7 +124,7 @@ Required upper case characters for a layout to be considered Latin.
 
 
 def filter_latin_layouts(
-    xkb_root: Path,
+    xkb_roots: Sequence[Path],
     registry: Registry,
     latin: bool,
     rules: str | None = None,
@@ -138,7 +141,7 @@ def filter_latin_layouts(
     for layout in registry.layouts:
         try:
             with xkbcommon.ForeignKeymap(
-                xkb_base=xkb_root,
+                xkb_base=xkb_roots,
                 rules=rules,
                 layout=layout.layout,
                 variant=layout.variant,
@@ -169,7 +172,9 @@ def filter_latin_layouts(
             )
 
 
-def process_layouts(xkb_root: Path, registry: Registry, args: argparse.Namespace):
+def process_layouts(
+    xkb_roots: Sequence[Path], registry: Registry, args: argparse.Namespace
+):
     """
     Process layouts from a given registry, depending on the CLI arguments.
     """
@@ -178,7 +183,7 @@ def process_layouts(xkb_root: Path, registry: Registry, args: argparse.Namespace
         # Filter (non-)Latin layouts
         layouts = tuple(
             filter_latin_layouts(
-                xkb_root,
+                xkb_roots,
                 registry,
                 latin=args.latin,
                 rules=args.rules,
@@ -221,7 +226,7 @@ def parse_cli_args() -> argparse.Namespace:
     Create CLI parser and parse corresponding arguments.
     """
     parser = argparse.ArgumentParser()
-    parser.add_argument("--xkb-root", type=Path, required=True)
+    parser.add_argument("--xkb-root", type=Path, action="append", required=True)
     parser.add_argument("--debug", action="store_true")
     parser.add_argument("--rules", help="Rules set to use")
     subparsers = parser.add_subparsers(required=True)
@@ -240,7 +245,7 @@ if __name__ == "__main__":
     args = parse_cli_args()
     if args.debug:
         logger.setLevel(logging.DEBUG)
-    xkb_root: Path = args.xkb_root
+    xkb_roots: list[Path] = args.xkb_root
     rules: str | None = args.rules
-    registry = Registry.load(xkb_root, rules)
-    args.run(xkb_root, registry, args)
+    registry = Registry.load(xkb_roots, rules)
+    args.run(xkb_roots, registry, args)

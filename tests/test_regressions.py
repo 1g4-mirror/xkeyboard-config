@@ -192,15 +192,22 @@ class _KeyDown:
 @pytest.fixture(scope="session")
 def xkb_base():
     """Get the xkeyboard-config directory from the environment."""
-    path = os.environ.get("XKB_CONFIG_ROOT")
-    if path:
-        return Path(path)
+    roots: list[Path] = []
+
+    # XKB_CONFIG_EXTRA_PATH is not mandatory
+    if path := os.environ.get("XKB_CONFIG_EXTRA_PATH"):
+        roots.append(Path(path))
+
+    if path := os.environ.get("XKB_CONFIG_ROOT"):
+        roots.append(Path(path))
     else:
         raise ValueError("XKB_CONFIG_ROOT environment variable is not defined")
 
+    return roots
+
 
 @pytest.fixture(scope="session")
-def has_vmod_queries(xkb_base: Path) -> bool:
+def has_vmod_queries(xkb_base: list[Path]) -> bool:
     return xkbcommon.has_vmod_queries(xkb_base)
 
 
@@ -234,7 +241,7 @@ def options(request: pytest.FixtureRequest):
 
 @pytest.fixture
 def keymap(
-    xkb_base: Path,
+    xkb_base: list[Path],
     has_vmod_queries: bool,
     rules: Optional[str],
     model: Optional[str],

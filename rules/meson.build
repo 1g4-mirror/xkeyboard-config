@@ -166,6 +166,8 @@ if python.language_version().version_compare('<@0@'.format(MINIMUM_PYTHON_VERSIO
 endif
 merge_py = find_program('merge.py')
 xml2lst = find_program('xml2lst.pl')
+rules_files = []
+registry_files = []
 foreach ruleset: ['base', 'evdev']
     # generate the "evdev" and "base" rules files
     #
@@ -184,38 +186,37 @@ foreach ruleset: ['base', 'evdev']
     endforeach
 
     # Second: merge those parts together into the actual rules file
-    custom_target('rules-@0@'.format(ruleset),
-                  build_by_default: true,
-                  command: [
-                      merge_py,
-                      rules_parts + rules_parts_generated,
-                  ],
-                  depends: rules_parts_generated,
-                  output: ruleset,
-                  capture: true,
-                  install: true,
-                  install_dir: dir_xkb_rules)
+    rules_files += custom_target(f'rules-@ruleset@',
+                                 build_by_default: true,
+                                 command: [
+                                     merge_py,
+                                     rules_parts + rules_parts_generated,
+                                 ],
+                                 depends: rules_parts_generated,
+                                 output: ruleset,
+                                 capture: true,
+                                 install: true,
+                                 install_dir: dir_xkb_rules)
 
     # Third: the xml files, simply copied from the base*.xml files
-    ruleset_xml = configure_file(output: '@0@.xml'.format(ruleset),
-                       input: base_xml,
-                       copy: true,
-                       install: true,
-                       install_dir: dir_xkb_rules)
-
+    ruleset_xml = configure_file(output: f'@ruleset@.xml',
+                                 input: base_xml,
+                                 copy: true,
+                                 install: true,
+                                 install_dir: dir_xkb_rules)
+    registry_files += ruleset_xml
     # This is used by the man page's meson.build
     if ruleset == 'evdev'
       evdev_ruleset = ruleset_xml
     endif
-
-    configure_file(output: '@0@.extras.xml'.format(ruleset),
-                   input: base_extras_xml,
-                   copy: true,
-                   install: true,
-                   install_dir: dir_xkb_rules)
+    registry_files += configure_file(output: f'@ruleset@.extras.xml',
+                                     input: base_extras_xml,
+                                     copy: true,
+                                     install: true,
+                                     install_dir: dir_xkb_rules)
 
     # Fourth: generate the evdev.lst and base.lst files
-    lst_file = '@0@.lst'.format(ruleset)
+    lst_file = f'@ruleset@.lst'
     custom_target(lst_file,
                   build_by_default: true,
                   command: [xml2lst, ruleset_xml],
@@ -223,7 +224,6 @@ foreach ruleset: ['base', 'evdev']
                   output: lst_file,
                   install: true,
                   install_dir: dir_xkb_rules)
-
 endforeach
 
 if get_option('xorg-rules-symlinks')
@@ -238,6 +238,7 @@ if get_option('xorg-rules-symlinks')
     endif
   endforeach
 endif
+
 # Copy the DTD to the build directory, the man page generation expects it in
 # the same directory as the input XML file.
 configure_file(output: 'xkb.dtd',

@@ -10,14 +10,23 @@ from pathlib import Path
 import pytest
 
 
-def _xkb_config_root():
-    path = os.getenv("XKB_CONFIG_ROOT")
-    assert path is not None, "Environment variable XKB_CONFIG_ROOT must be set"
-    print(f"Using {path}")
+def _xkb_config_root() -> list[Path]:
+    roots: list[Path] = []
 
-    xkbpath = Path(path)
-    assert (xkbpath / "symbols").exists(), f"{path} is not an XKB installation"
-    return xkbpath
+    # XKB_CONFIG_EXTRA_PATH is not mandatory
+    if path := os.getenv("XKB_CONFIG_EXTRA_PATH"):
+        roots.append(Path(path))
+        print(f"Using XKB_CONFIG_EXTRA_PATH={path}")
+
+    if path := os.getenv("XKB_CONFIG_ROOT"):
+        xkbpath = Path(path)
+        assert (xkbpath / "symbols").exists(), f"{path} is not an XKB installation"
+        roots.append(xkbpath)
+        print(f"Using XKB_CONFIG_ROOT={path}")
+    else:
+        raise ValueError("Environment variable XKB_CONFIG_ROOT must be set")
+
+    return roots
 
 
 @pytest.fixture
@@ -33,16 +42,19 @@ def pytest_generate_tests(metafunc):
     if "xkb_symbols" in metafunc.fixturenames:
         xkb_symbols = []
         # This skips the *_vndr directories, they're harder to test
-        for symbols_file in _xkb_config_root().glob("symbols/*"):
-            if symbols_file.is_dir():
-                continue
-            with open(symbols_file) as f:
-                print(f"Found file {symbols_file}")
-                for line in f:
-                    if not line.startswith('xkb_symbols "'):
-                        continue
-                    section = line.split('"')[1]
-                    xkb_symbols.append((symbols_file.name, section))
+        for root in _xkb_config_root():
+            for symbols_file in root.glob("symbols/*"):
+                if symbols_file.is_dir():
+                    continue
+                with open(symbols_file) as f:
+                    print(f"Found file {symbols_file}")
+                    for line in f:
+                        if not line.startswith('xkb_symbols "'):
+                            continue
+                        section = line.split('"')[1]
+                        entry = (symbols_file.name, section)
+                        if entry not in xkb_symbols:
+                            xkb_symbols.append(entry)
         assert xkb_symbols
         metafunc.parametrize("xkb_symbols", xkb_symbols)
 
@@ -64,9 +76,11 @@ xkb_keymap {{
         "-w0",  # reduce warning nose
         "-xkb",
         "-I",  # disable system includes
-        f"-I{xkb_config_root}",
-        "-",
-        "-",  # from stdin, to stdout
+    ]
+    args += [f"-I{p}" for p in xkb_config_root]
+    args += [
+        "-",  # from stdin
+        "-",  # to stdout
     ]
     p = subprocess.run(args, input=keymap, encoding="utf-8", capture_output=True)
     if p.stderr:

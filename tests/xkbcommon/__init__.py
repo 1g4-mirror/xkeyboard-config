@@ -23,7 +23,7 @@ from dataclasses import dataclass
 from enum import Enum, IntFlag
 from functools import partial, reduce
 from pathlib import Path
-from typing import TYPE_CHECKING, NamedTuple, Optional, TypeAlias
+from typing import TYPE_CHECKING, NamedTuple, Optional, Sequence, TypeAlias
 
 ###############################################################################
 # Types
@@ -255,7 +255,7 @@ else:
 
 
 def load_keymap(
-    xkb_config_root: Path,
+    xkb_config_roots: Sequence[Path],
     rules=None,
     model=None,
     layout=None,
@@ -268,8 +268,9 @@ def load_keymap(
     )
     if not context:
         raise ValueError("Couldn't create xkb context")
-    raw_path = create_string_buffer(str(xkb_config_root).encode("utf-8"))
-    xkbcommon.xkb_context_include_path_append(context, raw_path)
+    for xkb_config_root in xkb_config_roots:
+        raw_path = create_string_buffer(str(xkb_config_root).encode("utf-8"))
+        xkbcommon.xkb_context_include_path_append(context, raw_path)
     rmlvo = xkb_rule_names(
         rules=create_string_buffer(rules.encode("utf-8")) if rules else None,
         model=create_string_buffer(model.encode("utf-8")) if model else None,
@@ -333,14 +334,14 @@ def new_state(keymap: xkb_keymap_p) -> xkb_state_p:
 
 
 def init_state(
-    xkeyboard_config_path: Path,
+    xkeyboard_config_paths: Sequence[Path],
     rules=None,
     model=None,
     layout=None,
     variant=None,
     options=None,
 ) -> xkb_state_p:
-    keymap = load_keymap(xkeyboard_config_path, rules, model, layout, variant, options)
+    keymap = load_keymap(xkeyboard_config_paths, rules, model, layout, variant, options)
     return new_state(keymap)
 
 
@@ -538,14 +539,14 @@ class ForeignKeymap:
 
     def __init__(
         self,
-        xkb_base: Path,
+        xkb_base: Path | Sequence[Path],
         rules: Optional[str] = None,
         model: Optional[str] = None,
         layout: Optional[str] = None,
         variant: Optional[str] = None,
         options: Optional[str] = None,
     ):
-        self.xkb_base = xkb_base
+        self.xkb_roots = (xkb_base,) if isinstance(xkb_base, Path) else xkb_base
         self._keymap = POINTER(xkb_keymap)()  # NULL pointer
         self.rules = rules
         self.model = model
@@ -555,7 +556,7 @@ class ForeignKeymap:
 
     def __enter__(self) -> xkb_keymap_p:
         self._keymap = load_keymap(
-            self.xkb_base,
+            self.xkb_roots,
             model=self.model,
             layout=self.layout,
             variant=self.variant,

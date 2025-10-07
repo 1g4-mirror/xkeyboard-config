@@ -87,26 +87,10 @@ if xsltproc.found()
   test('verify group names', verify_group_names)
 endif
 
-# If needed, copy our data files over to the build directory
-# so we can use the builddir as XKB_CONFIG_ROOT
 pymod = import('python')
 python = pymod.find_installation('python3',
                                  modules: ['pytest'],
                                  required: false)
-pytest = find_program('pytest-3', 'pytest', required: false)
-enable_pytest = python.found() and pytest.found()
-if get_option('non-latin-layouts-list') or enable_pytest
-    foreach dir: ['compat', 'geometry', 'keycodes', 'symbols', 'types']
-        # Copy directory but exclude some symbols files that are generated
-        # to include compatibility sections
-        run_command(
-            'tests/copydir.py',
-            dir,
-            dir == 'symbols' ? compat_symbols : [],
-            check: true
-        )
-    endforeach
-endif
 
 # Latin layout list
 # Needed e.g. for a distribution installer, in order to check if user can
@@ -125,11 +109,14 @@ if get_option('non-latin-layouts-list')
                       build_by_default: true,
                       command: [pyregistry,
                                 '--xkb-root', meson.project_build_root(),
+                                '--xkb-root', meson.project_source_root(),
                                 '--rules', ruleset,
                                 'layouts',
                                 '--non-latin',
                                 '--csv', '@OUTPUT@'],
                       output: 'non-latin-layouts-@0@.csv'.format(ruleset),
+                      depends: rules_files,
+                      depend_files: registry_files,
                       install: false)
     endforeach
 endif
@@ -143,6 +130,8 @@ install_symlink(
 )
 
 # pytest suite
+pytest = find_program('pytest-3', 'pytest', required: false)
+enable_pytest = python.found() and pytest.found()
 if enable_pytest
     pytest_args = ['--verbose', '--log-level=DEBUG']
     if get_option('compat-rules')
@@ -160,7 +149,11 @@ if enable_pytest
 
     test('pytest', pytest,
          args: pytest_args,
-         env: ['XKB_CONFIG_ROOT=@0@'.format(meson.project_build_root())],
+         env: {
+            'XKB_CONFIG_ROOT': meson.project_source_root(),
+            'XKB_CONFIG_EXTRA_PATH': meson.project_build_root(),
+         },
+         depends: rules_files,
          workdir: meson.project_source_root(),
          timeout: 60)
 endif

@@ -5,18 +5,28 @@
 import os
 import xml.etree.ElementTree as ET
 from pathlib import Path
+from typing import Iterator
 
 import pytest
 
 
-def _xkb_config_root():
-    path = os.getenv("XKB_CONFIG_ROOT")
-    assert path is not None, "Environment variable XKB_CONFIG_ROOT must be set"
-    print(f"Using XKB_CONFIG_ROOT={path}")
+def _xkb_config_root() -> list[Path]:
+    roots: list[Path] = []
 
-    xkbpath = Path(path)
-    assert (xkbpath / "rules").exists(), f"{path} is not an XKB installation"
-    return xkbpath
+    # XKB_CONFIG_EXTRA_PATH is not mandatory
+    if path := os.getenv("XKB_CONFIG_EXTRA_PATH"):
+        roots.append(Path(path))
+        print(f"Using XKB_CONFIG_EXTRA_PATH={path}")
+
+    if path := os.getenv("XKB_CONFIG_ROOT"):
+        xkbpath = Path(path)
+        assert (xkbpath / "symbols").exists(), f"{path} is not an XKB installation"
+        roots.append(xkbpath)
+        print(f"Using XKB_CONFIG_ROOT={path}")
+    else:
+        raise ValueError("Environment variable XKB_CONFIG_ROOT must be set")
+
+    return roots
 
 
 @pytest.fixture
@@ -47,17 +57,32 @@ def iterate_config_items(rules_xml):
     return root.iter("configItem")
 
 
+def get_registry_files() -> Iterator[Path]:
+    """
+    List all registry files in <XKB_ROOT>/rules/*.xml and ensure unique name.
+    """
+    found: set[Path] = set()
+    for xkb_root in _xkb_config_root():
+        for path in xkb_root.glob("rules/*.xml"):
+            if (file := path.relative_to(xkb_root)) in found:
+                continue
+            else:
+                yield path
+                found.add(file)
+
+
 def pytest_generate_tests(metafunc):
-    # for any test_foo function with an argument named rules_xml,
-    # make it the list of XKB_CONFIG_ROOT/rules/*.xml files.
+    # For any test_foo function with an argument named rules_xml,
+    # make it the list of <XKB_ROOT>/rules/*.xml files.
+    # Use only the first XKB root.
     if "rules_xml" in metafunc.fixturenames:
-        rules_xml = list(_xkb_config_root().glob("rules/*.xml"))
+        rules_xml = list(get_registry_files())
         assert rules_xml
         metafunc.parametrize("rules_xml", rules_xml)
     # for any test_foo function with an argument named layout,
     # make it a Layout wrapper class for all layout(variant) combinations
     elif "layout" in metafunc.fixturenames:
-        rules_xml = list(_xkb_config_root().glob("rules/*.xml"))
+        rules_xml = list(get_registry_files())
         assert rules_xml
         layouts = []
         for f in rules_xml:
@@ -65,7 +90,7 @@ def pytest_generate_tests(metafunc):
                 layouts.append(Layout(f, l, v))
         metafunc.parametrize("layout", layouts)
     elif "config_item" in metafunc.fixturenames:
-        rules_xml = list(_xkb_config_root().glob("rules/*.xml"))
+        rules_xml = list(get_registry_files())
         assert rules_xml
         config_items = []
         for f in rules_xml:

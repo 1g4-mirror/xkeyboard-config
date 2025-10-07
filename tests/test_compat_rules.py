@@ -109,15 +109,22 @@ def pytest_generate_tests(metafunc: pytest.Metafunc):
 @pytest.fixture(scope="session")
 def xkb_base():
     """Get the xkeyboard-config directory from the environment."""
-    path = os.environ.get("XKB_CONFIG_ROOT")
-    if path:
-        return Path(path)
+    roots: list[Path] = []
+
+    # XKB_CONFIG_EXTRA_PATH is not mandatory
+    if path := os.environ.get("XKB_CONFIG_EXTRA_PATH"):
+        roots.append(Path(path))
+
+    if path := os.environ.get("XKB_CONFIG_ROOT"):
+        roots.append(Path(path))
     else:
         raise ValueError("XKB_CONFIG_ROOT environment variable is not defined")
 
+    return roots
+
 
 def compile_keymap(
-    xkb_base: Path,
+    xkb_base: list[Path],
     rules: str,
     ls: tuple[Union[Layout, builtins.ellipsis], ...],
     layout: Layout,
@@ -146,7 +153,9 @@ def drop_component_name(match: re.Match[str]) -> str:
 
 
 @pytest.mark.parametrize("rules", ("base", "evdev"))
-def test_compat_layout(xkb_base: Path, rules: str, mapping: tuple[Layout, Layout]):
+def test_compat_layout(
+    xkb_base: list[Path], rules: str, mapping: tuple[Layout, Layout]
+):
     alias = mapping[0]
     target = mapping[1]
     us = Layout("us", "")
