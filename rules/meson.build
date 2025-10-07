@@ -1,4 +1,4 @@
-# And some files that are a straight install
+# Files that are a straight install
 install_data('README', 'xkb.dtd', 'xfree98',
              install_dir: dir_xkb_rules)
 
@@ -44,8 +44,8 @@ rules_parts_generated = []
 
 generate_rules_options_symbols = find_program('generate-options-symbols.py')
 generated = [
-    ['0420-option_symbols.part', 'symbols'],
-    ['0430-option_compat.part', 'compatibility'],
+    ['0420-option_compat.part', 'compatibility'],
+    ['0430-option_symbols.part', 'symbols'],
     ['0440-option_types.part', 'types'],
 ]
 foreach g: generated
@@ -166,9 +166,37 @@ if python.language_version().version_compare('<@0@'.format(MINIMUM_PYTHON_VERSIO
 endif
 merge_py = find_program('merge.py')
 xml2lst = find_program('xml2lst.pl')
+rules_template = files('rules.in')
 rules_files = []
 registry_files = []
 foreach ruleset: ['base', 'evdev']
+    if get_option('new-rules-generator')
+    # First: generate the "evdev" and "base" rules files
+    cmd = [
+        'python3',
+        '-m',
+        'rules.generator',
+        'rules',
+        '--ruleset',
+        ruleset,
+        '--version',
+        'v2',
+        '--output',
+        meson.current_build_dir() / ruleset
+    ]
+    if get_option('compat-rules')
+        cmd += ['--compat']
+    endif
+    cmd += rules_template
+    rules_files += custom_target(f'rules-@ruleset@',
+                                 build_by_default: true,
+                                 command: cmd,
+                                 depend_files: rules_template,
+                                 env: { 'PYTHONPATH': meson.project_source_root() },
+                                 output: ruleset,
+                                 install: true,
+                                 install_dir: dir_xkb_rules)
+    else
     # generate the "evdev" and "base" rules files
     #
     # First: copy all the parts over to the build directory, replacing
@@ -197,6 +225,7 @@ foreach ruleset: ['base', 'evdev']
                                  capture: true,
                                  install: true,
                                  install_dir: dir_xkb_rules)
+    endif
 
     # Third: the xml files, simply copied from the base*.xml files
     ruleset_xml = configure_file(output: f'@ruleset@.xml',
