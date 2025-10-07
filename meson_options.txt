@@ -14,7 +14,3 @@ option('non-latin-layouts-list',
        type: 'boolean',
        value: false,
        description: 'create the list of non-Latin layouts [default=false]')
-option('new-rules-generator',
-       type: 'boolean',
-       value: false,
-       description: 'use new rules generator [default=false]')

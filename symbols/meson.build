@@ -15,9 +15,6 @@ excluded_symbols = symlinks + ['meson.build']
 if get_option('compat-rules')
     layout_mappings = files('../rules/compat/layoutsMapping.lst')
     variant_mappings = files('../rules/compat/variantsMapping.lst')
-    map_variants_py = find_program('../rules/compat/map-variants.py')
-
-    if get_option('new-rules-generator')
     cmd = [
         'python3',
         '-m',
@@ -26,19 +23,6 @@ if get_option('compat-rules')
         meson.current_build_dir(),
     ]
     cmd_env = { 'PYTHONPATH': meson.project_source_root() }
-
-    else
-
-    cmd = [
-        map_variants_py,
-        '--symbols',
-        '--has-variant',
-        meson.current_build_dir(),
-        variant_mappings
-    ]
-    cmd_env = {}
-    endif
-
     # Get list of symbols files to generate
     c = run_command(cmd + ['--dry-run'], env: cmd_env, check: true)
     compat_symbols = c.stdout().strip().split('\n')
@@ -48,7 +32,7 @@ if get_option('compat-rules')
         'compat-symbols',
         command: cmd,
         env: cmd_env,
-        depend_files: [map_variants_py.full_path(), variant_mappings],
+        depend_files: [variant_mappings],
         install: true,
         install_dir: dir_xkb_base / 'symbols',
         output: compat_symbols
