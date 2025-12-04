@@ -5833,6 +5833,12 @@
         </variant>
         <variant>
           <configItem>
+            <name>thinkpad_nodeadkeys</name>
+            <description>Portuguese (Brazil, IBM/Lenovo ThinkPad, no dead keys)</description>
+          </configItem>
+        </variant>
+        <variant>
+          <configItem>
             <name>nativo-epo</name>
             <description>Esperanto (Brazil, Nativo)</description>
             <languageList>
