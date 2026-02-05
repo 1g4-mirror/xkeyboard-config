@@ -356,3 +356,20 @@ xkb_symbols "zgt" {
 
 	include "level3(ralt_switch)"
 };
+
+// Mara keyboard layout
+// https://laitei.dev
+partial alphanumeric_keys
+xkb_symbols "mara" {
+    name[Group1]= "Mara";
+    include "latin"
+
+    // Map Q to â / Â
+    key <AD01> { [ acircumflex, Acircumflex ] };
+
+    // Map J to the Mara "ch" (pronounced like English j)
+    key <AC07> { [ j, J ] };
+
+    // Map X to ô / Ô
+    key <AB02> { [ ocircumflex, Ocircumflex ] };
+};

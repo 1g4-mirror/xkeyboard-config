@@ -2099,6 +2099,17 @@
         </variant>
         <variant>
           <configItem>
+            <name>mara</name>
+            <!-- Keyboard indicator for Mara layouts -->
+            <shortDescription>mrh</shortDescription>
+            <description>Mara</description>
+            <languageList>
+              <iso639Id>mrh</iso639Id>
+            </languageList>
+          </configItem>
+        </variant>
+        <variant>
+          <configItem>
             <name>mnw</name>
             <!-- Keyboard indicator for Mon layouts -->
             <shortDescription>mnw</shortDescription>
@@ -4509,6 +4520,17 @@
             <description>Malayalam (Poorna, extended InScript)</description>
             <languageList>
               <iso639Id>mal</iso639Id>
+            </languageList>
+          </configItem>
+        </variant>
+        <variant>
+          <configItem>
+            <name>mara</name>
+            <!-- Keyboard indicator for Mara layouts -->
+            <shortDescription>mrh</shortDescription>
+            <description>Mara</description>
+            <languageList>
+              <iso639Id>mrh</iso639Id>
             </languageList>
           </configItem>
         </variant>
