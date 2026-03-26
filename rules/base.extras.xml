@@ -647,16 +647,22 @@
             <description>Polish (Colemak)</description>
           </configItem>
         </variant>
-	<variant>
+        <variant>
           <configItem popularity="exotic">
             <name>colemak_dh_ansi</name>
             <description>Polish (Colemak-DH)</description>
           </configItem>
         </variant>
-	<variant>
+        <variant>
           <configItem popularity="exotic">
             <name>colemak_dh</name>
             <description>Polish (Colemak-DH ISO)</description>
+          </configItem>
+        </variant>
+        <variant>
+          <configItem popularity="exotic">
+            <name>colemak_dh_ortho</name>
+            <description>Polish (Colemak-DH Ortholinear)</description>
           </configItem>
         </variant>
         <variant>

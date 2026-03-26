@@ -532,6 +532,19 @@ xkb_symbols "colemak_dh" {
     key <AB05> { [    backslash,          bar,      asciitilde,        brokenbar ] };
 };
 
+// Colemak-DH (ortholinear), Polish variant, https://colemakmods.github.io/mod-dh/
+partial alphanumeric_keys
+xkb_symbols "colemak_dh_ortho" {
+    include "pl(colemak_dh_ansi)"
+    name[Group1]= "Polish (Colemak-DH Ortholinear)";
+
+    key <AB01> { [            z,            Z,      zabovedot,         Zabovedot ] };
+    key <AB02> { [            x,            X,         zacute,            Zacute ] };
+    key <AB03> { [            c,            C,         cacute,            Cacute ] };
+    key <AB04> { [            d,            D, dead_diaeresis,        asciitilde ] };
+    key <AB05> { [            v,            V,             oe,                OE ] };
+};
+
 partial alphanumeric_keys
 xkb_symbols "sun_type6" {
        include "sun_vndr/pl(sun_type6)"
