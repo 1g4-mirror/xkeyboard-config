@@ -441,6 +441,9 @@ xkb_symbols "evdev" {
    key <I601>   {       [ XF86BrightnessMax              ]      }; // KEY_BRIGHTNESS_MAX
    key <I602>   {       [ XF86ElectronicPrivacyScreenOn  ]      }; // KEY_EPRIVACY_SCREEN_ON
    key <I603>   {       [ XF86ElectronicPrivacyScreenOff ]      }; // KEY_EPRIVACY_SCREEN_OFF
+   key <I604>   {       [ XF86ActionOnSelection          ]      }; // KEY_ACTION_ON_SELECTION
+   key <I605>   {       [ XF86ContextualInsert           ]      }; // KEY_CONTEXTUAL_INSERT
+   key <I606>   {       [ XF86ContextualQuery            ]      }; // KEY_CONTEXTUAL_QUERY
    key <I616>   {       [ XF86KbdInputAssistPrev         ]      }; // KEY_KBDINPUTASSIST_PREV
    key <I617>   {       [ XF86KbdInputAssistNext         ]      }; // KEY_KBDINPUTASSIST_NEXT
    key <I618>   {       [ XF86KbdInputAssistPrevgroup    ]      }; // KEY_KBDINPUTASSIST_PREVGROUP
