@@ -512,6 +512,9 @@ default xkb_keycodes "evdev" {
 	<I601> = 601;		// #define KEY_BRIGHTNESS_MAX      593
 	<I602> = 602;		// #define KEY_EPRIVACY_SCREEN_ON  594
 	<I603> = 603;		// #define KEY_EPRIVACY_SCREEN_OFF 595
+	<I604> = 604;		// #define KEY_ACTION_ON_SELECTION 596
+	<I605> = 605;		// #define KEY_CONTEXTUAL_INSERT   597
+	<I606> = 606;		// #define KEY_CONTEXTUAL_QUERY    598
 	<I616> = 616;		// #define KEY_KBDINPUTASSIST_PREV 608
 	<I617> = 617;		// #define KEY_KBDINPUTASSIST_NEXT 609
 	<I618> = 618;		// #define KEY_KBDINPUTASSIST_PREVGROUP 610
