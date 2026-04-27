@@ -670,7 +670,7 @@ xkb_symbols "ohu_sk_fullcaps_req"{
     //Old Hungarian small and capital letter L, Ly
     key <AC10> { [ U10CDC,   U10C9C,      U10CC8, U10C88 ] };
     //Old Hungarian small and capital letter OO, And
-    key <AB01> { [ U10CEC,  U10CAC, U10CC8, U10C88]};
+    key <AB01> { [ U10CED,  U10CAD, U10CC8, U10C88]};
     //Old Hungarian small and capital letter Rudimenta UE, AMB
     key <AB03> { [         U10CC4,          U10C84,    U10CC5,     U10C85 ] };
     //Old Hungarian small and capital letter C, NC
