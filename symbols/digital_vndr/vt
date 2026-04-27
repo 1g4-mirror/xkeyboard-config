@@ -103,7 +103,7 @@ xkb_symbols "vt105" {
     key	  <DO> {       [	    Menu ] };
     key <FIND> {       [	    Find ] };
     key	 <INS> {       [	  Insert ] };
-    key <DELE> {       [       apLineDel ] };
+    key <DELE> {       [          Delete ] };
     key <SELE> {       [	  Select ] };
     key <PGUP> {       [	   Prior ] };
     key <PGDN> {       [	    Next ] };
