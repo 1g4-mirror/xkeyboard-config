@@ -46,6 +46,21 @@
       - "skip: stale triage"
   actions: *close-stale-issue-actions
 
+# Issues tagged with “Needs information” are closed earlier
+.close-stale-issue-needs-information: &close-stale-issue-needs-information
+  name: "Close stale issues with “Needs information”"
+  conditions:
+    state: opened
+    date:
+      attribute: updated_at
+      condition: older_than
+      interval_type: weeks
+      interval: 2
+    labels:
+      - "Needs information"
+    forbidden_labels:
+      - "skip: stale triage"
+  actions: *close-stale-issue-actions
 
 ################################################################################
 # Merge requests
@@ -86,6 +101,22 @@
       - "skip: stale triage"
   actions: *close-stale-mr-actions
 
+# MR tagged with “Needs information” are closed earlier
+.close-stale-mr-needs-information: &close-stale-mr-needs-information
+  name: "Close stale MR with “Needs information”"
+  conditions:
+    state: opened
+    date:
+      attribute: updated_at
+      condition: older_than
+      interval_type: weeks
+      interval: 2
+    labels:
+      - "Needs information"
+    forbidden_labels:
+      - "skip: stale triage"
+  actions: *close-stale-mr-actions
+
 
 ################################################################################
 # Common
@@ -112,10 +143,12 @@ resource_rules:
   issues:
     rules:
       - *untag-reopened-stale # Must come before closing stale issue
+      - *close-stale-issue-needs-information
       - *close-stale-issue
       - *close-pending-stale-issue
   merge_requests:
     rules:
       - *untag-reopened-stale # Must come before closing stale issue
+      - *close-stale-mr-needs-information
       - *close-stale-mr
       - *close-pending-stale-mr
