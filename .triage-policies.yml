@@ -22,6 +22,24 @@
       request more efficiently, please edit it and choose the appropriate template in the
       list above your text, then fill in the required information.
 
+.insufficient-information: &insufficient-information
+  name: "Needs information"
+  conditions:
+    labels:
+      - "bugbot::insufficient-information"
+  actions:
+    remove_labels:
+      - "bugbot::insufficient-information"
+    add_labels:
+      - "Needs information"
+    comment: |
+      Hi {{author}}! Thanks for filing this issue/merge request. However, information
+      you provided is insufficient to process your request.
+      Please fill in the missing information in the description and/or answer the
+      maintainers’ request in the corresponding thread[^1].
+
+      [^1]: Use the button `⮢` “Reply to comment” of the corresponding comment.
+
 .insufficient-motivation: &insufficient-motivation
   name: "Require better motivation"
   conditions:
@@ -74,6 +92,30 @@
       and [instructions for Wayland](https://xkbcommon.github.io/libxkbcommon/doc/current/md_doc_user_configuration.html).
     status: "close"
 
+.not-constructive: &not-constructive
+  name: "Close as not constructive"
+  conditions:
+    labels:
+      - "bugbot::not-constructive"
+  actions:
+    remove_labels:
+      - "bugbot::not-constructive"
+    comment: |
+      Dear {{author}}, it seems that after various maintainers’ requests you failed to
+      provide the relevant information and/or to stay on topic.
+
+      > [!important]
+      > Please check:
+      > - [The Contribution Guide]
+      > - [The Code of Conduct]
+
+      [The Contribution Guide]: https://xkeyboard-config.freedesktop.org/doc/contributing/
+      [The Code of Conduct]: https://www.freedesktop.org/wiki/CodeOfConduct/
+
+      Feel free to re-open the issue/merge request in order to address the
+      maintainers’ requests, so that we can restart the discussion on a better ground.
+    status: "close"
+
 .redirect-translations: &redirect-translations
   name: "Translations are handled in another project"
   conditions:
@@ -98,12 +140,16 @@ resource_rules:
   issues:
     rules:
       - *template-required
+      - *insufficient-information
       - *insufficient-motivation
       - *too-exotic
+      - *not-constructive
       - *redirect-translations
   merge_requests:
     rules:
       - *template-required
+      - *insufficient-information
       - *insufficient-motivation
       - *too-exotic
+      - *not-constructive
       - *redirect-translations
