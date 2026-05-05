@@ -30,7 +30,7 @@
   actions:
     remove_labels:
       - "bugbot::insufficient-information"
-    add_labels:
+    labels:
       - "Needs information"
     comment: |
       Hi {{author}}! Thanks for filing this issue/merge request. However, information
