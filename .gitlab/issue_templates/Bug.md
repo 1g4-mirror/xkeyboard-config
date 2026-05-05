@@ -1,17 +1,21 @@
 <!--
 Thank you for your interest!
-Please fill the following template with care.
+
+Please fill the following template with care, or use the
+“Feature Request” template if relevant.
 -->
 
 # Your setup
 
-- OS (with version): <!-- e.g. content of /etc/os-release -->
-- Desktop environment:
-- `xkeyboard-config` (or `xkb-data`) package version:
+(please fill in)
+
+- OS (with version): … <!-- e.g. content of /etc/os-release -->
+- Desktop environment: …
+- `xkeyboard-config` (or `xkb-data`) package version: …
 - Keyboard setup:
-  - Keyboard model:
-  - Layouts (with variant, if relevant):
-  - Options:
+  - Keyboard model: …
+  - Layouts (with variant, if relevant): …
+  - Options: …
 
 # Description of Problem
 
@@ -21,9 +25,11 @@ Please fill the following template with care.
 
 ## Steps to Reproduce
 
-1.
-2.
-3.
+(please fill in)
+
+1. …
+2. …
+3. …
 
 ## Actual Results
 

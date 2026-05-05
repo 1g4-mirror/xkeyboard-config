@@ -10,12 +10,16 @@ Unless it is a trivial fix, please first consider opening an issue using the
 -->
 (Detailed description; relevant pictures welcome)
 
+%{all_commits}
+
 Fixes (#issue-id)
 
 # Checklist
 
-- [ ] I read the [contribution instructions](https://www.freedesktop.org/wiki/Software/XKeyboardConfig/Rules/).
+- [ ] I read the [contribution instructions].
 - [ ] I ensured that the formatting follows the same conventions of the rest of the file.
 - [ ] I added a changelog entry following [these instructions](https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/blob/master/changes/README.md?ref_type=heads).
-- [ ] The commits messages are self-sufficient.
-- [ ] I ensure that the CI pipeline passes.
+- [ ] I wrote *self-sufficient* commits messages.
+- [ ] I ensured that the CI pipeline passes.
+
+[contribution instructions]: https://xkeyboard-config.freedesktop.org/doc/contributing/
