@@ -1,5 +1,5 @@
 project('xkeyboard-config',
-        version: '2.47',
+        version: '2.47.99',
         license: 'MIT/Expat',
         meson_version: '>= 0.61.0')
 
