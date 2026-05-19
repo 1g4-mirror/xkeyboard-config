@@ -35,12 +35,6 @@
 ! {group.name} = {group.definition}
 # endfor
 
-// If you want non-latin layouts to implicitly include the en_US layout,
-// then uncomment the following lines:
-//! $nonlatin = af am ara bd bg bt by eg et ge gn gr id il in ir \
-//              jp jv kg kh kr kz la lk ma me mk mm mn mv my \
-//              pk rs ru sy th tj tz ua uz
-
 // PC models
 ! $pcmodels = abnt2 jp106 kr106 pc86 pc101 pc102 pc104 pc104alt pc105
 
@@ -223,13 +217,10 @@
 # for e in layouts_compat_mappings:
   {e.source.model}	{e.source.layout}	=	{e.destination.symbols_prefix}+{e.destination}
 # endfor
-  ataritt	$nonlatin		=	xfree68_vndr/ataritt(us)+%l%(v):2
   ataritt	 *			=	xfree68_vndr/ataritt(us)+%l%(v)
-  amiga		$nonlatin		=	xfree68_vndr/amiga(usa1)+%l%(v):2
   amiga		 *			=	xfree68_vndr/amiga(usa1)+%l%(v)
   empty		 *			=	empty(basic)
   *		 empty			=	empty(basic)
-  jollasbj	$nonlatin		=	jolla_vndr/sbj(common)+us+%l%(v):2
   jollasbj	 *			=	jolla_vndr/sbj(common)+%l%(v)
  $sun		$sun_custom		=	pc+sun_vndr/%l
   pc98		 jp			=	nec_vndr/jp(pc98)+nec_vndr/jp(jp):2
@@ -249,7 +240,6 @@
   ws007sh	 *			=	pc+sharp_vndr/ws007sh(basic)
   ws011sh	 *			=	pc+sharp_vndr/ws011sh(basic)
   ws020sh	 *			=	pc+sharp_vndr/ws020sh(basic)
-  *		$nonlatin		=	pc+us+%l%(v):2
   *		 *			=	pc+%l%(v)
 
 # if variants_compat_mappings:
