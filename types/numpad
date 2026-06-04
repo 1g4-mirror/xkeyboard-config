@@ -47,8 +47,28 @@ partial xkb_types "shift3" {
 	// e.g. hexadecimal digits
 	map[Shift+NumLock] = Level3;
 
-	// Ctrl + Alt, regardless of NumLock and Shift => command keys
-	map[Control+Alt] = Level4;
+	// Ctrl and Alt, regardless of NumLock and Shift => command keys
+	preserve[Control] = Control;
+	preserve[Alt] = Alt;
+	preserve[Shift+Control] = Shift + Control;
+	preserve[Shift+Alt] = Shift + Alt;
+	map     [NumLock+Control] = Level2;
+	preserve[NumLock+Control] = Control;
+	map     [NumLock+Alt] = Level2;
+	preserve[NumLock+Alt] = Alt;
+	map     [Control+Alt] = Level4;
+
+	map     [Shift+NumLock+Control] = Level3;
+	preserve[Shift+NumLock+Control] = Control;
+	map     [Shift+NumLock+Alt] = Level3;
+	preserve[Shift+NumLock+Alt] = Alt;
+	map     [Shift+Control+Alt] = Level4;
+	preserve[Shift+Control+Alt] = Shift;
+	map     [NumLock+Control+Alt] = Level2;
+	preserve[NumLock+Control+Alt] = Control+Alt;
+
+	map     [Shift+NumLock+Control+Alt] = Level3;
+	preserve[Shift+NumLock+Control+Alt] = Control+Alt;
 
 	level_name[Level1] = "Base";
 	level_name[Level2] = "NumLock";

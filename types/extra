@@ -109,11 +109,38 @@ default partial xkb_types "default" {
     // Base level, two shifted LevelThree levels, one Ctrl+Alt command level.
     type "FOUR_LEVEL_X" {
 	modifiers = Shift + LevelThree + Control + Alt;
-	map[None] = Level1;
-	map[Shift] = Level1;
-	map[LevelThree] = Level2;
-	map[Shift+LevelThree] = Level3;
-	map[Control+Alt] = Level4;
+	map     [None] = Level1;
+	map     [Shift] = Level1;
+	preserve[Shift] = Shift;
+	map     [LevelThree] = Level2;
+	map     [Control] = Level1;
+	preserve[Control] = Control;
+	map     [Alt] = Level1;
+	preserve[Alt] = Alt;
+
+	map     [Shift+LevelThree] = Level3;
+	map     [Shift+Control] = Level1;
+	preserve[Shift+Control] = Shift+Control;
+	map     [Shift+Alt] = Level1;
+	preserve[Shift+Alt] = Shift+Alt;
+	map     [LevelThree+Control] = Level2;
+	preserve[LevelThree+Control] = Control;
+	map     [LevelThree+Alt] = Level2;
+	preserve[LevelThree+Alt] = Alt;
+	map     [Control+Alt] = Level4;
+
+	map     [Shift+LevelThree+Control] = Level3;
+	preserve[Shift+LevelThree+Control] = Control;
+	map     [Shift+LevelThree+Alt] = Level3;
+	preserve[Shift+LevelThree+Alt] = Alt;
+	map     [Shift+Control+Alt] = Level4;
+	preserve[Shift+Control+Alt] = Shift;
+	map     [LevelThree+Control+Alt] = Level2;
+	preserve[LevelThree+Control+Alt] = Control+Alt;
+
+	map     [Shift+LevelThree+Control+Alt] = Level3;
+	preserve[Shift+LevelThree+Control+Alt] = Control+Alt;
+
 	level_name[Level1] = "Base";
 	level_name[Level2] = "AltGr";
 	level_name[Level3] = "Shift AltGr";
