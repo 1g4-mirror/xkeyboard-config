@@ -20,16 +20,7 @@ partial xkb_types "mac" {
 };
 
 partial xkb_types "microsoft" {
-    virtual_modifiers  NumLock;
-
-    type "KEYPAD" {
-	modifiers = Shift + NumLock;
-	map[None] = Level1;
-	preserve[Shift] = Shift;
-	map[NumLock] = Level2;
-	level_name[Level1] = "Base";
-	level_name[Level2] = "Number";
-    };
+    include "numpad(pc)"
 };
 
 // Swiss-German style numeric keypad: Shift and NumLock operate as
