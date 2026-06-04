@@ -2,10 +2,9 @@ default partial xkb_types "pc" {
     virtual_modifiers  NumLock;
 
     type "KEYPAD" {
-	modifiers = Shift + NumLock;
+	modifiers = NumLock;
 	map[None] = Level1;
 	map[NumLock] = Level2;
-	map[Shift+NumLock] = Level1;
 	level_name[Level1] = "Base";
 	level_name[Level2] = "Number";
     };
