@@ -51,43 +51,47 @@ default partial xkb_types "default" {
 	level_name[Level4] = "Shift AltGr";
     };
 
+    // Default type used in xkbcomp and xkbcommon
     type "FOUR_LEVEL_KEYPAD" {
 	modifiers = Shift + NumLock + LevelThree;
-	map[None] = Level1;
-	map[Shift] = Level2;
-	map[NumLock] = Level2;
-	map[Shift+NumLock] = Level1;
-	map[LevelThree] = Level3;
-	map[Shift+LevelThree] = Level4;
-	map[NumLock+LevelThree] = Level4;
-	map[Shift+NumLock+LevelThree] = Level3;
+	map     [None] = Level1;
+	map     [Shift] = Level1;
+	preserve[Shift] = Shift;
+	map     [NumLock] = Level2;
+	map     [LevelThree] = Level3;
+	map     [Shift+NumLock] = Level2;
+	preserve[Shift+NumLock] = Shift;
+	map     [Shift+LevelThree] = Level4;
+	map     [NumLock+LevelThree] = Level3;
+	map     [Shift+NumLock+LevelThree] = Level4;
 	level_name[Level1] = "Base";
-	level_name[Level2] = "Shift/Numlock";
+	level_name[Level2] = "Shift";
 	level_name[Level3] = "AltGr";
-	level_name[Level4] = "Shift/Numlock AltGr";
+	level_name[Level4] = "Shift AltGr";
     };
 
-    // A four-level keypad variant. The first two levels are controlled by
-    // NumLock (with active shifting like in KEYPAD).  LevelThree overrides
-    // this mode, with two additional shifted levels.
+    // Alias for `FOUR_LEVEL_KEYPAD`
     type "FOUR_LEVEL_MIXED_KEYPAD" {
 	modifiers = Shift + NumLock + LevelThree;
-	map[None] = Level1;
-	map[Shift] = Level2;
-	map[NumLock] = Level2;
-	map[Shift+NumLock] = Level1;
-	map[LevelThree] = Level3;
-	map[Shift+LevelThree] = Level4;
-	map[NumLock+LevelThree] = Level3;
-	map[Shift+NumLock+LevelThree] = Level4;
+	map     [None] = Level1;
+	map     [Shift] = Level1;
+	preserve[Shift] = Shift;
+	map     [NumLock] = Level2;
+	map     [LevelThree] = Level3;
+	map     [Shift+NumLock] = Level2;
+	preserve[Shift+NumLock] = Shift;
+	map     [Shift+LevelThree] = Level4;
+	map     [NumLock+LevelThree] = Level3;
+	map     [Shift+NumLock+LevelThree] = Level4;
 	level_name[Level1] = "Base";
-	level_name[Level2] = "Number";
+	level_name[Level2] = "Shift";
 	level_name[Level3] = "AltGr";
 	level_name[Level4] = "Shift AltGr";
     };
 
     // A variant of FOUR_LEVEL_MIXED_KEYPAD that uses the LevelFive
-    // modifier instead of NumLock, to avoid interaction with the keypad.
+    // modifier instead of NumLock, to avoid interaction with the keypad;
+    // and it uses Shift in its standard role.
     // Originally created to lock the digits on layouts with digits on
     // the second level of the digits row (e.g. Azerty layouts).
     type "FOUR_LEVEL_LOCKABLE_LEVEL2" {
