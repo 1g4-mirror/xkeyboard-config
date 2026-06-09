@@ -65,7 +65,7 @@ default partial xkb_types "default" {
 	map     [NumLock+LevelThree] = Level3;
 	map     [Shift+NumLock+LevelThree] = Level4;
 	level_name[Level1] = "Base";
-	level_name[Level2] = "Shift";
+	level_name[Level2] = "NumLock";
 	level_name[Level3] = "AltGr";
 	level_name[Level4] = "Shift AltGr";
     };
@@ -84,7 +84,7 @@ default partial xkb_types "default" {
 	map     [NumLock+LevelThree] = Level3;
 	map     [Shift+NumLock+LevelThree] = Level4;
 	level_name[Level1] = "Base";
-	level_name[Level2] = "Shift";
+	level_name[Level2] = "NumLock";
 	level_name[Level3] = "AltGr";
 	level_name[Level4] = "Shift AltGr";
     };
