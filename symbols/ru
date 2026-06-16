@@ -931,7 +931,7 @@ xkb_symbols "ruu" {
 };
 
 partial alphanumeric_keys
-	xkb_symbols "sun_type6" {
+xkb_symbols "sun_type6" {
 	include "sun_vndr/ru(sun_type6)"
 };
 

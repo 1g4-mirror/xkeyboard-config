@@ -277,6 +277,6 @@ xkb_symbols "colemak_dh_wide" {
 // EXTRAS:
 
 partial alphanumeric_keys
-	xkb_symbols "sun_type6" {
+xkb_symbols "sun_type6" {
 	include "sun_vndr/no(sun_type6)"
 };

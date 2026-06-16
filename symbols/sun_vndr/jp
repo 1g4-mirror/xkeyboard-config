@@ -134,41 +134,41 @@ xkb_symbols "sun_type7" {
 };
 
 partial alphanumeric_keys
-	xkb_symbols "106" {
+xkb_symbols "106" {
 	include "jp(106)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "common" {
+xkb_symbols "common" {
 	include "jp(common)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "OADG109A" {
+xkb_symbols "OADG109A" {
 	include "jp(OADG109A)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "kana" {
+xkb_symbols "kana" {
 	include "jp(kana)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "nicola_f_bs" {
+xkb_symbols "nicola_f_bs" {
 	include "jp(nicola_f_bs)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "mac" {
+xkb_symbols "mac" {
 	include "jp(mac)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "hztg_escape" {
+xkb_symbols "hztg_escape" {
 	include "jp(hztg_escape)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "dvorak" {
+xkb_symbols "dvorak" {
 	include "jp(dvorak)"
 };

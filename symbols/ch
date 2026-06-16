@@ -174,11 +174,11 @@ xkb_symbols "fr_mac" {
 // EXTRAS:
 
 partial alphanumeric_keys
-	xkb_symbols "sun_type6_de" {
+xkb_symbols "sun_type6_de" {
 	include "sun_vndr/ch(sun_type6_de)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "sun_type6_fr" {
+xkb_symbols "sun_type6_fr" {
 	include "sun_vndr/ch(sun_type6_fr)"
 };

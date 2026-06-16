@@ -377,6 +377,6 @@ xkb_symbols "crh_alt" {
 // EXTRAS:
 
 partial alphanumeric_keys
-	xkb_symbols "sun_type6" {
+xkb_symbols "sun_type6" {
 	include "sun_vndr/ua(sun_type6)"
 };

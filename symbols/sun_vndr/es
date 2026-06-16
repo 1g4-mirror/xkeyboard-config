@@ -62,51 +62,51 @@ xkb_symbols "sun_type6" {
 };
 
 partial alphanumeric_keys
-	xkb_symbols "basic" {
+xkb_symbols "basic" {
 	include "sun_vndr/es(sun_type6)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "Sundeadkeys" {
+xkb_symbols "Sundeadkeys" {
 	include "es(basic)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "sundeadkeys" {
+xkb_symbols "sundeadkeys" {
 	include "es(basic)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "nodeadkeys" {
+xkb_symbols "nodeadkeys" {
 	include "es(nodeadkeys)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "dvorak" {
+xkb_symbols "dvorak" {
 	include "es(dvorak)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "cat" {
+xkb_symbols "cat" {
 	include "es(cat)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "ast" {
+xkb_symbols "ast" {
 	include "es(ast)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "olpc" {
+xkb_symbols "olpc" {
 	include "es(olpc)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "deadtilde" {
+xkb_symbols "deadtilde" {
 	include "es(deadtilde)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "olpc2" {
+xkb_symbols "olpc2" {
 	include "es(olpc2)"
 };

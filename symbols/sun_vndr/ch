@@ -108,61 +108,61 @@ xkb_symbols "sun_type6_fr" {
 };
 
 partial alphanumeric_keys
-	xkb_symbols "basic" {
+xkb_symbols "basic" {
 	include "sun_vndr/ch(sun_type6_de)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "legacy" {
+xkb_symbols "legacy" {
 	include "ch(legacy)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "de" {
+xkb_symbols "de" {
 	include "ch(de)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "de_Sundeadkeys" {
+xkb_symbols "de_Sundeadkeys" {
 	include "ch(de)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "de_sundeadkeys" {
+xkb_symbols "de_sundeadkeys" {
 	include "ch(de)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "de_nodeadkeys" {
+xkb_symbols "de_nodeadkeys" {
 	include "ch(de_nodeadkeys)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "fr" {
+xkb_symbols "fr" {
 	include "ch(fr)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "fr_Sundeadkeys" {
+xkb_symbols "fr_Sundeadkeys" {
 	include "ch(fr)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "fr_sundeadkeys" {
+xkb_symbols "fr_sundeadkeys" {
 	include "ch(fr)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "fr_nodeadkeys" {
+xkb_symbols "fr_nodeadkeys" {
 	include "ch(fr_nodeadkeys)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "de_mac" {
+xkb_symbols "de_mac" {
 	include "ch(de_mac)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "fr_mac" {
+xkb_symbols "fr_mac" {
 	include "ch(fr_mac)"
 };

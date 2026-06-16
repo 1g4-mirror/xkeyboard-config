@@ -66,101 +66,101 @@ xkb_symbols "sun_type6" {
 };
 
 partial alphanumeric_keys
-	xkb_symbols "basic" {
+xkb_symbols "basic" {
 	include "sun_vndr/de(sun_type6)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "legacy" {
+xkb_symbols "legacy" {
 	include "de(deadtilde)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "nodeadkeys" {
+xkb_symbols "nodeadkeys" {
 	include "de(nodeadkeys)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "deadgraveacute" {
+xkb_symbols "deadgraveacute" {
 	include "de(deadgraveacute)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "deadacute" {
+xkb_symbols "deadacute" {
 	include "de(deadacute)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "ro" {
+xkb_symbols "ro" {
 	include "de(ro)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "ro_nodeadkeys" {
+xkb_symbols "ro_nodeadkeys" {
 	include "de(ro_nodeadkeys)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "dvorak" {
+xkb_symbols "dvorak" {
 	include "de(dvorak)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "Sundeadkeys" {
+xkb_symbols "Sundeadkeys" {
 	include "de(basic)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "sundeadkeys" {
+xkb_symbols "sundeadkeys" {
 	include "de(basic)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "adnw" {
+xkb_symbols "adnw" {
 	include "de(adnw)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "neo" {
+xkb_symbols "neo" {
 	include "de(neo)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "mac" {
+xkb_symbols "mac" {
 	include "de(mac)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "mac_nodeadkeys" {
+xkb_symbols "mac_nodeadkeys" {
 	include "de(mac_nodeadkeys)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "dsb" {
+xkb_symbols "dsb" {
 	include "de(dsb)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "dsb_qwertz" {
+xkb_symbols "dsb_qwertz" {
 	include "de(dsb_qwertz)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "qwerty" {
+xkb_symbols "qwerty" {
 	include "de(qwerty)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "ru" {
+xkb_symbols "ru" {
 	include "de(ru)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "us" {
+xkb_symbols "us" {
 	include "de(us)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "hu" {
+xkb_symbols "hu" {
 	include "de(hu)"
 };

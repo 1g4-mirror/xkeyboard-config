@@ -70,106 +70,106 @@ xkb_symbols "sun_type6" {
 };
 
 partial alphanumeric_keys
-	xkb_symbols "basic" {
+xkb_symbols "basic" {
 	include "sun_vndr/fr(sun_type6)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "olpc" {
+xkb_symbols "olpc" {
 	include "fr(olpc)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "Sundeadkeys" {
+xkb_symbols "Sundeadkeys" {
 	include "fr(basic)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "sundeadkeys" {
+xkb_symbols "sundeadkeys" {
 	include "fr(basic)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "nodeadkeys" {
+xkb_symbols "nodeadkeys" {
 	include "fr(nodeadkeys)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "oss" {
+xkb_symbols "oss" {
 	include "fr(oss)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "oss_latin9" {
+xkb_symbols "oss_latin9" {
 	include "fr(oss_latin9)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "oss_Sundeadkeys" {
+xkb_symbols "oss_Sundeadkeys" {
 	include "fr(oss)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "oss_sundeadkeys" {
+xkb_symbols "oss_sundeadkeys" {
 	include "fr(oss)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "oss_nodeadkeys" {
+xkb_symbols "oss_nodeadkeys" {
 	include "fr(oss_nodeadkeys)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "latin9" {
+xkb_symbols "latin9" {
 	include "fr(latin9)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "latin9_Sundeadkeys" {
+xkb_symbols "latin9_Sundeadkeys" {
 	include "fr(latin9)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "latin9_sundeadkeys" {
+xkb_symbols "latin9_sundeadkeys" {
 	include "fr(latin9)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "latin9_nodeadkeys" {
+xkb_symbols "latin9_nodeadkeys" {
 	include "fr(latin9_nodeadkeys)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "bepo" {
+xkb_symbols "bepo" {
 	include "fr(bepo)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "bepo_latin9" {
+xkb_symbols "bepo_latin9" {
 	include "fr(bepo_latin9)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "dvorak" {
+xkb_symbols "dvorak" {
 	include "fr(dvorak)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "bre" {
+xkb_symbols "bre" {
 	include "fr(bre)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "oci" {
+xkb_symbols "oci" {
 	include "fr(oci)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "mac" {
+xkb_symbols "mac" {
 	include "fr(mac)"
 };
 
 partial alphanumeric_keys
-	xkb_symbols "geo" {
+xkb_symbols "geo" {
 	include "fr(geo)"
 };
