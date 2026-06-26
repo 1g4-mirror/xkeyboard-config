@@ -2,18 +2,10 @@ xkeyboard-config [2.48] - 2026-06-21
 ====================================
 
 [2.48]: https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/tree/xkeyboard-config-2.48
-================================================================================================================================================================================
-Models
-------
 
-No significant changes.
+# Layouts
 
-
-Layouts
--------
-
-Breaking changes
-~~~~~~~~~~~~~~~~
+## Breaking changes
 
 - Spanish layout: move `dead_doubleacute` and `dead_caron` to easier to remember positions:
   - `dead_doubleacute` is moved to same key as `dead_acute` and `dead_diaeresis`, replacing `dead_caron`.
@@ -21,32 +13,23 @@ Breaking changes
   - `dead_abovering` is moved to `Ntilde`, where `dead_doubleacute` used to be.
 
 
-New
-~~~
+## New
 
-- - `pl`: Added Colemak-DH ortholinear variant
+- `pl`: Added Colemak-DH ortholinear variant
 
-     Contributed by Aria Węgrzyn ([#pl-colemak-dh-ortho](https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/issues/pl-colemak-dh-ortho))
+  Contributed by Aria Węgrzyn ([!885](https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/merge_requests/885))
 - `ca(multix)`:
-  - Added `oneeighth` (U+215B) to `<AE02>`
-  - Duplicated `currency` (U+00A4) on `<AE04>`
-  - Added `dstroke` (U+0111) to `<AC04>`
+  - Added `oneeighth` (`U+215B`) to <kbd>&lt;AE02&gt;</kbd>
+  - Duplicated `currency` (`U+00A4`) on <kbd>&lt;AE04&gt;</kbd>
+  - Added `dstroke` (`U+0111`) to <kbd>&lt;AC04&gt;</kbd>
 
   Contributed by Alexandre Bouvier ([#563](https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/issues/563))
 - Added `br(thinkpad_nodeadkeys)`: Portuguese (Brazil, IBM/Lenovo ThinkPad, no dead keys). ([#868](https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/issues/868))
 
 
-Options
--------
+# Miscellaneous
 
-No significant changes.
-
-
-Miscellaneous
--------------
-
-Breaking changes
-~~~~~~~~~~~~~~~~
+## Breaking changes
 
 - Made key type `KEYPAD` independent of `Shift`, so that `Shift` can be used in
   keyboard shortcuts with numpad keys, with and without `NumLock`.
@@ -57,7 +40,7 @@ Breaking changes
   so that they are identical and enable to use `Shift` in keyboard shortcuts
   with *both* arrows/edition keys and numbers:
 
-  - `Shift` maps to level 1, usually corresponding to numpad `KP_`
+  - `Shift` maps to level 1, usually corresponding to numpad `KP_*`
     arrows/editing keysyms variants);
   - `Shift` is preserved.
   - No “`Shift` cancels `NumLock`” behavior.
@@ -66,8 +49,7 @@ Breaking changes
   and `NumLock`.
 
 
-New
-~~~
+## New
 
 - inet: Added mapping to the following new keysyms:
   - `XF86ElectronicPrivacyScreenOn`
@@ -82,8 +64,7 @@ New
   [xorgproto-112]: https://gitlab.freedesktop.org/xorg/proto/xorgproto/-/merge_requests/112
 
 
-Fixes
-~~~~~
+## Fixes
 
 - Fixed key types missing or erroneous `map` and `preserve` entries:
   - `extra`: `FOUR_LEVEL_X`
@@ -91,13 +72,11 @@ Fixes
   - `pc`: `PC_SHIFT_SUPER_LEVEL2` and `CTRL+ALT`
 
 
-Build system
-------------
+# Build system
 
-Breaking changes
-~~~~~~~~~~~~~~~~
+## Breaking changes
 
-- Bumped the minimum required Python version to 3.11 ([#11](https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/issues/11))
+- Bumped the minimum required Python version to 3.11 ([!859](https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/merge_requests/859))
 
 
 xkeyboard-config [2.47] - 2026-02-23
