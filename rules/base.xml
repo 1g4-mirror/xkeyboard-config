@@ -6890,7 +6890,7 @@
             <name>snd</name>
             <!-- Keyboard indicator for Sindhi layouts -->
             <shortDescription>sd</shortDescription>
-            <description>Sindhi</description>
+            <description>Sindhi (M.B. Sindhi)</description>
             <languageList>
               <iso639Id>snd</iso639Id>
             </languageList>

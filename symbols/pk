@@ -186,59 +186,79 @@ xkb_symbols "urd-nla" {
 
 partial alphanumeric_keys
 xkb_symbols "snd" {
-    name[Group1]= "Sindhi";
-    // www.bhurgri.com
+    name[Group1]= "Sindhi (M.B. Sindhi)";
 
-    key <TLDE>	{[  U2019,     U2018             ]};
-    key <AE01>	{[      1,    exclam,     U0610  ]};
-    key <AE02>	{[      2,     U0670,     U0611  ]};
-    key <AE03>	{[      3,     U0621,     U0613  ]};
-    key <AE04>	{[      4,     U0621,     U0612  ]};
-    key <AE05>	{[      5,     U0621,     U2026  ]};
-    key <AE06>	{[      6,     U0621,     U2022  ]};
-    key <AE07>	{[      7,     U06FD             ]};
-    key <AE08>	{[      8,  asterisk             ]};
-    key <AE09>	{[      9,parenright             ]};
-    key <AE10>	{[      0, parenleft             ]};
-    key <AE11>	{[  U068F,underscore,     minus  ]};
-    key <AE12>	{[  U068C,      plus,     equal  ]};
+    // M.B. Sindhi keyboard developed by Abdul-Majid Bhurgri.
+    // Website: www.bhurgri.com
+    // Unicode mappings based on MB Sindhi SK 2.0 — Sindhi Keyboard (Pakistan),
+    // using Microsoft Keyboard Layout Creator (MSKLC) as the reference.
+
+                 // Number Row (1–0)
+
+    //              Normal     Shift      AltGr
+
+    key <TLDE>	{[  U2019,     U2018,     U0060  ]};
+    key <AE01>	{[  U0031,     U0021,     U06F1  ]};
+    key <AE02>	{[  U0032,     U0670,     U06F2  ]};
+    key <AE03>	{[  U0033,     U0621,     U06F3  ]};   // Shift+3: should produce Unicode sequence U+0621 U+0650
+    key <AE04>	{[  U0034,     U0621,     U06F4  ]};   // Shift+4: should produce Unicode sequence U+0621 U+064E
+    key <AE05>	{[  U0035,     U0621,     U06F5  ]};   // Shift+5: should produce Unicode sequence U+0621 U+064F
+    key <AE06>	{[  U0036,     U0621,     U0666  ]};   // Shift+6: should produce Unicode sequence U+0621 U+064C
+    key <AE07>	{[  U0037,     U06FD,     U06F7  ]};
+    key <AE08>	{[  U0038,     U002A,     U06F8  ]};
+    // Parentheses: reverse the Shift-level Unicode assignments to match
+    // the MB-Sindhi SK 2.0 reference layout in right-to-left (RTL) text.
+    key <AE09>	{[  U0039,     U0029,     U06F9  ]};   // Shift+9: U+0029 = RIGHT PARENTHESIS )
+    key <AE10>	{[  U0030,     U0028,     U06F0  ]};   // Shift+0: U+0028 = LEFT  PARENTHESIS (
+    key <AE11>	{[  U068F,     U005F,     U0652  ]};
+    key <AE12>	{[  U068C,     U003D,     U06D4  ]};
+
+                 // Top Row (QWERTY)
 
     key <AD01>	{[  U0642,     U064E,     U064B  ]};
     key <AD02>	{[  U0635,     U0636,     UFDFA  ]};
     key <AD03>	{[  U064A,     U0650,     U0656  ]};
-    key <AD04>	{[  U0631,     U0699,     UFDE6  ]};
+    key <AD04>	{[  U0631,     U0699,     U0612  ]};
     key <AD05>	{[  U062A,     U067D,     U0629  ]};
-    key <AD06>	{[  U067F,     U062B,     UFDE5  ]};
-    key <AD07>	{[  U0639,     U063A,     UFDE3  ]};
-    key <AD08>	{[  U06B3,     U06BE,     UFDE4  ]};
+    key <AD06>	{[  U067F,     U062B,     U0610  ]};
+    key <AD07>	{[  U0639,     U063A,     U0611  ]};
+    key <AD08>	{[  U06B3,     U06C1,     U0613  ]};
     key <AD09>	{[  U0648,     U064F,     U0657  ]};
-    key <AD10>	{[  U067E,     U06A6             ]};
-    key <AD11>	{[  U0687,     U0683             ]};
-    key <AD12>	{[  U0686,     U0684             ]};
+    key <AD10>	{[  U067E,     U06A6,     U064C  ]};
+    // Square brackets: reverse the AltGr-level Unicode assignments to match
+    // the MB-Sindhi SK 2.0 reference layout in right-to-left (RTL) text.
+    key <AD11>	{[  U0687,     U0683,     U005D  ]};   // AltGr+[ : U+005D RIGHT SQUARE BRACKET ]
+    key <AD12>	{[  U0686,     U0684,     U005B  ]};   // AltGr+] : U+005B LEFT SQUARE BRACKET  [
+
+                 // Home Row (ASDF)
 
     key <AC01>	{[  U0627,     U0622,     U0649  ]};
-    key <AC02>	{[  U0633,     U0634             ]};
-    key <AC03>	{[  U062F,     U068A             ]};
-    key <AC04>	{[  U0641,     U06A6             ]};
-    key <AC05>	{[  U06AF,     U06AF             ]};
-    key <AC06>	{[  U0647,     U062D,     U06C1  ]};
-    key <AC07>	{[  U062C,     U062C,     UFDFB  ]};
-    key <AC08>	{[  U06AA,     U06E1             ]};
-    key <AC09>	{[  U0644,     colon             ]};
-    key <AC10>	{[  U06A9,     U061B             ]};
-    key <AC11>	{[  U06B1,     U0640             ]};
-    key <BKSL>	{[  U068D,     U067A,       bar  ]};
+    key <AC02>	{[  U0633,     U0634,     U064D  ]};
+    key <AC03>	{[  U062F,     U068A,     U0023  ]};
+    key <AC04>	{[  U0641,     U06A6,     U0024  ]};
+    key <AC05>	{[  U06AF,     U06AF,     U0025  ]};   // Shift+G: combines U+06AF (گ) and U+0647 (ه) to form (گھ)
+    key <AC06>	{[  U06BE,     U062D,     U0647  ]};
+    key <AC07>	{[  U062C,     U062C,      at    ]};   // Shift+J: combines U+062C (ج) and U+0647 (ه) to form (جہ); | AltGr+J: should produce Unicode sequence U+200F U+0040
+    key <AC08>	{[  U06AA,     U06E1,     U0026  ]};
+    key <AC09>	{[  U0644,     U003A,     U002B  ]};
+    key <AC10>	{[  U06A9,     U061B,     U002D  ]};
+    key <AC11>	{[  U06B1,     U0640,     U0653  ]};
+    key <BKSL>	{[  U068D,     U067A,     U005C  ]};   // The Backslash key (\), typically located on the top row, near the Enter key.
 
-    key <AB01>	{[  U0632,     U0630,     U0652  ]};
-    key <AB02>	{[  U062E,     U0651,     U200C  ]};
-    key <AB03>	{[  U0637,     U0638,     U200D  ]};
+               // Bottom Row (ZXCV)
+
+    key <AB01>	{[  U0632,     U0630,     U007E  ]};
+    key <AB02>	{[  U062E,     U0651,     U066A  ]};
+    key <AB03>	{[  U0637,     U0638,     U2026  ]};
     key <AB04>	{[  U0680,     U0621,     U0624  ]};
-    key <AB05>	{[  U0628,     U067B,     UFDE1  ]};
-    key <AB06>	{[  U0646,     U06BB,     U200E  ]};
+    key <AB05>	{[  U0628,     U067B,     UFDFD  ]};
+    key <AB06>	{[  U0646,     U06BB,     UFDF2  ]};
     key <AB07>	{[  U0645,     U06FE,     UFDF4  ]};
-    key <AB08>	{[  U060C,     U201C,     U200F  ]};
-    key <AB09>	{[ period,     U201D,     U06D4  ]};
-    key <AB10>	{[  U0626,     U061F,     slash  ]};
+    // Angle brackets: reverse AltGr-level Unicode assignments to match the
+    // MB-Sindhi SK 2.0 reference layout in right-to-left (RTL) text.
+    key <AB08>	{[  U060C,     U201C,     U003E  ]};   // AltGr+< : U+003E Greater-Than Sign >
+    key <AB09>	{[  U002E,     U201D,     U003C  ]};   // AltGr+> : U+003C Less-Than Sign <
+    key <AB10>	{[  U0626,     U061F,     U002F  ]};
 
     include "level3(ralt_switch)"
 };
