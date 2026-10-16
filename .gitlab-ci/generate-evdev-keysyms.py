@@ -14,8 +14,9 @@ import argparse
 import contextlib
 import re
 import sys
+from collections.abc import Iterable
 from dataclasses import dataclass
-from typing import Iterator, TextIO
+from typing import TextIO
 
 # The marker to search for in the template file, replaced with our generated
 # codes.
@@ -33,7 +34,7 @@ class KeyAlias:
     target: str
 
 
-def evdev_keycodes_aliases(content: TextIO) -> Iterator[KeyAlias]:
+def evdev_keycodes_aliases(content: TextIO) -> Iterable[KeyAlias]:
     KEY_ALIAS_PATTERN = re.compile(
         r"^\s*alias\s+<(?P<alias>(?:\w|-|\+)+)>"
         r"\s+=\s+"
@@ -111,7 +112,9 @@ def xorgproto_evdev_keysyms(header):
             yield keyname, xkeycode, kernelname
 
 
-def generate_symbols_file(template: TextIO, header: TextIO, keycodes: TextIO):
+def generate_symbols_file(
+    template: TextIO, header: TextIO, keycodes: TextIO
+) -> Iterable[str]:
     """
     Generate a new symbols/inet file with line containing @evdevsyms@
     replaced by the full list of evdev keysym mappings, including our
@@ -149,44 +152,41 @@ def generate_symbols_file(template: TextIO, header: TextIO, keycodes: TextIO):
         if (kc := get_keycode(raw_kc)) is not None
     }
 
-    output = []
     template.seek(0)
     for line in template.readlines():
         if replacement_marker not in line:
-            output.append(line)
+            yield line
             continue
 
-        output.append(f"   // {section_header}\n")
+        yield f"   // {section_header}\n"
         for name, xkeycode, kernelname in xorgproto_evdev_keysyms(header):
             if xkeycode in keysyms:
                 prefix = "//"
             else:
                 prefix = "  "
-            output.append(
+            yield (
                 f"{prefix} key <I{xkeycode}>   {{       [ {name:30s} ]      }}; // {kernelname}\n"
             )
-        output.append(f"  // {section_footer}\n")
-
-    return output
+        yield f"  // {section_footer}\n"
 
 
 def main():
     parser = argparse.ArgumentParser(description="Generate the evdev symbol lists.")
     parser.add_argument(
         "--template",
-        type=argparse.FileType("r"),
+        type=argparse.FileType("rt", encoding="UTF-8"),
         default=".gitlab-ci/inet.in",
         help="The template file (default: %(default)s)",
     )
     parser.add_argument(
         "--header",
-        type=argparse.FileType("r"),
+        type=argparse.FileType("rt", encoding="UTF-8"),
         help="Path to the XF86keysym.h header file (default: %(default)s)",
         default="/usr/include/X11/XF86keysym.h",
     )
     parser.add_argument(
         "--keycodes",
-        type=argparse.FileType("r"),
+        type=argparse.FileType("rt", encoding="UTF-8"),
         help="Path to the evdev keycode file (default: %(default)s)",
         default="keycodes/evdev",
     )
@@ -202,9 +202,9 @@ def main():
         if ns.output == "-":
             fd = sys.stdout
         else:
-            fd = stack.enter_context(open(ns.output, "w"))
+            fd = stack.enter_context(open(ns.output, "wt", encoding="UTF-8"))
         output = generate_symbols_file(ns.template, ns.header, ns.keycodes)
-        fd.write("".join(output))
+        fd.writelines(output)
 
 
 if __name__ == "__main__":
