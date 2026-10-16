@@ -229,8 +229,8 @@ xkb_symbols "evdev" {
 // key <I198>   {       [ F20                            ]      }; // KEY_F20
 // key <I199>   {       [ F21                            ]      }; // KEY_F21
 // key <I200>   {       [ F22                            ]      }; // KEY_F22
-   key <I201>   {       [ F23                            ]      }; // KEY_F23
-   key <I202>   {       [ F24                            ]      }; // KEY_F24
+// key <I201>   {       [ F23                            ]      }; // KEY_F23
+// key <I202>   {       [ F24                            ]      }; // KEY_F24
 // key <I208>   {       [ XF86AudioPlay                  ]      }; // KEY_PLAYCD
 // key <I209>   {       [ XF86AudioPause                 ]      }; // KEY_PAUSECD
 // key <I210>   {       [ XF86Launch3                    ]      }; // KEY_PROG3

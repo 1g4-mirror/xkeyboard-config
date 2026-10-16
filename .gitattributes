@@ -3,3 +3,4 @@
 .gitlab-ci	export-ignore
 .gitlab-ci.yml	export-ignore
 .mailmap	export-ignore
+tests/test_evdev_keysyms.py export-ignore

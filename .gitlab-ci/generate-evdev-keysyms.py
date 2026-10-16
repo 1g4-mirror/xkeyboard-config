@@ -57,7 +57,7 @@ def existing_keysyms(template):
 
     # This does not handle multiline keysyms
     keysym_pattern = re.compile(
-        r"\s+key \<(?P<keycode>\w+)\>\s+{\s+\[(?P<keysyms>[^]]+)\s*\]\s*};"
+        r"\s+key \<(?P<keycode>\w+)\>\s+{\s+\[(?P<keysyms>[^]]+)\s*\](?:\s*,[^}]*)?\s*};"
     )
 
     in_evdev = False
