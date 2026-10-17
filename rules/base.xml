@@ -7808,6 +7808,12 @@
           <description>NumLock enables digits; Shift cancels NumLock but never enables digits (as in Windows)</description>
         </configItem>
       </option>
+      <option>
+        <configItem>
+          <name>numpad:mac</name>
+          <description>Numeric keypad is independent of the NumLock state (as in macOS)</description>
+        </configItem>
+      </option>
     </group>
     <group allowMultipleSelection="false">
       <!-- Using special PC keys (Win, Menu) to work as standard X keys (Super, Hyper, etc.) -->
@@ -8032,12 +8038,6 @@
         <name>compat</name>
         <description>Compatibility options</description>
       </configItem>
-      <option>
-        <configItem>
-          <name>numpad:mac</name>
-          <description>Numeric keypad always enters digits (as in macOS)</description>
-        </configItem>
-      </option>
       <option>
         <configItem>
           <name>numpad:shift3</name>

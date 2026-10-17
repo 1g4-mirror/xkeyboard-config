@@ -180,10 +180,40 @@ partial xkb_types "pc" {
 
 // On Mac keypads, level 1 is unreachable
 partial xkb_types "mac" {
+    virtual_modifiers LevelThree;
+
     type "KEYPAD" {
 	modifiers = None;
 	map[None] = Level2;
 	level_name[Level2] = "Number";
+    };
+
+    // A four-level keypad variant.
+    type "FOUR_LEVEL_KEYPAD" {
+	modifiers = Shift + LevelThree;
+	map[None] = Level2;
+	map[Shift] = Level2;
+	preserve[Shift] = Shift;
+	map[LevelThree] = Level3;
+	map[Shift+LevelThree] = Level4;
+	level_name[Level1] = "Unreachable";
+	level_name[Level2] = "Number";
+	level_name[Level3] = "AltGr";
+	level_name[Level4] = "Shift AltGr";
+    };
+
+    // Identical to FOUR_LEVEL_KEYPAD
+    type "FOUR_LEVEL_MIXED_KEYPAD" {
+	modifiers = Shift + LevelThree;
+	map[None] = Level2;
+	map[Shift] = Level2;
+	preserve[Shift] = Shift;
+	map[LevelThree] = Level3;
+	map[Shift+LevelThree] = Level4;
+	level_name[Level1] = "Unreachable";
+	level_name[Level2] = "Number";
+	level_name[Level3] = "AltGr";
+	level_name[Level4] = "Shift AltGr";
     };
 };
 
