@@ -7814,6 +7814,12 @@
           <description>Numeric keypad is independent of the NumLock state (as in macOS)</description>
         </configItem>
       </option>
+      <option>
+        <configItem>
+          <name>numpad:shift3</name>
+          <description>NumLock enables digits; NumLock+Shift enables auxiliary symbols when available, digits otherwise</description>
+        </configItem>
+      </option>
     </group>
     <group allowMultipleSelection="false">
       <!-- Using special PC keys (Win, Menu) to work as standard X keys (Super, Hyper, etc.) -->
@@ -8038,12 +8044,6 @@
         <name>compat</name>
         <description>Compatibility options</description>
       </configItem>
-      <option>
-        <configItem>
-          <name>numpad:shift3</name>
-          <description>Shift does not cancel Num Lock, chooses 3rd level instead</description>
-        </configItem>
-      </option>
       <option>
         <configItem>
           <name>hyper:mod2</name>
