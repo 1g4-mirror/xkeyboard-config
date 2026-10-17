@@ -35,13 +35,13 @@ xkeyboard-config [2.48] - 2026-06-21
   keyboard shortcuts with numpad keys, with and without `NumLock`.
 
   This removes the counter-intuitive behavior of `Shift + NumLock` mapping to the
-  arrow/edition keys on the numpad.
+  navigation/editing keys on the numpad.
 - numpad  key types: Changed `FOUR_LEVEL_KEYPAD` and `FOUR_LEVEL_MIXED_KEYPAD`
-  so that they are identical and enable to use `Shift` in keyboard shortcuts
-  with *both* arrows/edition keys and numbers:
+  so that they are identical and enable using `Shift` in keyboard shortcuts
+  with *both* navigation/editing keys and numbers:
 
   - `Shift` maps to level 1, usually corresponding to numpad `KP_*`
-    arrows/editing keysyms variants);
+    navigation/editing keysyms variants);
   - `Shift` is preserved.
   - No “`Shift` cancels `NumLock`” behavior.
 

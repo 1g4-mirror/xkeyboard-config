@@ -7785,6 +7785,19 @@
       </option>
     </group>
     <group allowMultipleSelection="false">
+      <!-- Numpad tweaks -->
+      <configItem>
+        <name>numpad</name>
+        <description>Num Lock behavior</description>
+      </configItem>
+      <option>
+        <configItem>
+          <name>numpad:pc</name>
+          <description>Shift and NumLock each enable digits; both together cancel (as in Classic XKB)</description>
+        </configItem>
+      </option>
+    </group>
+    <group allowMultipleSelection="false">
       <!-- Using special PC keys (Win, Menu) to work as standard X keys (Super, Hyper, etc.) -->
       <configItem>
         <name>altwin</name>
@@ -8007,12 +8020,6 @@
         <name>compat</name>
         <description>Compatibility options</description>
       </configItem>
-      <option>
-        <configItem>
-          <name>numpad:pc</name>
-          <description>Default numeric keypad keys</description>
-        </configItem>
-      </option>
       <option>
         <configItem>
           <name>numpad:mac</name>

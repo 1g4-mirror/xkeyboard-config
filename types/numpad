@@ -1,4 +1,50 @@
-default partial xkb_types "pc" {
+// Every variant section must define the types KEYPAD,
+// FOUR_LEVEL_KEYPAD and FOUR_LEVEL_MIXED_KEYPAD:
+//
+// - KEYPAD is required by the XKB protocol.
+// - KEYPAD and FOUR_LEVEL_KEYPAD are required by xkbcomp
+//   and xkbcommon for automatic key type assignment.
+// - KEYPAD and FOUR_LEVEL_MIXED_KEYPAD are used in the
+//   codebase.
+
+// Overview of the numpad behaviors by variant:
+//
+// | Variant      | No modifier | Shift   | NumLock | Shift + NumLock |
+// | ------------ | ----------- | ------- | ------- | --------------- |
+// | numlock_only | Level 1     | Level 1 | Level 2 | Level 2         |
+// | microsoft    | Level 1     | Level 1 | Level 2 | Level 1         |
+// | pc           | Level 1     | Level 2 | Level 2 | Level 1         |
+// | mac          | Level 2     | Level 2 | Level 2 | Level 2         |
+//
+// Types involving LevelThree additionaly have the following rules:
+//
+// FOUR_LEVEL_KEYPAD
+//     Is similar to the KEYPAD scheme but considers also the LevelThree
+//     modifier. If the LevelThree modifier applies, the symbol from the
+//     third level is taken. If both Shift and LevelThree or NumLock and
+//     LevelThree apply, the symbol from the fourth level is taken. If
+//     all three (Shift+NumLock+LevelThree) apply, the symbol from the
+//     third level is taken. This also is a shift-cancels-caps variant.
+//
+// FOUR_LEVEL_MIXED_KEYPAD
+//     A four-level keypad scheme where the first two levels behave like
+//     the KEYPAD scheme (with Shift and NumLock). The LevelThree modifier
+//     acts as an override, providing access to two normally Shift-ed
+//     levels: when LevelThree is active we ignore the NumLock state.
+//     Intended for the digit area of the keypad.
+//
+// See also: docs/README.enhancing.
+
+// NumLock enables digits; Shift does not interact with NumLock:
+//
+//     | NumLock | Shift | Level | Description            |
+//     | ------- | ----- | ----- | ---------------------- |
+//     | Off     | Off   | 1     | Navigation and editing |
+//     | Off     | On    | 1     | Navigation and editing |
+//     | On      | Off   | 2     | Digits                 |
+//     | On      | On    | 2     | Digits                 |
+
+default partial xkb_types "numlock_only_base" {
     virtual_modifiers  NumLock;
 
     type "KEYPAD" {
@@ -10,7 +56,79 @@ default partial xkb_types "pc" {
     };
 };
 
-// On Mac keypads, levels 1 and 2 are swapped.
+// NumLock and Shift each enable digits; both together cancel:
+//
+//     | NumLock | Shift | Level | Description            |
+//     | ------- | ----- | ----- | ---------------------- |
+//     | Off     | Off   | 1     | Navigation and editing |
+//     | Off     | On    | 2     | Digits                 |
+//     | On      | Off   | 2     | Digits                 |
+//     | On      | On    | 1     | Navigation and editing |
+
+partial xkb_types "pc" {
+    virtual_modifiers  NumLock, LevelThree;
+
+    // Canonical keypad type, as defined by the XKB protocol:
+    // Shift selects the digits and cancels NumLock.
+    // See: https://xorg.freedesktop.org/archive/X11R7.7/doc/kbproto/xkbproto.html#The_KEYPAD_Key_Type
+    type "KEYPAD" {
+	modifiers = Shift+NumLock;
+	map[None] = Level1;
+	map[Shift] = Level2;
+	map[NumLock] = Level2;
+	map[Shift+NumLock] = Level1;
+	level_name[Level1] = "Base";
+	level_name[Level2] = "Number";
+    };
+
+    // A four-level keypad variant with LevelThree and “Shift cancels NumLock”
+    // behavior.
+    type "FOUR_LEVEL_KEYPAD" {
+	modifiers = Shift + NumLock + LevelThree;
+	map[None] = Level1;
+	map[Shift] = Level2;
+	map[NumLock] = Level2;
+	map[LevelThree] = Level3;
+	map[Shift+NumLock] = Level1;
+	map[Shift+LevelThree] = Level4;
+	map[NumLock+LevelThree] = Level4;
+	map[Shift+NumLock+LevelThree] = Level3;
+	level_name[Level1] = "Base";
+	level_name[Level2] = "NumLock";
+	level_name[Level3] = "AltGr";
+	level_name[Level4] = "Shift/NumLock AltGr";
+    };
+
+    // A four-level keypad variant. The first two levels are controlled by
+    // NumLock and Shift (like in KEYPAD).  LevelThree overrides this mode,
+    // with two additional shifted levels.
+    type "FOUR_LEVEL_MIXED_KEYPAD" {
+	modifiers = Shift + NumLock + LevelThree;
+	map[None] = Level1;
+	map[Shift] = Level2;
+	map[NumLock] = Level2;
+	map[LevelThree] = Level3;
+	map[Shift+NumLock] = Level1;
+	map[Shift+LevelThree] = Level4;
+	map[NumLock+LevelThree] = Level3;
+	map[Shift+NumLock+LevelThree] = Level4;
+	level_name[Level1] = "Base";
+	level_name[Level2] = "NumLock";
+	level_name[Level3] = "AltGr";
+	level_name[Level4] = "Shift AltGr";
+    };
+};
+
+// Neither NumLock nor Shift affects digits selection:
+//
+//     | NumLock | Shift | Level | Description      |
+//     | ------- | ----- | ----- | ---------------- |
+//     | Off     | Off   | 2     | Digits           |
+//     | Off     | On    | 2     | Digits           |
+//     | On      | Off   | 2     | Digits           |
+//     | On      | On    | 2     | Digits           |
+
+// On Mac keypads, level 1 is unreachable
 partial xkb_types "mac" {
     type "KEYPAD" {
 	modifiers = None;
@@ -18,6 +136,15 @@ partial xkb_types "mac" {
 	level_name[Level2] = "Number";
     };
 };
+
+// NumLock enables digits; Shift cancels NumLock but never enables digits
+//
+//     | NumLock | Shift | Level | Description            |
+//     | ------- | ----- | ----- | ---------------------- |
+//     | Off     | Off   | 1     | Navigation and editing |
+//     | Off     | On    | 1     | Navigation and editing |
+//     | On      | Off   | 2     | Digits                 |
+//     | On      | On    | 1     | Navigation and editing |
 
 // On Windows keypads, Shift cancels NumLock but Shift alone does not enable digits.
 partial xkb_types "microsoft" {
@@ -32,6 +159,15 @@ partial xkb_types "microsoft" {
 	level_name[Level2] = "Number";
     };
 };
+
+// NumLock enables digits; NumLock+Shift enables auxiliary symbols:
+//
+//     | NumLock | Shift | Level | Description            |
+//     | ------- | ----- | ----- | ---------------------- |
+//     | Off     | Off   | 1     | Navigation and editing |
+//     | Off     | On    | 1     | Navigation and editing |
+//     | On      | Off   | 2     | Digits                 |
+//     | On      | On    | 3     | Auxiliary symbols      |
 
 // Swiss-German style numeric keypad: Shift and NumLock operate as
 // two independent modifiers; however, since we want shift state for
