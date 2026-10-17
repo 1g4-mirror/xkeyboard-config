@@ -62,15 +62,16 @@ default partial xkb_types "default" {
 	map     [Shift+NumLock] = Level2;
 	preserve[Shift+NumLock] = Shift;
 	map     [Shift+LevelThree] = Level4;
-	map     [NumLock+LevelThree] = Level3;
-	map     [Shift+NumLock+LevelThree] = Level4;
+	map     [NumLock+LevelThree] = Level4;
+	map     [Shift+NumLock+LevelThree] = Level3;
 	level_name[Level1] = "Base";
 	level_name[Level2] = "NumLock";
 	level_name[Level3] = "AltGr";
-	level_name[Level4] = "Shift AltGr";
+	level_name[Level4] = "Shift/NumLock AltGr";
     };
 
-    // Alias for `FOUR_LEVEL_KEYPAD`
+    // A four-level keypad variant. NumLock does not interact with
+    // Shift nor LevelThree.
     type "FOUR_LEVEL_MIXED_KEYPAD" {
 	modifiers = Shift + NumLock + LevelThree;
 	map     [None] = Level1;
