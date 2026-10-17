@@ -35,7 +35,8 @@
 //
 // See also: docs/README.enhancing.
 
-// NumLock enables digits; Shift does not interact with NumLock:
+// NumLock enables digits; Shift does not interact with NumLock
+// at the two lowest levels:
 //
 //     | NumLock | Shift | Level | Description            |
 //     | ------- | ----- | ----- | ---------------------- |
@@ -54,6 +55,55 @@ default partial xkb_types "numlock_only_base" {
 	level_name[Level1] = "Base";
 	level_name[Level2] = "Number";
     };
+};
+
+partial xkb_types "numlock_only_extra" {
+    virtual_modifiers  NumLock, LevelThree;
+
+    // A four-level keypad variant with “Shift cancels NumLock”
+    // behavior only when combined with LevelThree.
+    type "FOUR_LEVEL_KEYPAD" {
+	modifiers = Shift + NumLock + LevelThree;
+	map     [None] = Level1;
+	map     [Shift] = Level1;
+	preserve[Shift] = Shift;
+	map     [NumLock] = Level2;
+	map     [LevelThree] = Level3;
+	map     [Shift+NumLock] = Level2;
+	preserve[Shift+NumLock] = Shift;
+	map     [Shift+LevelThree] = Level4;
+	map     [NumLock+LevelThree] = Level4;
+	map     [Shift+NumLock+LevelThree] = Level3;
+	level_name[Level1] = "Base";
+	level_name[Level2] = "NumLock";
+	level_name[Level3] = "AltGr";
+	level_name[Level4] = "Shift/NumLock AltGr";
+    };
+
+    // A four-level keypad variant. NumLock does not interact with
+    // Shift nor LevelThree.
+    type "FOUR_LEVEL_MIXED_KEYPAD" {
+	modifiers = Shift + NumLock + LevelThree;
+	map     [None] = Level1;
+	map     [Shift] = Level1;
+	preserve[Shift] = Shift;
+	map     [NumLock] = Level2;
+	map     [LevelThree] = Level3;
+	map     [Shift+NumLock] = Level2;
+	preserve[Shift+NumLock] = Shift;
+	map     [Shift+LevelThree] = Level4;
+	map     [NumLock+LevelThree] = Level3;
+	map     [Shift+NumLock+LevelThree] = Level4;
+	level_name[Level1] = "Base";
+	level_name[Level2] = "NumLock";
+	level_name[Level3] = "AltGr";
+	level_name[Level4] = "Shift AltGr";
+    };
+};
+
+partial xkb_types "numlock_only" {
+    include "numpad(numlock_only_base)"
+    include "numpad(numlock_only_extra)"
 };
 
 // NumLock and Shift each enable digits; both together cancel:

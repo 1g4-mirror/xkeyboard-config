@@ -7792,6 +7792,12 @@
       </configItem>
       <option>
         <configItem>
+          <name>numpad:numlock_only</name>
+          <description>NumLock enables digits; Shift does not interact with NumLock</description>
+        </configItem>
+      </option>
+      <option>
+        <configItem>
           <name>numpad:pc</name>
           <description>Shift and NumLock each enable digits; both together cancel (as in Classic XKB)</description>
         </configItem>
