@@ -19,8 +19,18 @@ partial xkb_types "mac" {
     };
 };
 
+// On Windows keypads, Shift cancels NumLock but Shift alone does not enable digits.
 partial xkb_types "microsoft" {
-    include "numpad(pc)"
+    virtual_modifiers  NumLock;
+
+    type "KEYPAD" {
+	modifiers = Shift + NumLock;
+	map[None] = Level1;
+	preserve[Shift] = Shift;
+	map[NumLock] = Level2;
+	level_name[Level1] = "Base";
+	level_name[Level2] = "Number";
+    };
 };
 
 // Swiss-German style numeric keypad: Shift and NumLock operate as
