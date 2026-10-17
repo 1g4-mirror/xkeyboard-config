@@ -7802,6 +7802,12 @@
           <description>Shift and NumLock each enable digits; both together cancel (as in Classic XKB)</description>
         </configItem>
       </option>
+      <option>
+        <configItem>
+          <name>numpad:microsoft</name>
+          <description>NumLock enables digits; Shift cancels NumLock but never enables digits (as in Windows)</description>
+        </configItem>
+      </option>
     </group>
     <group allowMultipleSelection="false">
       <!-- Using special PC keys (Win, Menu) to work as standard X keys (Super, Hyper, etc.) -->
@@ -8030,12 +8036,6 @@
         <configItem>
           <name>numpad:mac</name>
           <description>Numeric keypad always enters digits (as in macOS)</description>
-        </configItem>
-      </option>
-      <option>
-        <configItem>
-          <name>numpad:microsoft</name>
-          <description>Num Lock on: digits; Shift for arrows. Num Lock off: arrows (as in Windows)</description>
         </configItem>
       </option>
       <option>

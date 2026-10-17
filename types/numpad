@@ -198,15 +198,55 @@ partial xkb_types "mac" {
 
 // On Windows keypads, Shift cancels NumLock but Shift alone does not enable digits.
 partial xkb_types "microsoft" {
-    virtual_modifiers  NumLock;
+    virtual_modifiers  NumLock, LevelThree;
 
     type "KEYPAD" {
 	modifiers = Shift + NumLock;
 	map[None] = Level1;
+	map[Shift] = Level1;
 	preserve[Shift] = Shift;
 	map[NumLock] = Level2;
+	map[Shift+NumLock] = Level1;
 	level_name[Level1] = "Base";
 	level_name[Level2] = "Number";
+    };
+
+    // A four-level keypad variant. Shift alone does not enable digits,
+    // but Shift cancels NumLock.
+    type "FOUR_LEVEL_KEYPAD" {
+	modifiers = Shift + NumLock + LevelThree;
+	map[None] = Level1;
+	map[Shift] = Level1;
+	preserve[Shift] = Shift;
+	map[NumLock] = Level2;
+	map[LevelThree] = Level3;
+	map[Shift+NumLock] = Level1;
+	map[Shift+LevelThree] = Level4;
+	map[NumLock+LevelThree] = Level4;
+	map[Shift+NumLock+LevelThree] = Level3;
+	level_name[Level1] = "Base";
+	level_name[Level2] = "NumLock";
+	level_name[Level3] = "AltGr";
+	level_name[Level4] = "Shift/NumLock AltGr";
+    };
+
+    // A four-level keypad variant. The first two levels are controlled by NumLock.
+    // LevelThree overrides this mode, with two additional shifted levels.
+    type "FOUR_LEVEL_MIXED_KEYPAD" {
+	modifiers = Shift + NumLock + LevelThree;
+	map[None] = Level1;
+	map[Shift] = Level1;
+	preserve[Shift] = Shift;
+	map[NumLock] = Level2;
+	map[LevelThree] = Level3;
+	map[Shift+NumLock] = Level1;
+	map[Shift+LevelThree] = Level4;
+	map[NumLock+LevelThree] = Level3;
+	map[Shift+NumLock+LevelThree] = Level4;
+	level_name[Level1] = "Base";
+	level_name[Level2] = "NumLock";
+	level_name[Level3] = "AltGr";
+	level_name[Level4] = "Shift AltGr";
     };
 };
 
