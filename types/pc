@@ -50,6 +50,10 @@ default partial xkb_types "default" {
 	level_name[Level2] = "Control + Super";
     };
 
+    // This type never consumes its Shift modifier, so that
+    // apps can distinguish e.g. F10 and Shift+F10.
+    // Control and Alt must also be preserved whenever the
+    // corresponding level is not 5.
     type "CTRL+ALT" {
 	modifiers = Shift + LevelThree + Control + Alt;
 	map[None] = Level1;
@@ -68,17 +72,19 @@ default partial xkb_types "default" {
 	map[Control+Alt+Shift] = Level2;
 	map[Control+Alt+LevelThree] = Level3;
 	map[Control+Alt+LevelThree+Shift] = Level4;
+	preserve[Shift] = Shift;
+	preserve[Shift+LevelThree] = Shift;
 	preserve[Alt] = Alt;
-	preserve[Alt+Shift] = Alt;
+	preserve[Alt+Shift] = Alt+Shift;
 	preserve[Alt+LevelThree] = Alt;
-	preserve[Alt+LevelThree+Shift] = Alt;
+	preserve[Alt+LevelThree+Shift] = Alt+Shift;
 	preserve[Control] = Control;
-	preserve[Control+Shift] = Control;
+	preserve[Control+Shift] = Control+Shift;
 	preserve[Control+LevelThree] = Control;
-	preserve[Control+LevelThree+Shift] = Control;
-	preserve[Control+Alt+Shift] = Control+Alt;
+	preserve[Control+LevelThree+Shift] = Control+Shift;
+	preserve[Control+Alt+Shift] = Control+Alt+Shift;
 	preserve[Control+Alt+LevelThree] = Control+Alt;
-	preserve[Control+Alt+LevelThree+Shift] = Control+Alt;
+	preserve[Control+Alt+LevelThree+Shift] = Control+Alt+Shift;
 	level_name[Level1] = "Base";
 	level_name[Level2] = "Shift";
 	level_name[Level3] = "AltGr";
