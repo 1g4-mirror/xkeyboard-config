@@ -242,6 +242,6 @@ xkb_symbols "eastern-alt" {
     // AE01 (the colon) has been replaced with the Armenian_full_stop and
     // capital AE07 (ken) with the Armenian ligature ew
 
-    key <AD05>	{[ Armenian_ke,		Armenian_KE	]};
+    key <AC05>	{[ Armenian_ke,		Armenian_KE	]};
     key <AB03>	{[ Armenian_gim,	Armenian_GIM	]};
 };
