@@ -90,12 +90,15 @@ default partial xkb_compatibility "misc" {
 	action = SetMods(modifiers=Hyper);
     };
 
-    // Sets the "ScrollLock" virtual modifier and
-    // makes it actually lock when pressed.  Sets
-    // up a map for the scroll lock indicator.
+    // Lock the "ScrollLock" virtual modifier
+
     interpret Scroll_Lock+Any {
 	virtualModifier= ScrollLock;
 	action = LockMods(modifiers=modMapMods);
+    };
+
+    interpret Scroll_Lock {
+	action = LockMods(modifiers=ScrollLock);
     };
 
     include "ledscroll"
