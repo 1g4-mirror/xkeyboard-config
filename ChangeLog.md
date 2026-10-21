@@ -1,3 +1,154 @@
+xkeyboard-config [2.49] - 2026-10-21
+====================================
+
+[2.49]: https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/tree/xkeyboard-config-2.49
+
+# Release highlights
+
+This release fixes the follow regressions:
+- Numpad: all numpad options were fixed to enable the following behavior:
+
+  | Option                | No modifier | Shift   | NumLock | Shift + NumLock  |
+  | --------------------- | ----------- | ------- | ------- | ---------------- |
+  | `numpad:numlock_only` | Level 1     | Level 1 | Level 2 | Level 2          |
+  | `numpad:microsoft`    | Level 1     | Level 1 | Level 2 | Level 1          |
+  | `numpad:pc`           | Level 1     | Level 2 | Level 2 | Level 1          |
+  | `numpad:mac`          | Level 2     | Level 2 | Level 2 | Level 2          |
+  | `numpad:shift3`       | Level 1     | Level 1 | Level 2 | Level 2 (KEYPAD) |
+  |                       |             |         |         | or 3 (*_KEYPAD)  |
+
+  **The default behaviour is `numpad:numlock_only`.**
+- Fixed regression where F1–F12 keys were indistinguishable from Shift + F1–F12.
+
+# Models
+
+## New
+
+- Added [BlackBerry KEY2](https://en.wikipedia.org/wiki/BlackBerry_Key2)
+  model and its corresponding vendor-specific US English layout.
+
+  Contributed by Paul Sajna
+  [!856](https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/merge_requests/856)
+
+## Fixes
+
+- Fixed Apple Aluminium models not using the macOS numpad behavior by default for
+  `FOUR_LEVEL_KEYPAD` and `FOUR_LEVEL_MIXED_KEYPAD` key types.
+
+
+# Layouts
+
+## New
+
+- Added a Belarusian layout with typography symbols.
+- Added a Brahui keyboard layout for Pakistan.
+- Added a Croatian layout variant for writing
+  [Glagolitic Script](https://en.wikipedia.org/wiki/Glagolitic_script).
+- Added the Azerbaijani *standard* layout `az(standard)`, which implements the
+  Azerbaijani national standard AZS 495-2010 “Language-dependent keyboard layout of
+  letters of the alphabet of Azerbaijan”, known locally as *PÜŞUD* and shipped by
+  Microsoft as “Azerbaijani (Standard)” since Windows 8.1.
+- Updated the Sindhi keyboard layout to match the MB-Sindhi SK 2.0 keyboard layout.
+
+  - Adds missing Unicode mappings for Normal, Shift, and AltGr levels.
+  - Updates paired and bidirectional punctuation mappings, including parentheses,
+    square brackets, and angle brackets.
+  - Aligns punctuation mappings with their standard Unicode code points.
+  - Updates the layout description to identify it as “Sindhi (M.B. Sindhi)”.
+  - Updated the MB Sindhi keyboard layout's paired punctuation mappings by
+    interchanging the Unicode assignments on the corresponding physical keys.
+    This adjustment aims to improve the visual presentation of parentheses,
+    square brackets, and angle brackets when typing right-to-left Sindhi text.
+
+## Fixes
+
+- `am(eastern-alt)`: Fixed key name typo resulting in missing ‘տ’ and swapped ‘գ’/‘ք’.
+  ([#603](https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/issues/603))
+- `pl`: Replaced `mu` and `periodcentered` with same-looking but more appropriate characters
+
+  Contributed by Michał Górny
+
+
+# Options
+
+## New
+
+- Generalized `numpad:pc` to enable the classical “`Shift` cancels `NumLock`” behavior to all keypad types:
+
+  | NumLock | Shift | Level | Description            |
+  | ------- | ----- | ----- | ---------------------- |
+  | Off     | Off   | 1     | Navigation and editing |
+  | Off     | On    | 2     | Digits                 |
+  | On      | Off   | 2     | Digits                 |
+  | On      | On    | 1     | Navigation and editing |
+
+  ([#594](https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/issues/594))
+- Generalized `numpad:mac` to enable the following numpad behavior for all
+  keypad key types: neither NumLock nor Shift affects digits selection.
+- Generalized `numpad:microsoft` to enable the following behavior to all keypad key types:
+  - NumLock enables digits;
+  - Shift cancels NumLock but never enables digits.
+- Generalized `numpad:shift3` to enable the following numpad behavior for all
+  keypad key types:
+  - NumLock enables digits;
+  - NumLock+Shift enables digits for `KEYPAD` and auxiliary symbols for the
+    other `*_KEYPAD` types.
+- Added `numpad:numlock_only` to enable the following numpad behavior:
+  - NumLock enables digits;
+  - Shift does not interact with NumLock.
+- Add option `caps:shift_shifted_capslock` to use `<CAPS>` as a Shift key.
+
+  It keeps Caps_Lock on its Shift level as many similar options do.
+- Added `hyper:mod5` to complete the `hyper:mod{2–4}` family, to enable users to select
+  themselves the trade-offs regarding conflicting modifiers.
+- Added `meta:mod{2–5}` to enable users to select themselves the trade-offs
+  regarding conflicting modifiers.
+
+## Fixes
+
+- Fixed `altwin:meta_win` conflicting with `lv3:ralt_switch`
+  ([#514](https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/issues/514)).
+- Fixed `ctrl:lctrl_meta` wrong encoding of the `Meta` modifier.
+
+
+# Miscellaneous
+
+## Fixes
+
+- types: *Mitigated* `NumLock + Shift` not selecting the corresponding keypad navigation
+  and editing symbols,  e.g. `Shift + KP_0` acting as `Shift (consumed) + KP_Insert`.
+
+  Users wanting this behavior should enable the option `numpad:pc` or `numpad:microsoft`
+  ([#594](https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/issues/594)).
+- types: Fixed missing mapping `NumLock+Shift = Level1` in `numpad(microsoft)`.
+
+  This was a regression introduced in xkeyboard-config 2.48.
+- types: Fixed regression where F1–F12 keys were indistinguishable from Shift + F1–F12.
+  ([#599](https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/issues/599)).
+- inet: Restored `XF86TouchpadOff` on the base level of `<F23>`.
+
+  This regression has affected xkeyboard-config 2.47 and 2.48.
+- compat: Fixed missing interpret for `Scroll_Lock`.
+
+  Contrary to an X11 session, on a Wayland session and with xkbcommon 1.11+,
+  this enables to lock the `ScrollLock` modifier and to control the corresponding LED
+  *without* requiring the `scrolllock:mod3` option or a custom `modifier_map` entry
+  ([#194](https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/issues/194)).
+
+## New
+
+- keycodes: Added the following keycodes to `evdev`:
+  - <kbd>\<I602\></kbd> (Linux 6.18: `KEY_EPRIVACY_SCREEN_ON`)
+  - <kbd>\<I603\></kbd> (Linux 6.18: `KEY_EPRIVACY_SCREEN_OFF`)
+  - <kbd>\<I604\></kbd> (Linux 7.0: `KEY_ACTION_ON_SELECTION`)
+  - <kbd>\<I605\></kbd> (Linux 7.0: `KEY_CONTEXTUAL_INSERT`)
+  - <kbd>\<I606\></kbd> (Linux 7.0: `KEY_CONTEXTUAL_QUERY`)
+
+# Build system
+
+No significant changes.
+
+
 xkeyboard-config [2.48] - 2026-06-21
 ====================================
 
